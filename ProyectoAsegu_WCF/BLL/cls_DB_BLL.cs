@@ -28,7 +28,7 @@ namespace BLL
         {
             try
             {
-                ObjDB_DAL.sCadena = ConfigurationManager.ConnectionStrings[].ToString().Trim();
+                ObjDB_DAL.sCadena = ConfigurationManager.ConnectionStrings["CONEXION_SQL"].ToString().Trim();
 
                 ObjDB_DAL.sql_CNX = new SqlConnection(ObjDB_DAL.sCadena);
 
@@ -138,7 +138,7 @@ namespace BLL
                 }
                 ObjDB_DAL.sMsgError = string.Empty;
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 ObjDB_DAL.sMsgError = ex.Message;
             }
@@ -162,16 +162,104 @@ namespace BLL
                     ObjDB_DAL.sql_CMD = new SqlCommand(ObjDB_DAL.sSentencia, ObjDB_DAL.sql_CNX);
                     ObjDB_DAL.sql_CMD.CommandType = CommandType.StoredProcedure;
 
+                    if (ObjDB_DAL.dtParametros != null)
+                    {
+                        SqlDbType sqlDataType = SqlDbType.VarChar;
+                        foreach (DataRow dr in ObjDB_DAL.dtParametros.Rows)
+                        {
+                            switch (dr["Tipo de Dato"].ToString())
+                            {
+                                case "1":
+                                    sqlDataType = SqlDbType.Int;
+                                    break;
 
+                                case "2":
+                                    sqlDataType = SqlDbType.VarChar;
+                                    break;
 
+                                case "3":
+                                    sqlDataType = SqlDbType.DateTime;
+                                    break;
+
+                                case "4":
+                                    sqlDataType = SqlDbType.Money;
+                                    break;
+                                default:
+                                    break;
+
+                            }
+                            ObjDB_DAL.sql_CMD.Parameters.Add(dr["Nombre"].ToString(), sqlDataType).Value = dr["Valor"].ToString();
+                        }
+                    }
+                    ObjDB_DAL.sql_CMD.ExecuteNonQuery();
                 }
+                ObjDB_DAL.sMsgError = string.Empty;
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
-
-                throw;
+                ObjDB_DAL.sMsgError = ex.Message;
             }
 
+            finally
+            {
+                Cerrar_cnx(ref ObjDB_DAL);
+            }
+        }
+
+        public void Ejec_Scalar(ref cls_DB_DAL ObjDB_DAL)
+        {
+            try
+            {
+                Traer_cnx(ref ObjDB_DAL);
+                if (ObjDB_DAL.sql_CNX != null)
+                {
+                    Abrir_cnx(ref ObjDB_DAL);
+
+                    ObjDB_DAL.sql_CMD = new SqlCommand(ObjDB_DAL.sSentencia, ObjDB_DAL.sql_CNX);
+                    ObjDB_DAL.sql_CMD.CommandType = CommandType.StoredProcedure;
+
+                    if (ObjDB_DAL.dtParametros != null)
+                    {
+                        SqlDbType sqlDataType = SqlDbType.VarChar;
+                        foreach (DataRow dr in ObjDB_DAL.dtParametros.Rows)
+                        {
+                            switch (dr["Tipo de Dato"].ToString())
+                            {
+                                case "1":
+                                    sqlDataType = SqlDbType.Int;
+                                    break;
+
+                                case "2":
+                                    sqlDataType = SqlDbType.VarChar;
+                                    break;
+
+                                case "3":
+                                    sqlDataType = SqlDbType.DateTime;
+                                    break;
+
+                                case "4":
+                                    sqlDataType = SqlDbType.Money;
+                                    break;
+                                default:
+                                    break;
+
+                            }
+                            ObjDB_DAL.sql_CMD.Parameters.Add(dr["Nombre"].ToString(), sqlDataType).Value = dr["Valor"].ToString();
+                        }
+                    }
+                    ObjDB_DAL.iValorScalar = Convert.ToInt32(ObjDB_DAL.sql_CMD.ExecuteScalar());
+                }
+                ObjDB_DAL.sMsgError = string.Empty;
+            }
+            catch (SqlException ex)
+            {
+                ObjDB_DAL.sMsgError = ex.Message;
+            }
+
+            finally
+            {
+                Cerrar_cnx(ref ObjDB_DAL);
+            }
         }
     }
 }

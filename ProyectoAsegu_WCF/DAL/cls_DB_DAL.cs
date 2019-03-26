@@ -11,7 +11,7 @@ namespace DAL
     public class cls_DB_DAL
     {
         private string _sCadena, _sSentencia, _sNombreTabla, _sMsgError;
-
+        private int _iValorScalar;
         private DataTable _dtParametros;
 
         private SqlConnection _sql_CNX;
@@ -133,6 +133,19 @@ namespace DAL
             set
             {
                 _sql_CMD = value;
+            }
+        }
+
+        public int iValorScalar
+        {
+            get
+            {
+                return _iValorScalar;
+            }
+
+            set
+            {
+                _iValorScalar = value;
             }
         }
     }

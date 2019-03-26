@@ -12,10 +12,11 @@ namespace DAL
     {
         private string _sCadena, _sSentencia, _sNombreTabla, _sMsgError;
 
-        private DataTable _dtParametros = new DataTable("Parametros");
+        private DataTable _dtParametros;
 
         private SqlConnection _sql_CNX;
         private SqlDataAdapter _sql_DA;
+        private SqlCommand _sql_CMD;
         private DataSet _DS;
 
         public string sCadena
@@ -119,6 +120,19 @@ namespace DAL
             set
             {
                 _DS = value;
+            }
+        }
+
+        public SqlCommand sql_CMD
+        {
+            get
+            {
+                return _sql_CMD;
+            }
+
+            set
+            {
+                _sql_CMD = value;
             }
         }
     }

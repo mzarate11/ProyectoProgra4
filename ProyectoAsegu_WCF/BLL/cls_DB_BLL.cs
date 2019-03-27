@@ -58,7 +58,7 @@ namespace BLL
 
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 ObjDB_DAL.sCadena = string.Empty;
                 ObjDB_DAL.sql_CNX = null;
@@ -82,7 +82,7 @@ namespace BLL
                 }
 
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 ObjDB_DAL.sCadena = string.Empty;
                 ObjDB_DAL.sql_CNX = null;
@@ -146,6 +146,7 @@ namespace BLL
             finally
             {
                 Cerrar_cnx(ref ObjDB_DAL);
+                ObjDB_DAL.sql_DA.Dispose();
             }
 
         }
@@ -203,6 +204,7 @@ namespace BLL
             finally
             {
                 Cerrar_cnx(ref ObjDB_DAL);
+                ObjDB_DAL.sql_CMD.Dispose();
             }
         }
 
@@ -259,6 +261,7 @@ namespace BLL
             finally
             {
                 Cerrar_cnx(ref ObjDB_DAL);
+                ObjDB_DAL.sql_CMD.Dispose();
             }
         }
     }

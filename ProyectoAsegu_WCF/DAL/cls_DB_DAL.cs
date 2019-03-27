@@ -14,10 +14,10 @@ namespace DAL
         private int _iValorScalar;
         private DataTable _dtParametros;
 
-        private SqlConnection _sql_CNX;
-        private SqlDataAdapter _sql_DA;
-        private SqlCommand _sql_CMD;
-        private DataSet _DS;
+        public SqlConnection sql_CNX;
+        public SqlDataAdapter sql_DA;
+        public SqlCommand sql_CMD;
+        public DataSet DS;
 
         public string sCadena
         {
@@ -83,59 +83,6 @@ namespace DAL
                 _dtParametros = value;
             }
         }
-
-        public SqlConnection sql_CNX
-        {
-            get
-            {
-                return _sql_CNX;
-            }
-
-            set
-            {
-                _sql_CNX = value;
-            }
-        }
-
-        public SqlDataAdapter sql_DA
-        {
-            get
-            {
-                return _sql_DA;
-            }
-
-            set
-            {
-                _sql_DA = value;
-            }
-        }
-
-        public DataSet DS
-        {
-            get
-            {
-                return _DS;
-            }
-
-            set
-            {
-                _DS = value;
-            }
-        }
-
-        public SqlCommand sql_CMD
-        {
-            get
-            {
-                return _sql_CMD;
-            }
-
-            set
-            {
-                _sql_CMD = value;
-            }
-        }
-
         public int iValorScalar
         {
             get

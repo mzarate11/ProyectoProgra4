@@ -19,5 +19,13 @@ namespace SVC.Contracts
             return Obj_DB_BLL.Ejec_DataAdapter(sNombreSP, "", SqlDbType.VarChar, "", ref sMsjError);
 
         }
+
+        public DataTable FiltrarDatos(string sNombreSP, string sNombreParametro, ref string sMsjError)
+        {
+            cls_DB_BLL Obj_DB_BLL = new cls_DB_BLL();
+
+            return Obj_DB_BLL.Ejec_DataAdapter(sNombreSP, sNombreParametro, SqlDbType.VarChar, "", ref sMsjError);
+
+        }
     }
 }

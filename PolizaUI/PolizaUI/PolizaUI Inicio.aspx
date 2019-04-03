@@ -21,7 +21,7 @@
     <h3>Por favor sienta se llibre de mirar nuestras polizas</h3>
     <h5>
         <br />
-   Seguro Grupal de Responsabilidad Civil Profesional1
+   Seguro Grupal de Responsabilidad Civil Profesional
         <br />
         <br />
  Nueva Póliza Colectiva de Vida.

@@ -91,12 +91,22 @@ namespace BLL
 
         //}
 
+        //se Crea en e web!!!!
+        //Obj_DAL.dtParametros = new DataTable("Parametros");
+        //    DataColumn dcNombre = new DataColumn(@"Nombre", typeof(string));
+        //    DataColumn dcTipoDato = new DataColumn(@"TipoDato", typeof(string));
+        //    DataColumn dcValor = new DataColumn(@"Valor", typeof(string));
+
+        //    Obj_DAL.dtParametros.Columns.Add(dcNombre);
+        //    Obj_DAL.dtParametros.Columns.Add(dcTipoDato);
+        //    Obj_DAL.dtParametros.Columns.Add(dcValor);
+
         public DataTable Ejec_DataAdapter(string sNombre_SP, string sNombreParametro, SqlDbType DbType, string sValorParametro, ref string sMsjError)
         {
-                cls_DB_DAL ObjDB_DAL = new cls_DB_DAL();
+            cls_DB_DAL ObjDB_DAL = new cls_DB_DAL();
             try
             {
-                
+
                 ObjDB_DAL.sCadena = ConfigurationManager.ConnectionStrings["CONEXION_SQL"].ToString().Trim();
 
                 ObjDB_DAL.sql_CNX = new SqlConnection(ObjDB_DAL.sCadena);
@@ -143,34 +153,196 @@ namespace BLL
 
                     ObjDB_DAL.sql_CNX.Dispose();
                 }
+                    
+                }
+            }
+
+            public bool ExecuteNonQuery(string sNombre_SP, DataTable dtParametros, ref string sMsjError)
+            {
+            cls_DB_DAL Obj_DB_DAL = new cls_DB_DAL();
+            try
+            {
+                
+                Obj_DB_DAL.sCadena = ConfigurationManager.ConnectionStrings["CONEXION_SQL"].ToString().Trim();
+
+                Obj_DB_DAL.sql_CNX = new SqlConnection(Obj_DB_DAL.sCadena);
+
+                if (Obj_DB_DAL.sql_CNX.State == ConnectionState.Closed)
+                {
+                    Obj_DB_DAL.sql_CNX.Open();
+                }
+
+                Obj_DB_DAL.sql_CMD = new SqlCommand(sNombre_SP, Obj_DB_DAL.sql_CNX);
+
+                Obj_DB_DAL.sql_CMD.CommandType = CommandType.StoredProcedure;
+
+                if (dtParametros.Rows.Count > 0)
+                {
+
+                   
+                    foreach (DataRow dr in Obj_DB_DAL.dtParametros.Rows)
+                    {
+                        SqlDbType sqlDataType = SqlDbType.VarChar;
+                        switch (dr[1].ToString())
+                        {
+                            case "1":
+                                sqlDataType = SqlDbType.Int;
+                                break;
+
+                            case "2":
+                                sqlDataType = SqlDbType.VarChar;
+                                break;
+
+                            case "3":
+                                sqlDataType = SqlDbType.DateTime;
+                                break;
+
+                            case "4":
+                                sqlDataType = SqlDbType.Money;
+                                break;
+                            case "5":
+                                sqlDataType = SqlDbType.Bit;
+                                break;
+                            default:
+                                break;
+
+
+                        }
+                        Obj_DB_DAL.sql_CMD.Parameters.Add(dr[0].ToString(), sqlDataType).Value = dr[2].ToString();
+                    }
+                }
+                    Obj_DB_DAL.sql_CMD.ExecuteNonQuery();
+
+                    sMsjError = string.Empty;
+                    return true;
+                }
+            
+            catch (SqlException ex)
+            {
+                sMsjError = ex.Message.ToString();
+                return false;
+            }
+                finally
+                {
+                if (Obj_DB_DAL.sql_CNX != null)
+                {
+                    if (Obj_DB_DAL.sql_CNX.State == ConnectionState.Open)
+                    {
+                        Obj_DB_DAL.sql_CNX.Close();
+                    }
+
+                    Obj_DB_DAL.sql_CNX.Dispose();
+                }
 
             }
-            //if (ObjDB_DAL.dtParametros != null)
-            //{
-            //    SqlDbType sqlDataType = SqlDbType.VarChar;
-            //    foreach (DataRow dr in ObjDB_DAL.dtParametros.Rows)
-            //    {
-            //        switch (dr["Tipo de Dato"].ToString())
-            //        {
-            //            case "1":
-            //                sqlDataType = SqlDbType.Int;
-            //                break;
-
-            //            case "2":
-            //                sqlDataType = SqlDbType.VarChar;
-            //                break;
-
-            //            case "3":
-            //                sqlDataType = SqlDbType.DateTime;
-            //                break;
-
-            //            case "4":
-            //                sqlDataType = SqlDbType.Money;
-            //                break;
-            //            default:
-            //                break;
-
         }
+            
+        public string ExecuteScalar(string sNombre_SP, DataTable dtParametros, ref string sValorScalar ,ref string sMsjError)
+        {
+            cls_DB_DAL Obj_DB_DAL = new cls_DB_DAL();
+            try
+            {
+
+                Obj_DB_DAL.sCadena = ConfigurationManager.ConnectionStrings["CONEXION_SQL"].ToString().Trim();
+
+                Obj_DB_DAL.sql_CNX = new SqlConnection(Obj_DB_DAL.sCadena);
+
+                if (Obj_DB_DAL.sql_CNX.State == ConnectionState.Closed)
+                {
+                    Obj_DB_DAL.sql_CNX.Open();
+                }
+
+                Obj_DB_DAL.sql_CMD = new SqlCommand(sNombre_SP, Obj_DB_DAL.sql_CNX);
+
+                Obj_DB_DAL.sql_CMD.CommandType = CommandType.StoredProcedure;
+
+                if (dtParametros.Rows.Count > 0)
+                {
+
+
+                    foreach (DataRow dr in Obj_DB_DAL.dtParametros.Rows)
+                    {
+                        SqlDbType sqlDataType = SqlDbType.VarChar;
+                        switch (dr[1].ToString())
+                        {
+                            case "1":
+                                sqlDataType = SqlDbType.Int;
+                                break;
+
+                            case "2":
+                                sqlDataType = SqlDbType.VarChar;
+                                break;
+
+                            case "3":
+                                sqlDataType = SqlDbType.DateTime;
+                                break;
+
+                            case "4":
+                                sqlDataType = SqlDbType.Money;
+                                break;
+                            case "5":
+                                sqlDataType = SqlDbType.Bit;
+                                break;
+                            default:
+                                break;
+
+
+                        }
+                        Obj_DB_DAL.sql_CMD.Parameters.Add(dr[0].ToString(), sqlDataType).Value = dr[2].ToString();
+                    }
+                }
+               Obj_DB_DAL.iValorScalar = Obj_DB_DAL.sql_CMD.ExecuteNonQuery();
+
+                sMsjError = string.Empty;
+                return sValorScalar;
+            }
+
+            catch (SqlException ex)
+            {
+                sMsjError = ex.Message.ToString();
+                return null;
+            }
+            finally
+            {
+                if (Obj_DB_DAL.sql_CNX != null)
+                {
+                    if (Obj_DB_DAL.sql_CNX.State == ConnectionState.Open)
+                    {
+                        Obj_DB_DAL.sql_CNX.Close();
+                    }
+
+                    Obj_DB_DAL.sql_CNX.Dispose();
+                }
+
+            }
+        }
+    }
+        //if (ObjDB_DAL.dtParametros != null)
+        //{
+        //    SqlDbType sqlDataType = SqlDbType.VarChar;
+        //    foreach (DataRow dr in ObjDB_DAL.dtParametros.Rows)
+        //    {
+        //        switch (dr["Tipo de Dato"].ToString())
+        //        {
+        //            case "1":
+        //                sqlDataType = SqlDbType.Int;
+        //                break;
+
+        //            case "2":
+        //                sqlDataType = SqlDbType.VarChar;
+        //                break;
+
+        //            case "3":
+        //                sqlDataType = SqlDbType.DateTime;
+        //                break;
+
+        //            case "4":
+        //                sqlDataType = SqlDbType.Money;
+        //                break;
+        //            default:
+        //                break;
+
+    }
 
         //public void Ejec_NonQuery(ref cls_DB_DAL ObjDB_DAL)
         //{
@@ -285,5 +457,5 @@ namespace BLL
         //        ObjDB_DAL.sql_CMD.Dispose();
         //    }
         //}
-    }
-}
+    
+

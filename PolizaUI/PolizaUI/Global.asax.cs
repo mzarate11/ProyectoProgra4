@@ -7,7 +7,7 @@ using System.Web.SessionState;
 
 namespace PolizaUI
 {
-    public class Global : System.Web.HttpApplication
+    public class Global : System.Web.HttpApplication/*o*/
     {
         protected void Application_Start(object sender, EventArgs e)
         {

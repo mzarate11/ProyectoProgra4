@@ -1,0 +1,39 @@
+﻿body {
+    background-color:#104b59;
+}
+}
+
+
+#Div-Master2 {
+margin-top:-30%;
+margin-left:80%;
+max-width:200px;
+max-height:500px;
+background-color:#ffffff;
+border-radius:1%;
+}
+#Div-Master-Footer{
+background-color:black;
+max-width:100%;
+min-height:50px;
+margin-top:5%;
+}
+#Div-Med {
+background-color:#ffffff;
+min-height:100px;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+max-width:20000px;
+}
+
+.Inputs-Margin {
+margin-left:2%;
+margin-top:2%;
+border-radius:20%;
+}
+.H1Global {
+text-align:center;
+}

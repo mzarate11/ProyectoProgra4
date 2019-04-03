@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PolizaUIMaster.master.cs" Inherits="PolizaUI.PolizaUIMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Polizas</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="description" content="Made with WOW Slider - Create beautiful, responsive image sliders in a few clicks. Awesome skins and animations. Html slider" />
+    <script type="text/javascript" src="Resources/Validaciones.js"></script>
+    <script type="text/javascript" src="Resources/jquery.mask.min.js"></script>
+    <link rel="stylesheet" href="Resources/bootstrap.min.css"/>
+    <link rel="stylesheet" href="Resources/MasterStyle.css"/>
+    <script src="Resources/jquery.min.js"></script>
+    <script src="Resources/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="Resources/Slider/engine1/style.css" />
+	<script type="text/javascript" src="Resources/Slider/engine1/jquery.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Polizas Americanas</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="PolizaUI Inicio.aspx">Inicio</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Tipos de polizas <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Seguro Grupal de Responsabilidad Civil Profesional</a></li>
+                                <li><a href="#">Póliza Colectiva de Vida.</a></li>
+                                <li><a href="#"> Póliza de Seguro Médico Básico.</a></li>
+                                <li><a href="#">Pólizas de Seguros Médicos Voluntarios.</a></li>
+                                <li><a href="#">Póliza de Seguro de Vida 01-16VIC-299.</a></li>
+                                <li><a href="#">Formularios del Seguro Básico del Colegio de Médicos.</a></li>
+                                <li><a href="#">Procedimiento para la presentación de reclamos y Solicitud de Beneficios</a></li>
+                                <li><a href="#">Médicos Pensionados</a></li>
+                                <li><a href="#">Seguro de Asistencia al Viajero </a></li>
+                            </ul>
+                        </li>
+                        <li><a class="dropdown-toggle" data-toggle="dropdown" href="# ">Administrativo<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="Paginas/Persona.aspx">Personas</a></li>
+                                <li><a href="Paginas/">Identificacion</a></li>
+                                <li><a href="Paginas/Beneficiario.aspx">Beneficiario</a></li>
+                                <li><a href="Paginas/Poliza.aspx">Poliza</a></li>
+                                <li><a href="Paginas/Venta">Venta</a></li>
+                                <li><a href="Paginas/MetodoPago">MetodoPago</a></li>
+                                <li><a href="Paginas/TarjetaCreaditoDeb">Tarjeta_Cred_Deb</a></li>
+                                <li><a href="Paginas/Planes">Planes</a></li>
+                                <li><a href="Paginas/Cobertura">Cobertura</a></li>
+                                <li><a href="Adicionales">Provincia</a></li>
+                                <li><a href="#">Canton</a></li>
+                                <li><a href="#">Distrito</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div id="Div-Master">
+            <div id="Div-Med">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+            
+            <div id="Div-Master-Footer">
+                <br />
+                <h5>Proyecto Final Universidad Americana</h5>
+                <h6>Integrantes:</h6>
+                <br />
+            </div>
+        </div>
+
+    </form>
+      <script type="text/javascript" src="Resources/Slider/engine1/wowslider.js"></script>
+	<script type="text/javascript" src="Resources/Slider/engine1/script.js"></script>
+</body>
+</html>

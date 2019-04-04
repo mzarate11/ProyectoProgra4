@@ -67,8 +67,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Paginas\Administrativo\Login.aspx" />
     <Content Include="Paginas\Administrativo\Planes.aspx" />
     <Content Include="Paginas\Administrativo\Cobertura.aspx" />
+    <Content Include="Paginas\Administrativo\Registrar.aspx" />
     <Content Include="Paginas\Administrativo\TarjetaCreditoDeb.aspx" />
     <Content Include="Paginas\Administrativo\MetodoPago.aspx" />
     <Content Include="Paginas\Administrativo\Venta.aspx" />
@@ -90,13 +92,23 @@
     <Content Include="Resources\bootstrap.min.css" />
     <Content Include="Resources\bootstrap.min.js" />
     <Content Include="Resources\jquery.mask.min.js" />
+    <Content Include="Resources\jquery.min.js" />
     <Content Include="Resources\MasterStyle.css" />
     <Content Include="Resources\Validaciones.js" />
+    <Content Include="Scripts\Login.js" />
+    <Content Include="styles\Login.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Administrativo\Planes.aspx.cs">
       <DependentUpon>Planes.aspx</DependentUpon>
@@ -111,6 +123,13 @@
     </Compile>
     <Compile Include="Paginas\Administrativo\Cobertura.aspx.designer.cs">
       <DependentUpon>Cobertura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Registrar.aspx.cs">
+      <DependentUpon>Registrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Registrar.aspx.designer.cs">
+      <DependentUpon>Registrar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Administrativo\TarjetaCreditoDeb.aspx.cs">
       <DependentUpon>TarjetaCreditoDeb.aspx</DependentUpon>

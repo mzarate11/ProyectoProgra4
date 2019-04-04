@@ -8,6 +8,7 @@
 function NoEspacios(event) {
     var k = event ? event.which : window.event.keyCode;
     if (k == 32) return false;
+    alert(event);
 }
 
 function SoloLetras(evt) {

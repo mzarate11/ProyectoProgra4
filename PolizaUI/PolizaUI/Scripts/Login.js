@@ -36,7 +36,7 @@ function getCookie(cname) {
     }
     return "";
 };
-function guardarPass(){
+function guardarPass(Cpass){
     var cck = document.getElementById("chk").checked
     if (cck) {
         var pass = $("#ContentPlaceHolder1_txt_P").val();
@@ -45,7 +45,7 @@ function guardarPass(){
         return Cpass;
         }
 };
-function GuardarUser() {
+function GuardarUser(Cuser) {
     var cck = document.getElementById("chk").checked
     if (cck) {
         var user = $("#ContentPlaceHolder1_txt_U").val();
@@ -54,7 +54,7 @@ function GuardarUser() {
         return Cuser;
     }
 };
-function imprimirCookkies() {
+function validarCookies() {
     var cck = document.getElementById("chk").checked
     if (cck) {
         var user = GuardarUser(user);
@@ -65,5 +65,5 @@ function imprimirCookkies() {
         user = "";
         pass = "";
     }
-    $("#ContentPlaceHolder1_txt_U").val(user);
+    
 };

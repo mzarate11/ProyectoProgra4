@@ -20,12 +20,12 @@
   </div>
   <div class="form-group">
     <label>Contraseña:</label>
-    <input runat="server" type="password" class="form-control" id="txt_P" onkeypress="return controlEspacio()"/>
+    <input runat="server" type="password" autocomplete="on" class="form-control" id="txt_P" onkeypress="return controlEspacio()"/>
   </div>
   <div class="checkbox">
     <label><input id="chk" type="checkbox"/> Recuerdame</label>
   </div>
-  <button type="button" runat="server" onclick="imprimirCookkies()" class="btn btn-default">Ingresar</button>
+  <button type="button" runat="server" class="btn btn-default" onclick="validarCookies()">Ingresar</button>
    <div>
        <p >No tienes cuenta? <a href="Registrar.aspx">Crea una nueva cuenta aqui</a></p>
    </div>

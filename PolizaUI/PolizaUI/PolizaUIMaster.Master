@@ -16,6 +16,7 @@
     <script src="Resources/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Resources/Slider/engine1/style.css" />
 	<script type="text/javascript" src="Resources/Slider/engine1/jquery.js"></script>
+    <script type="text/javascript" src="Scripts/link's.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -59,7 +60,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        <li><a onclick="abrir_login()"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
                     </ul>
                 </div>
             </nav>

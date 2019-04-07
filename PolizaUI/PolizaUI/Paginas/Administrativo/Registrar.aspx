@@ -20,16 +20,17 @@
                
                 <label>Usuario<input class="form-control" type="text" runat="server" id="Txt_Usuario" onkeypress="return controlEspacio()"/></label>
                 <label>Contraseña<input class="form-control" type="password" runat="server"  id="txt_Contraseña" onkeypress="return controlEspacio()" /></label>
-                <label>Apellido 1<input class="form-control" type="text" runat="server"  id="Txt_ape1" onkeypress="return controlEspacio()" /></label>    
+                <label>Nombre<input class="form-control" type="text" runat="server" id="Txt_N" onkeypress="return controlEspacio()" /></label>
+
                             
             </div>
             <div class="row">
                 <br />
             </div>
             <div class="form-horizontal">  
-            <label>Apellido 2<input class="form-control" type="text" runat="server"  id="txt_ape2" onkeypress="return controlEspacio()"/></label>    
-            <label>Nombre<input class="form-control" type="text" runat="server" id="Txt_N" onkeypress="return controlEspacio()" /></label>
-            <label>Cédula<input class="form-control" type="text" runat="server"  id="Txt_C" onkeypress="return controlEspacio()" /></label>
+             <label>Primer Apellido<input class="form-control" type="text" runat="server"  id="Txt_ape1" onkeypress="return controlEspacio()" /></label>    
+            <label>Segundo Apellido<input class="form-control" type="text" runat="server"  id="txt_ape2" onkeypress="return controlEspacio()"/></label>    
+            <label>Cédula o  Identificación<input class="form-control" type="text" runat="server"  id="Txt_C" onkeypress="return controlEspacio()" /></label>
             
             </div>
                 <div class="row">

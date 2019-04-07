@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PolizaUI.Paginas
+namespace PolizaUI.Paginas.Administrativo
 {
 
 
-    public partial class Persona
+    public partial class Provincia
     {
     }
 }

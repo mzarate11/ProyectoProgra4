@@ -18,5 +18,11 @@ namespace SVC.Interfaces
 
         [OperationContract]
         DataTable FiltrarDatos(string sNombreSP, string sNombreParametro, ref string sMsjError);
+
+        [OperationContract]
+        bool Consultas_sin_I(string sNombreSP, DataTable dtParametros, ref string sMsjError);
+
+        [OperationContract]
+        string Consuultas_con_I(string sNombreSP, DataTable dtParametros, ref string sValorScalar, ref string sMsjError);
     }
 }

@@ -27,5 +27,16 @@ namespace SVC.Contracts
             return Obj_DB_BLL.Ejec_DataAdapter(sNombreSP, sNombreParametro, SqlDbType.VarChar, "", ref sMsjError);
 
         }
+        public bool Consultas_sin_I(string sNombreSP, DataTable dtParametros, ref string sMsjError)
+        {
+            cls_DB_BLL Obj_BD_BLL = new cls_DB_BLL();
+            return Obj_BD_BLL.ExecuteNonQuery(sNombreSP, dtParametros, ref sMsjError);
+        }
+
+        public string Consuultas_con_I(string sNombreSP, DataTable dtParametros, ref string sValorScalar, ref string sMsjError)
+        {
+            cls_DB_BLL Obj_DB_BLL = new cls_DB_BLL();
+            return Obj_DB_BLL.ExecuteScalar(sNombreSP, dtParametros, ref sValorScalar, ref sMsjError);
+        }
     }
 }

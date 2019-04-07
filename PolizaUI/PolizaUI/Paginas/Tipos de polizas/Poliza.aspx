@@ -202,10 +202,15 @@ Y es que por lo general, cuando planificamos un viaje en lo que menos pensamos e
             hasta un 80% en más de 45 especialidades médicas y en más de 500 servicios médicos</div>
       </div>
     </div>
-
-
+      <br />    
+      <div class="row">
+     <p class="col-6"><input type="button" runat="server" value="Inicio" class="btn btn-group-lg" id="btn_A" <a href="PolizaUI Inicio.aspx"/></a>
+     
+</div>
 
   </div> 
+
+
 </div>
 
   </div>

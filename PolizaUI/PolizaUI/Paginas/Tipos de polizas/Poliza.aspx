@@ -204,9 +204,9 @@ Y es que por lo general, cuando planificamos un viaje en lo que menos pensamos e
     </div>
       <br />    
       <div class="row">
-     <p class="col-6"><input type="button" runat="server" value="Inicio" class="btn btn-group-lg" id="btn_A" href="PolizaUI Inicio.aspx"/>
+     <p class="col-6"><input type="button" runat="server" value="Inicio" class="btn btn-primary dropdown-toggle" id="btn_A" href="PolizaUI Inicio.aspx"/>
      
-         <h9>Polizas</h9>
+         
   <p>Para más informacion puede llamarnos al : <strong> 2888-1111 o al 8107-3333</strong><br /> Si aún ocupa mas información no dude en acercarsenos en la Avenida 4, Costa Rica, San José, San Pedro.</p>
 </div>
 

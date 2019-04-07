@@ -74,7 +74,7 @@
     <Content Include="Paginas\Administrativo\TarjetaCreditoDeb.aspx" />
     <Content Include="Paginas\Administrativo\MetodoPago.aspx" />
     <Content Include="Paginas\Administrativo\Venta.aspx" />
-    <Content Include="Paginas\Administrativo\Poliza.aspx" />
+    <Content Include="Paginas\Tipos de polizas\Poliza.aspx" />
     <Content Include="Paginas\Administrativo\Beneficiario.aspx" />
     <Content Include="Paginas\Administrativo\Vendedor.aspx" />
     <Content Include="Paginas\Administrativo\Persona.aspx" />
@@ -154,11 +154,11 @@
     <Compile Include="Paginas\Administrativo\Venta.aspx.designer.cs">
       <DependentUpon>Venta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\Administrativo\Poliza.aspx.cs">
+    <Compile Include="Paginas\Tipos de polizas\Poliza.aspx.cs">
       <DependentUpon>Poliza.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Paginas\Administrativo\Poliza.aspx.designer.cs">
+    <Compile Include="Paginas\Tipos de polizas\Poliza.aspx.designer.cs">
       <DependentUpon>Poliza.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Administrativo\Beneficiario.aspx.cs">
@@ -201,7 +201,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Paginas\Tipos de polizas\" />
     <Folder Include="Resources\IMG\" />
     <Folder Include="Resources\Slider\" />
   </ItemGroup>

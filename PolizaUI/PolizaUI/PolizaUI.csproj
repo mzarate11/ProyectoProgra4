@@ -91,6 +91,9 @@
     <Content Include="PolizaUI Inicio.aspx" />
     <Content Include="Resources\bootstrap.min.css" />
     <Content Include="Resources\bootstrap.min.js" />
+    <Content Include="Resources\IMG\proto1.jpg" />
+    <Content Include="Resources\IMG\proto2.jpg" />
+    <Content Include="Resources\IMG\proto3.jpg" />
     <Content Include="Resources\jquery.mask.min.js" />
     <Content Include="Resources\jquery.min.js" />
     <Content Include="Resources\MasterStyle.css" />
@@ -201,7 +204,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Resources\IMG\" />
     <Folder Include="Resources\Slider\" />
   </ItemGroup>
   <ItemGroup>

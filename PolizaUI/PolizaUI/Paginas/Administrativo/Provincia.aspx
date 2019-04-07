@@ -4,6 +4,13 @@
         <link rel="stylesheet" href="Resources/bootstrap.min.css"/>
     <script type="text/javascript" src="../../Resources/jquery.min.js"></script>
     <script type="text/javascript" src="../../Resources/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="../../Scripts/provincia.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="provincia">
+        <asp:GridView style="text-align:center" ID="GV" runat="server">
+
+        </asp:GridView>
+
+    </div>
 </asp:Content>

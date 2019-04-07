@@ -77,11 +77,15 @@
             </div>
 <br/>
   <div class="form-horizontal">
-  <label>Apoderado<input type="text" class="form-control" runat="server"  disabled="disabled"  id="txt_A" onkeypress="return controlEspacio()" /></label>  
+      <label>Apoderado<input type="text" class="form-control" runat="server"  disabled="disabled"  id="txt_A" onkeypress="return controlEspacio()" /></label>  
   </div>               
 <br />
  <div class="row">
      <label class="col-5">Usuario Admin </label><input class="checkbox; col-4"  type="checkbox" runat="server"  id="chk_A" />
+     </div>
+<div class="row">
+     <p class="col-sm-7"><input type="button" runat="server" value="Registrarse" class="btn btn-group-lg" id="btn_S" /></p>
 </div>
+
 </div>
 </asp:Content>

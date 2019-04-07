@@ -18,7 +18,7 @@
 	</div>	
     <!---Comienza texto de polizas-->
     <Br />
-    <h3>Por favor sienta se llibre de mirar nuestras polizas.</h3>
+    
 
 
     <h4>Fecha</h4>

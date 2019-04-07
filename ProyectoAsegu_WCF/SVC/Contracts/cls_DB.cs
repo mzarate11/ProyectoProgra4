@@ -7,6 +7,7 @@ using BLL;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Data;
+using DAL;
 
 namespace SVC.Contracts
 {

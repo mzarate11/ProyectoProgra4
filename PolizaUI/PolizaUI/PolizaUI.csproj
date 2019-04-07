@@ -95,8 +95,8 @@
     <Content Include="Resources\jquery.min.js" />
     <Content Include="Resources\MasterStyle.css" />
     <Content Include="Resources\Validaciones.js" />
-    <Content Include="Scripts\link%27s.js" />
     <Content Include="Scripts\Login.js" />
+    <Content Include="Scripts\provincia.js" />
     <Content Include="styles\Login.css" />
     <Content Include="styles\registro.css" />
     <Content Include="Web.config" />

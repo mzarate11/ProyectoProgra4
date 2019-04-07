@@ -57,6 +57,7 @@ CREATE TABLE [ADMINISTRATIVO].[CANTON]
 (
 [ID_CANTON]  int NOT NULL,
 [NOMBRE] varchar(25),
+[ID_PROVINCIA]  int NOT NULL,
 CONSTRAINT [PK_ID_CANTON] PRIMARY KEY CLUSTERED
 (
 	ID_CANTON
@@ -67,6 +68,7 @@ CREATE TABLE [ADMINISTRATIVO].[DISTRITO]
 (
 [ID_DISTRITO]  int NOT NULL,
 [NOMBRE] varchar(25),
+[ID_CANTON]  int NOT NULL,
 CONSTRAINT [PK_ID_DISTRITO] PRIMARY KEY CLUSTERED
 (
 	ID_DISTRITO
@@ -109,7 +111,7 @@ GO
 CREATE TABLE [COMERCIAL].[POLIZA]
 (
 [ID_POLIZA]  int IDENTITY(1,1) NOT NULL,
-[NOMBRE] varchar(25),
+[NOMBRE] varchar(50),
 [DESCRIPCION] varchar(25),
 [ID_BENEFICIARIO] INT NOT NULL,
 [ID_PLAN]  int NOT NULL,
@@ -123,7 +125,7 @@ GO
 CREATE TABLE [COMERCIAL].[PLANES]
 (
 [ID_PLAN]  int NOT NULL,
-[NOMBRE] varchar(25),
+[NOMBRE] varchar(200),
 [COSTO] money,
 [ID_COBERTURA]  int NOT NULL,
 CONSTRAINT [PK_ID_PLAN] PRIMARY KEY CLUSTERED
@@ -180,6 +182,16 @@ CONSTRAINT [PK_ID_BENEFICIARIO] PRIMARY KEY CLUSTERED
 	ID_BENEFICIARIO
 )
 )
+GO
+ALTER TABLE [ADMINISTRATIVO].[CANTON]
+ADD CONSTRAINT [FK_PROVINCIA_C]
+	FOREIGN KEY (ID_PROVINCIA)
+	REFERENCES [ADMINISTRATIVO].[PROVINCIA]
+GO
+ALTER TABLE [ADMINISTRATIVO].[DISTRITO]
+ADD CONSTRAINT [FK_CANTON_P]
+	FOREIGN KEY (ID_CANTON)
+	REFERENCES [ADMINISTRATIVO].[CANTON]
 GO
 ALTER TABLE [ADMINISTRATIVO].[PERSONA] WITH NOCHECK
 ADD CONSTRAINT [FK_TIPO_IDENTIFICACION]
@@ -254,7 +266,7 @@ INSERT INTO [ADMINISTRATIVO].[PROVINCIA] ([ID_PROVINCIA],[NOMBRE]) VALUES
 (7, 'Limón');  
 
 GO
-INSERT INTO [ADMINISTRATIVO].[CANTON] ([ID_CANTON],[NOMBRE],[PROVINCIA]) VALUES
+INSERT INTO [ADMINISTRATIVO].[CANTON] ([ID_CANTON],[NOMBRE],[ID_PROVINCIA]) VALUES
 
 --SAN JOSE
 (1, 'San José',1),
@@ -347,7 +359,7 @@ INSERT INTO [ADMINISTRATIVO].[CANTON] ([ID_CANTON],[NOMBRE],[PROVINCIA]) VALUES
 (82, 'Guácimo',7)
 
 GO
-INSERT INTO [ADMINISTRATIVO].[DISTRITO]([ID_DISTRITO],[NOMBRE],[CANTON]) VALUES
+INSERT INTO [ADMINISTRATIVO].[DISTRITO]([ID_DISTRITO],[NOMBRE],[ID_CANTON]) VALUES
 --Sanjosé
 ()
 GO
@@ -355,7 +367,37 @@ INSERT INTO [ADMINISTRATIVO].[GENERO] ([ID_GENERO],[TIPO]) VALUES
 (1,'Masculino'), (2, 'Femenino')
 GO
 INSERT INTO [ADMINISTRATIVO].[ESTADO_CIVIL] ([ID_ESTADO_CIVIL],[ESTADO]) VALUES
-(1,'Soltero'),(2,'Casado'),(3,'Separado'),(3,'Divorcio'),(4,'Unión Libre'),(5, 'Viudez')
+(1,'Soltero'),(2,'Casado'),(3,'Separado'),(4,'Divorcio'),(5,'Unión Libre'),(6, 'Viudez')
 GO
-INSERT INTO [COMERCIAL].[PLANES]
+INSERT INTO [COMERCIAL].[COBERTURA] ([ID_COBERTURA],[NOMBRE],[MONTO],[CANT_EVENTOS],[CANT_BENEFICIARIOS]) VALUES
+(1,'Completa',5000000,12,5),(2,'Parcial',2500000,6,3),(3,'Personal',1000000,12,1)
+GO
+INSERT INTO [COMERCIAL].[PLANES] ([ID_PLAN],[NOMBRE],[COSTO],[ID_COBERTURA]) VALUES
+(1,'Poliza de seguro básico (completa)',417000,1),
+(2,'Poliza de seguro básico (Parcial)',417000,2),
+(3,'Poliza de seguro básico (Personal)',84000,3),
+(4,'Seguro grupal de Responsabilidad Civil Profesional (completa)',417000,1),
+(5,'Seguro grupal de Responsabilidad Civil Profesional (Parcial)',417000,2),
+(6,'Seguro grupal de Responsabilidad Civil Profesional (Personal)',84000,3),
+(7,'Poliza de seguro médico voluntario (completa)',417000,1),
+(8,'Poliza de seguro médico voluntario (Parcial)',417000,2),
+(9,'Poliza de seguro médico voluntario (Personal)',84000,3),
+(10,'Poliza de seguro de vida 01-16VIC-299 (completa)',417000,1),
+(11,'Poliza de seguro de vida 01-16VIC-299 (Parcial)',417000,2),
+(12,'Poliza de seguro de vida 01-16VIC-299 (Personal)',84000,3),
+(13,'Reclamos  y solicitud de beneficiarios (completa)',417000,1),
+(14,'Reclamos  y solicitud de beneficiarios (Parcial)',417000,2),
+(15,'Reclamos  y solicitud de beneficiarios (Personal)',84000,3),
+(16,'Medicos pensionados (completa)',417000,1),
+(17,'Medicos pensionados (Parcial)',417000,2),
+(18,'Medicos pensionados (Personal)',84000,3),
+(19,'Seguro de asistencia al Viajero (completa)',417000,1),
+(20,'Seguro de asistencia al Viajero (Parcial)',417000,2),
+(21,'Seguro de asistencia al Viajero (Personal)',84000,3),
+(22,'Poliza Colectiva de vida (completa)',417000,1),
+(23,'Poliza Colectiva de vida (Parcial)',417000,2),
+(24,'Poliza Colectiva de vida (Personal)',84000,3),
+(25,'Formularios del Seguro Básico del Colegio de Medicos (completa)',417000,1),
+(26,'Formularios del Seguro Básico del Colegio de Medicos (Parcial)',417000,2),
+(27,'Formularios del Seguro Básico del Colegio de Medicos (Perosnal)',84000,3)
 GO

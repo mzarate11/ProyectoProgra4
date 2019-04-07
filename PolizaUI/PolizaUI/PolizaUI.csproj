@@ -98,6 +98,7 @@
     <Content Include="Scripts\link%27s.js" />
     <Content Include="Scripts\Login.js" />
     <Content Include="styles\Login.css" />
+    <Content Include="styles\registro.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -70,13 +70,13 @@
     <Content Include="Paginas\Administrativo\Login.aspx" />
     <Content Include="Paginas\Administrativo\Planes.aspx" />
     <Content Include="Paginas\Administrativo\Cobertura.aspx" />
+    <Content Include="Paginas\Administrativo\Provincia.aspx" />
     <Content Include="Paginas\Administrativo\Registrar.aspx" />
     <Content Include="Paginas\Administrativo\TarjetaCreditoDeb.aspx" />
     <Content Include="Paginas\Administrativo\MetodoPago.aspx" />
     <Content Include="Paginas\Administrativo\Venta.aspx" />
     <Content Include="Paginas\Tipos de polizas\Poliza.aspx" />
     <Content Include="Paginas\Administrativo\Beneficiario.aspx" />
-    <Content Include="Paginas\Administrativo\Vendedor.aspx" />
     <Content Include="Paginas\Administrativo\Persona.aspx" />
     <Content Include="PolizaUIMaster.Master" />
     <None Include="Web.Debug.config">
@@ -126,6 +126,13 @@
     <Compile Include="Paginas\Administrativo\Cobertura.aspx.designer.cs">
       <DependentUpon>Cobertura.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Administrativo\Provincia.aspx.cs">
+      <DependentUpon>Provincia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Provincia.aspx.designer.cs">
+      <DependentUpon>Provincia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Administrativo\Registrar.aspx.cs">
       <DependentUpon>Registrar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -167,13 +174,6 @@
     </Compile>
     <Compile Include="Paginas\Administrativo\Beneficiario.aspx.designer.cs">
       <DependentUpon>Beneficiario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Paginas\Administrativo\Vendedor.aspx.cs">
-      <DependentUpon>Vendedor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Paginas\Administrativo\Vendedor.aspx.designer.cs">
-      <DependentUpon>Vendedor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Administrativo\Persona.aspx.cs">
       <DependentUpon>Persona.aspx</DependentUpon>

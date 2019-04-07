@@ -59,7 +59,7 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+                        <li><a onclick="abrir_registro()"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
                         <li><a onclick="abrir_login()"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
                     </ul>
                 </div>

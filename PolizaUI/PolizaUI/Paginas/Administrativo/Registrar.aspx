@@ -38,54 +38,40 @@
             <div class="form-horizontal">
               <label>Fecha de nacimiento<input class="form-control" type="date" runat="server"  id="Text6"/></label>
                      
-            <label><div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Provincia
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">HTML</a></li>
-    <li><a href="#">CSS</a></li>
-    <li><a href="#">JavaScript</a></li>
-  </ul>
-</div></label>
-<label class="col-4"><div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Cantón
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">HTML</a></li>
-    <li><a href="#">CSS</a></li>
-    <li><a href="#">JavaScript</a></li>
-  </ul>
-</div></label>  
-<label><div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Distrito
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">HTML</a></li>
-    <li><a href="#">CSS</a></li>
-    <li><a href="#">JavaScript</a></li>
-  </ul>
-</div></label>
- <label><div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Genero
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">HTML</a></li>
-    <li><a href="#">CSS</a></li>
-    <li><a href="#">JavaScript</a></li>
-  </ul>
-</div></label>           
+<asp:DropDownList style="background-color:#104b59;" runat="server" class="btn btn-primary dropdown-toggle">
+      <asp:listitem Text="Provincia" value="0"></asp:listitem>
+  </asp:DropDownList>
+
+<asp:DropDownList style="background-color:#104b59;" runat="server" class="btn btn-primary dropdown-toggle">
+      <asp:listitem Text="Cantón" value="0"></asp:listitem>
+  </asp:DropDownList>  
+
+  <asp:DropDownList style="background-color:#104b59;" runat="server" class="btn btn-primary dropdown-toggle">
+      <asp:listitem Text="Distrito" value="0"></asp:listitem>
+  </asp:DropDownList>
+
+  <asp:DropDownList style="background-color:#104b59;" runat="server" class="btn btn-primary dropdown-toggle">
+      <asp:listitem text="Género" value="0"></asp:listitem>
+  </asp:DropDownList>
+           
             </div>
 <br/>
   <div class="form-horizontal">
-      <label>Apoderado<input type="text" class="form-control" runat="server"  disabled="disabled"  id="txt_A" onkeypress="return controlEspacio()" /></label>  
+      <label>Apoderado<input type="text" class="form-control" runat="server"  disabled="disabled"  id="txt_A" onkeypress="return controlEspacio()" /></label>
+      <asp:DropDownList style="background-color:#104b59;" runat="server" class="btn btn-primary dropdown-toggle">
+      <asp:listitem text="Tipo de Identificación" value="0"></asp:listitem>
+  </asp:DropDownList>  
   </div>               
 <br />
  <div class="row">
      <label class="col-5">Usuario Admin </label><input class="checkbox; col-4"  type="checkbox" runat="server"  id="chk_A" />
      </div>
+<br />
 <div class="row">
-     <p class="col-sm-7"><input type="button" runat="server" value="Registrarse" class="btn btn-group-lg" id="btn_S" /></p>
+     <p class="col-6"><input type="button" runat="server" value="Registrarse" class="btn btn-group-lg" id="btn_S" />  <a href="Login.aspx">Ya tienes un Usuario? ingresa desde acá</a></p>
+     
 </div>
 
 </div>
+
 </asp:Content>

@@ -36,7 +36,7 @@
   <p>Las siguentes son <strong>nuestras polizas de seguros. </strong><br />Por favor sienta se llibre de mirar nuestras polizas.</p>
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"style ="background-color:#5F9EA0">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"> <strong> Póliza Colectiva de Vida.</strong></a>
         </h4>
@@ -48,7 +48,7 @@
       </div>
     </div>
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" style ="background-color:#5F9EA0">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><strong> Póliza de Seguro Médico Básico.</strong></a>
         </h4>
@@ -62,7 +62,7 @@
     
 
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"style ="background-color:#5F9EA0">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><strong> Seguro Grupal de Responsabilidad Civil Profesional.</strong></a>
         </h4>
@@ -80,7 +80,7 @@
     </div>
 
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"style ="background-color:#5F9EA0">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><strong> Pólizas de Seguros Médicos Voluntarios.</strong></a>
         </h4>
@@ -91,7 +91,7 @@
       </div>
     </div>
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"style ="background-color:#5F9EA0">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse5"><strong> Póliza de Seguro de Vida 01-16VIC-299.</strong></a>
         </h4>
@@ -108,7 +108,7 @@
     </div>
 
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"style ="background-color:#5F9EA0">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse6"><strong> Procedimiento para la presentación de reclamos y Solicitud de Beneficios.</strong></a>
         </h4>
@@ -130,7 +130,7 @@
 
 
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"style ="background-color:#5F9EA0">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse7"><strong> Médicos Pensionados.</strong></a>
         </h4>
@@ -150,7 +150,7 @@
 
 
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"style ="background-color:#5F9EA0">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse8"><strong> Seguro de Asistencia al Viajero.</strong></a>
         </h4>
@@ -171,7 +171,7 @@ Y es que por lo general, cuando planificamos un viaje en lo que menos pensamos e
     </div>
 
       <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"style ="background-color:#5F9EA0">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse9"><strong> Póliza Colectiva de Vida.</strong></a>
         </h4>
@@ -191,7 +191,7 @@ Y es que por lo general, cuando planificamos un viaje en lo que menos pensamos e
       </div>
     </div>
        <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"style ="background-color:#5F9EA0">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse10"><strong> Formularios del Seguro Básico del Colegio de Médicos.</strong></a>
         </h4>

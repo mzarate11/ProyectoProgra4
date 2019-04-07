@@ -13,7 +13,7 @@
     <div>
         <form>
             <div id="h">
-                <h1 class="H1Global">Login</h1>
+                <h1 class="H1Global"></h1>
             </div>
   <div class="form-group">
    <%--<asp:DropDownList style="background-color:#104b59;" runat="server" class="btn btn-primary dropdown-toggle">
@@ -59,7 +59,9 @@
             en su póliza.</div>
       </div>
     </div>
-    <div class="panel panel-default">
+    
+
+      <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><strong> Seguro Grupal de Responsabilidad Civil Profesional.</strong></a>
@@ -73,13 +75,14 @@
     económicas de los hechos acaecidos y cubiertos por el contrato, reparando el daño causado
     por el asegurado a un tercero, hasta el límite pactado en la póliza de seguro, que es el
     documento que contiene las condiciones que regulan la relación contractual entre nosotros y
-    asegurados o sea ustedes, recogiendo los derechos y deberes de las partes. </div>
+    asegurados o sea ustedes, recogiendo los derechos y deberes de las partes.</div>
       </div>
     </div>
+
       <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><strong> Pólizas de Seguros Médicos Voluntarios.</strong></a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><strong> Pólizas de Seguros Médicos Voluntarios.</strong></a>
         </h4>
       </div>
       <div id="collapse4" class="panel-collapse collapse">
@@ -90,7 +93,7 @@
       <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><strong> Póliza de Seguro de Vida 01-16VIC-299.</strong></a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5"><strong> Póliza de Seguro de Vida 01-16VIC-299.</strong></a>
         </h4>
       </div>
       <div id="collapse5" class="panel-collapse collapse">
@@ -107,7 +110,7 @@
       <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><strong> Procedimiento para la presentación de reclamos y Solicitud de Beneficios.</strong></a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse6"><strong> Procedimiento para la presentación de reclamos y Solicitud de Beneficios.</strong></a>
         </h4>
       </div>
       <div id="collapse6" class="panel-collapse collapse">
@@ -129,7 +132,7 @@
       <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><strong> Médicos Pensionados.</strong></a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse7"><strong> Médicos Pensionados.</strong></a>
         </h4>
       </div>
       <div id="collapse7" class="panel-collapse collapse">
@@ -140,7 +143,8 @@
             seguro correspondiente.
             Si el médico no hace esta gestión, el Colegio lo excluye de la póliza, y si
             posteriormente el médico desea contar con el seguro, debe solicitar su inclusión y
-            comenzar a realizar los pagos correspondientes..</div>
+            comenzar a realizar los pagos correspondientes.
+.</div>
       </div>
     </div>
 
@@ -148,7 +152,7 @@
       <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><strong> Seguro de Asistencia al Viajero.</strong></a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse8"><strong> Seguro de Asistencia al Viajero.</strong></a>
         </h4>
       </div>
       <div id="collapse8" class="panel-collapse collapse">
@@ -169,7 +173,7 @@ Y es que por lo general, cuando planificamos un viaje en lo que menos pensamos e
       <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><strong> Póliza Colectiva de Vida.</strong></a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse9"><strong> Póliza Colectiva de Vida.</strong></a>
         </h4>
       </div>
       <div id="collapse9" class="panel-collapse collapse">
@@ -189,7 +193,7 @@ Y es que por lo general, cuando planificamos un viaje en lo que menos pensamos e
        <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><strong> Formularios del Seguro Básico del Colegio de Médicos.</strong></a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse10"><strong> Formularios del Seguro Básico del Colegio de Médicos.</strong></a>
         </h4>
       </div>
       <div id="collapse10" class="panel-collapse collapse">
@@ -200,6 +204,7 @@ Y es que por lo general, cuando planificamos un viaje en lo que menos pensamos e
     </div>
 
 
+
   </div> 
 </div>
 
@@ -207,6 +212,9 @@ Y es que por lo general, cuando planificamos un viaje en lo que menos pensamos e
 
 </form>
     </div>
-                        
+                            
+                       
+
+                            
                        
 </asp:Content>

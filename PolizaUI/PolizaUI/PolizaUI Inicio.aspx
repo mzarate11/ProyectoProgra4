@@ -18,36 +18,8 @@
 	</div>	
     <!---Comienza texto de polizas-->
     <Br />
-    <h3>Por favor sienta se llibre de mirar nuestras polizas</h3>
-    <h5>
-        <br />
-   Seguro Grupal de Responsabilidad Civil Profesional
-        <br />
-        <br />
- Nueva Póliza Colectiva de Vida.
-        <br />
-        <br />
- Póliza de Seguro Médico Básico.
-        <br />
-        <br />
- Pólizas de Seguros Médicos Voluntarios.
-        <br />
-        <br />
- Póliza de Seguro de Vida 01-16VIC-299.
-        <br />
-        <br />
- Formularios del Seguro Básico del Colegio de Médicos.
-        <br />
-        <br />
- Procedimiento para la presentación de reclamos y Solicitud de Beneficios
-        <br />
-        <br />
- Médicos Pensionados 
-        <br />
-        <br />
- Seguro de Asistencia al Viajero 
-  <br />
-  </h5>
+    <h3>Por favor sienta se llibre de mirar nuestras polizas.</h3>
+
 
     <h4>Fecha</h4>
 <input type="text" runat="server" name="Hola" id="inputExample" onkeypress="return SoloLetras(event)" class="Inputs-Margin" placeholder="_-____-____" data-mask="00/00/0000" required/>

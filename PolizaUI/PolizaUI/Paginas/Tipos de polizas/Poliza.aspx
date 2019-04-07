@@ -28,16 +28,20 @@
       <asp:listitem text="Procedimiento para la presentación de reclamos y Solicitud de Beneficios." value="7"></asp:listitem>
       <asp:listitem text="Médicos Pensionados." value="8"></asp:listitem>
       <asp:listitem text="Seguro de Asistencia al Viajero." value="9"></asp:listitem>
+      
 
   </asp:DropDownList>
   </div>
 
   <div class="form-group">
     <label>Informacion:</label>
-    
+
   </div>
   
 </form>
+    </div>
+                            
+                       
     </div>
                             
                        

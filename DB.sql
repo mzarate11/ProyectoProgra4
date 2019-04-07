@@ -401,3 +401,112 @@ INSERT INTO [COMERCIAL].[PLANES] ([ID_PLAN],[NOMBRE],[COSTO],[ID_COBERTURA]) VAL
 (26,'Formularios del Seguro Básico del Colegio de Medicos (Parcial)',417000,2),
 (27,'Formularios del Seguro Básico del Colegio de Medicos (Perosnal)',84000,3)
 GO
+							      
+		--SP's
+ CREATE PROCEDURE [dbo].[SP_Read_Persona]--LEER
+AS
+BEGIN
+SELECT
+
+[ID_PERSONA] AS [ID_Persona]
+[NO_CEDULA] AS [Numero_Cedula],
+[NOMBRE] AS [Name],
+[APELLIDO1] AS [PrimerApellido],
+[APELLIDO2] AS [SegundoApellido],
+[CORREO_ELECTRONICO] AS [Correo],
+[TELEFONO] [Numero_Telefonico],
+[FECHA_NACIMIENTO_CONSTITUCION] AS [FechaNacimiento],
+[APODERADO] AS [Apoderado]
+[ID_PROVINCIA]  AS [Provincia]
+[ID_CANTON] AS [Canton],
+[ID_DISTRITO]  AS [Distrito]
+[ID_GENERO]  AS [Genero]
+[ID_ESTADO_CIVIL]  AS [Estado_Civil]
+[ID_TIPO_IDENTIFICACION] AS [Tipo_Identificacion]
+FROM	[ADMINISTRATIVO].[PERSONA]
+END
+GO
+
+
+
+CREATE PROCEDURE [dbo].[SP_Insert_Persona]--INSERT
+(
+@ID_Persona INT,
+@Num_Cedula INT,
+@Nombre VARCHAR (25),
+@APELLIDO1 varchar(25),
+@APELLIDO2 varchar(25),
+@Correo_Electronico varchar (40),
+@Telefono int,
+@FechaNacimiento DATETIME,
+@Apoderado varchar (50),
+@ID_PROVINCIA int ,
+@ID_CANTON int, 
+@ID_DISTRITO  int ,
+@ID_GENERO  int,
+@ID_ESTADO_CIVIL  int,
+@Tipo_Identificacion int
+
+)
+AS BEGIN
+INSERT INTO [ADMINISTRATIVO].[PERSONA] ([ID_PERSONA],[NO_CEDULA],[NOMBRE],[APELLIDO1],[APELLIDO2],
+[CORREO_ELECTRONICO],[TELEFONO],[FECHA_NACIMIENTO_CONSTITUCION],[APODERADO],[ID_PROVINCIA],
+[ID_CANTON],[ID_DISTRITO],[ID_GENERO],[ID_ESTADO_CIVIL],[ID_TIPO_IDENTIFICACION])
+
+VALUES (@ID_Persona,@Num_Cedula,@Nombre,@APELLIDO1,@APELLIDO2,@Correo_Electronico,
+@Telefono,@FechaNacimiento,@Apoderado,@ID_PROVINCIA,@ID_CANTON,@ID_DISTRITO,
+@ID_GENERO,@ID_ESTADO_CIVIL,@Tipo_Identificacion)
+END
+GO
+
+CREATE PROCEDURE [dbo].[SP_Update_Persona]--UPDATE
+
+AS BEGIN
+
+declare @ID_Persona as INT
+declare @Num_Cedula as INT
+declare @Nombre as VARCHAR (25)
+declare @APELLIDO1 as varchar(25)
+declare @APELLIDO2 as  varchar(25)
+declare @Correo_Electronico as varchar (40)
+declare @Telefono as int
+declare @FechaNacimiento as DATETIME
+declare @Apoderado as varchar (50)
+declare @ID_PROVINCIA as int 
+declare @ID_CANTON as int 
+declare @ID_DISTRITO as int 
+declare @ID_GENERO as int
+declare @ID_ESTADO_CIVIL as int
+declare @Tipo_Identificacion as int
+declare @Dato as varchar 
+
+declare @UPDATE as varchar
+							 
+UPDATE [ADMINISTRATIVO].[PERSONA]  set [ID_PERSONA] = @Dato
+WHERE ([ID_PERSONA] = @ID_Persona and 
+[NO_CEDULA] = @Num_Cedula and
+[NOMBRE] = @Nombre and 
+[APELLIDO1] = @Apellido1 and 
+[APELLIDO2] = @Apellido2 and 
+[CORREO_ELECTRONICO] = @Correo_Electronico and 
+[TELEFONO] = @Telefono and 
+[FECHA_NACIMIENTO_CONSTITUCION] = @FechaNacimiento and 
+[APODERADO] = @Apoderado and
+[ID_PROVINCIA] = @ID_PROVINCIA and 
+[ID_CANTON] = @ID_CANTON and
+[ID_DISTRITO] = @ID_DISTRITO and 
+[ID_GENERO] = @ID_GENERO and 
+[ID_TIPO_IDENTIFICACION] = @Tipo_Identificacion)
+END
+GO
+
+CREATE PROCEDURE [dbo].[SP_Delete_Persona]--DELETE
+as 
+begin
+declare  @ID_Persona as INT 
+delete from [ADMINISTRATIVO].[PERSONA] 
+where ID_Persona = @ID_Persona
+end
+
+go
+							      

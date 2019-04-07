@@ -28,7 +28,7 @@
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="PolizaUI Inicio.aspx">Inicio</a></li>
-                        <li class="active"><a href="Paginas/Administrativo/Poliza.aspx"">Polizas</a></li>
+                        <li class="active"><a href="Paginas/Tipos%20de%20polizas/">Paginas/Tipos de polizas/</a></li>
                         
                             
                         </li>
@@ -72,7 +72,7 @@
             <div id="Div-Master-Footer">
                 <br />
                 <h5>Proyecto Final Universidad Americana</h5>
-                 <h6>Integrantes:
+                 <h6>   Integrantes:
                     Rosa Alvarez Bermudez.
                     <br/>
                     Luis Rosales Perez.

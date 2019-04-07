@@ -7,8 +7,8 @@
     <script type="text/javascript" src="../../Scripts/provincia.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="provincia">
-        <asp:GridView style="text-align:center" ID="GV" runat="server">
+    <div id="provincia" OnLoad="GV_Load" runat="server">
+        <asp:GridView style="text-align:center"  ID="GV" runat="server">
 
         </asp:GridView>
 

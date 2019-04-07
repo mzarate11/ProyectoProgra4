@@ -43,7 +43,7 @@
                                 <li><a href="Paginas/TarjetaCreaditoDeb">Tarjeta_Cred_Deb</a></li>
                                 <li><a href="Paginas/Administrativo/Planes">Planes</a></li>
                                 <li><a href="Paginas/Administrativo/Cobertura">Cobertura</a></li>
-                                <li><a href="Adicionales">Provincia</a></li>
+                                <li><a href="../../Paginas/Administrativo/Provincia.aspx">Provincia</a></li>
                                 <li><a href="#">Canton</a></li>
                                 <li><a href="#">Distrito</a></li>
                             </ul>

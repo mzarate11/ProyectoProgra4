@@ -14,16 +14,7 @@ namespace PolizaUI.Paginas.Administrativo
         protected void Page_Load(object sender, EventArgs e, ref string sMsjError)
         {
 
-            cargarDatos(ref sMsjError);
-            if (sMsjError == string.Empty)
-            {
-
-            }
-            else
-            { 
-            ClientScript.RegisterStartupScript(GetType(), "alerta", "error();", true);
-             }
-         }
+        }
         public void cargarDatos(ref string sMsjError)
         {
             cls_Provincia_DAL Obj_DAL = new cls_Provincia_DAL();
@@ -40,5 +31,19 @@ namespace PolizaUI.Paginas.Administrativo
                 
             }
         }
+
+        protected void GV_Load(object sender, EventArgs e, ref string sMsjError)
+        {
+            cargarDatos(ref sMsjError);
+            if (sMsjError == string.Empty)
+            {
+
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(GetType(), "alerta", "error();", true);
+            }
+        
+    }
     }
 }

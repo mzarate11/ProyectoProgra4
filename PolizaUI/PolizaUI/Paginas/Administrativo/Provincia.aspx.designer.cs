@@ -13,6 +13,15 @@ namespace PolizaUI.Paginas.Administrativo {
     public partial class Provincia {
         
         /// <summary>
+        /// provincia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl provincia;
+        
+        /// <summary>
         /// GV control.
         /// </summary>
         /// <remarks>

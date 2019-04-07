@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolizaUI", "PolizaUI\PolizaUI.csproj", "{FF88406C-1604-4139-B304-81FB9C0AF344}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{698C17CE-7358-4B0F-A644-482F664338BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{4BB37F3F-CAE1-454B-BF67-AF2D4F395C8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{FF88406C-1604-4139-B304-81FB9C0AF344}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF88406C-1604-4139-B304-81FB9C0AF344}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF88406C-1604-4139-B304-81FB9C0AF344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{698C17CE-7358-4B0F-A644-482F664338BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{698C17CE-7358-4B0F-A644-482F664338BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{698C17CE-7358-4B0F-A644-482F664338BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{698C17CE-7358-4B0F-A644-482F664338BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB37F3F-CAE1-454B-BF67-AF2D4F395C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB37F3F-CAE1-454B-BF67-AF2D4F395C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB37F3F-CAE1-454B-BF67-AF2D4F395C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB37F3F-CAE1-454B-BF67-AF2D4F395C8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

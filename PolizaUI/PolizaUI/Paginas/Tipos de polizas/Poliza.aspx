@@ -93,16 +93,22 @@
       <div class="panel panel-default">
       <div class="panel-heading"style ="background-color:#5F9EA0">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5"><strong> Póliza de Seguro de Vida 01-16VIC-299.</strong></a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5"><strong> Póliza de Seguro Voluntario de Automóviles.</strong></a>
         </h4>
       </div>
       <div id="collapse5" class="panel-collapse collapse">
         <div class="panel-body">
 
+        El Seguro Voluntario de Automóviles le ofrece una amplia gama de coberturas a elegir. 
 
-
-
-
+                Cubre la Responsabilidad Civil Extracontractual 
+            (responsabilidad que nace en general en virtud de la ley, sin que sea precisa la existencia de un contrato entre 
+            las partes afectadas) por lesión y/o muerte de personas, que hayan ocasionado en forma accidental las personas 
+            aseguradas por uso o mantenimiento del vehículo asegurado, al ser declaradas responsables civiles*. 
+            También cubrirá los casos donde se produzca un Arreglo Extrajudicial 
+            (acuerdo que se hace o trata fuera de la vía judicial) o arreglo judicial, o la aplicación de una Solución 
+            Alternativa de Conflictos (es una forma de resolver conflictos al margen de métodos tradicionales, como denuncias, quejas, 
+            demandas ante entes judiciales de forma directa), siempre que se cumpla con las disposiciones vigentes.
         </div>
       </div>
     </div>

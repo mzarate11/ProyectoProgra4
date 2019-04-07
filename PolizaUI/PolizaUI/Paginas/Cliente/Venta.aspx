@@ -53,8 +53,17 @@
 
   </asp:DropDownList>  
     <br />
+    <h4>Metodo Pago</h4>
+     <asp:DropDownList style="background-color:#104b59;" runat="server" class="btn btn-primary dropdown-toggle">
+         <asp:listitem Text="Tarjeta." value="0"></asp:listitem>
+      <asp:listitem Text="Credito." value="1"></asp:listitem>
+      <asp:listitem Text="Debito." value="2"></asp:listitem>
+     </asp:DropDownList>
     <br />
+    <br />
+
     <p class="ws_shadow"><input type="button" runat="server" value="Obtener Seguro" class="btn btn-group-lg" id="btn_S" />
     <br />
+    
 
 </asp:Content>

@@ -48,6 +48,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -79,6 +81,29 @@
     <Content Include="Paginas\Administrativo\Beneficiario.aspx" />
     <Content Include="Paginas\Administrativo\Persona.aspx" />
     <Content Include="PolizaUIMaster.Master" />
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Service References\Svc_DataBase\cls_DB.wsdl" />
+    <Content Include="Service References\Svc_DataBase\PolizaUI.Svc_DataBase.Consultas_sin_IResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Svc_DataBase\PolizaUI.Svc_DataBase.Consuultas_con_IResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Svc_DataBase\PolizaUI.Svc_DataBase.FiltrarDatosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Svc_DataBase\PolizaUI.Svc_DataBase.ListarDatosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Svc_DataBase\servicio.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Svc_DataBase\servicio1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Svc_DataBase\servicio2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -100,6 +125,12 @@
     <Content Include="Resources\Validaciones.js" />
     <Content Include="Scripts\Login.js" />
     <Content Include="Scripts\provincia.js" />
+    <None Include="Service References\Svc_DataBase\configuration91.svcinfo" />
+    <None Include="Service References\Svc_DataBase\configuration.svcinfo" />
+    <None Include="Service References\Svc_DataBase\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="styles\Login.css" />
     <Content Include="styles\registro.css" />
     <Content Include="Web.config" />
@@ -200,6 +231,11 @@
       <DependentUpon>PolizaUIMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Svc_DataBase\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -215,6 +251,12 @@
       <Project>{4bb37f3f-cae1-454b-bf67-af2d4f395c8d}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Svc_DataBase\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

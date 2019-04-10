@@ -861,13 +861,15 @@ INSERT INTO [COMERCIAL].[PLANES] ([ID_PLAN],[NOMBRE],[COSTO],[ID_COBERTURA]) VAL
 (27,'Formularios del Seguro Básico del Colegio de Medicos (Perosnal)',84000,3)
 GO
 							      
+			      
 		--SP's
- CREATE PROCEDURE [dbo].[SP_Read_Persona]--LEER
+		--SP PERSONA
+CREATE PROCEDURE [dbo].[SP_Read_Persona]--LEER
 AS
 BEGIN
 SELECT
 
-[ID_PERSONA] AS [ID_Persona]
+[ID_PERSONA] AS [ID_Persona],
 [NO_CEDULA] AS [Numero_Cedula],
 [NOMBRE] AS [Name],
 [APELLIDO1] AS [PrimerApellido],
@@ -875,12 +877,12 @@ SELECT
 [CORREO_ELECTRONICO] AS [Correo],
 [TELEFONO] [Numero_Telefonico],
 [FECHA_NACIMIENTO_CONSTITUCION] AS [FechaNacimiento],
-[APODERADO] AS [Apoderado]
-[ID_PROVINCIA]  AS [Provincia]
+[APODERADO] AS [Apoderado],
+[ID_PROVINCIA]  AS [Provincia],
 [ID_CANTON] AS [Canton],
-[ID_DISTRITO]  AS [Distrito]
-[ID_GENERO]  AS [Genero]
-[ID_ESTADO_CIVIL]  AS [Estado_Civil]
+[ID_DISTRITO]  AS [Distrito],
+[ID_GENERO]  AS [Genero],
+[ID_ESTADO_CIVIL]  AS [Estado_Civil],
 [ID_TIPO_IDENTIFICACION] AS [Tipo_Identificacion]
 FROM	[ADMINISTRATIVO].[PERSONA]
 END
@@ -941,7 +943,7 @@ declare @Dato as varchar
 
 declare @UPDATE as varchar
 							 
-UPDATE [ADMINISTRATIVO].[PERSONA]  set [ID_PERSONA] = @Dato
+UPDATE [ADMINISTRATIVO].[PERSONA]  set [NO_CEDULA] = @Dato
 WHERE ([ID_PERSONA] = @ID_Persona and 
 [NO_CEDULA] = @Num_Cedula and
 [NOMBRE] = @Nombre and 
@@ -966,6 +968,55 @@ declare  @ID_Persona as INT
 delete from [ADMINISTRATIVO].[PERSONA] 
 where ID_Persona = @ID_Persona
 end
-
 go
-							      
+
+
+
+--SP ESTADO CIVIL
+create proc [dbo].[SP_InsertEstCivil]
+(
+@ID_ESTADO_CIVIL int,
+@Estado varchar(25)
+)
+as 
+begin
+--Veo que solo habrian unos cuantos no hay necesidad de meter variables
+insert into  [ADMINISTRATIVO].[ESTADO_CIVIL] ([ID_ESTADO_CIVIL],
+[ESTADO])
+values (@ID_ESTADO_CIVIL,@Estado)
+end
+go
+
+
+create proc [dbo].[SP_SelectEstCivil]
+as 
+begin
+--Veo que solo habrian unos cuantos no hay necesidad de meter variables
+select 
+[ID_ESTADO_CIVIL],
+[ESTADO]
+from [ADMINISTRATIVO].[ESTADO_CIVIL]
+end
+go
+
+create proc [dbo].[SP_UpdateEstCivil]
+as
+begin
+declare @EstID as int
+declare @EstEstado as varchar
+update [ADMINISTRATIVO].[ESTADO_CIVIL] set Estado = @EstEstado 
+where [ID_ESTADO_CIVIL] = @EstID
+end
+go
+
+create proc [dbo].[SP_DeleteEstCivil]
+as 
+begin
+declare @EstID as int
+delete from [ADMINISTRATIVO].[ESTADO_CIVIL]
+where [ID_ESTADO_CIVIL] = @EstID
+end
+go
+		
+						      
+--SP 

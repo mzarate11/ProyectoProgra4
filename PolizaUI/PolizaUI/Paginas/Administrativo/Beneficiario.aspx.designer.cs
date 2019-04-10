@@ -10,7 +10,7 @@
 namespace PolizaUI.Paginas {
     
     
-    public partial class Persona {
+    public partial class Beneficiario {
         
         /// <summary>
         /// provincia control.

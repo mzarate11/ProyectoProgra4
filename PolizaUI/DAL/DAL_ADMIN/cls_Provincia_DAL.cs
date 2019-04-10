@@ -12,7 +12,7 @@ namespace DAL.DAL_ADMIN
     {
         private string _sNombre_sp, _sNTablar, _sNombre_P;
 
-        private DataTable DT;
+        private DataSet DS;
 
         public string sNombre_P
         {
@@ -40,16 +40,16 @@ namespace DAL.DAL_ADMIN
             }
         }
 
-        public DataTable DT1
+        public DataSet DS1
         {
             get
             {
-                return DT;
+                return DS;
             }
 
             set
             {
-                DT = value;
+                DS = value;
             }
         }
     }

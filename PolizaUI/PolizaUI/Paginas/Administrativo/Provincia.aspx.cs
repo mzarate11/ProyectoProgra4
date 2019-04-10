@@ -11,9 +11,13 @@ namespace PolizaUI.Paginas.Administrativo
 {
     public partial class Provincia : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e, ref string sMsjError)
+        protected void Page_Load(object sender, EventArgs e)
         {
-
+            string sMsjError = string.Empty;
+            if (!IsPostBack)
+            {
+                cargarDatos(ref sMsjError);
+            }
         }
         public void cargarDatos(ref string sMsjError)
         {
@@ -22,28 +26,15 @@ namespace PolizaUI.Paginas.Administrativo
             Obj_BLL.Listar_provincias(ref Obj_DAL, sMsjError);
             if (sMsjError == string.Empty)
             {
-                GV.DataSource = null;
-                GV.DataSource = Obj_DAL.DT1;
+                this.GV.DataSource = null;
+                this.GV.DataSource = Obj_DAL.DS1.Tables[0];
+                this.GV.DataBind();
             }
             else
             {
                 GV.DataSource = null;
-                
+
             }
         }
-
-        protected void GV_Load(object sender, EventArgs e, ref string sMsjError)
-        {
-            cargarDatos(ref sMsjError);
-            if (sMsjError == string.Empty)
-            {
-
-            }
-            else
-            {
-                ClientScript.RegisterStartupScript(GetType(), "alerta", "error();", true);
-            }
-        
     }
     }
-}

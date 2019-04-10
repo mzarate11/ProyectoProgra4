@@ -75,7 +75,7 @@
     <Content Include="Paginas\Administrativo\TarjetaCreditoDeb.aspx" />
     <Content Include="Paginas\Administrativo\MetodoPago.aspx" />
     <Content Include="Paginas\Cliente\Venta.aspx" />
-    <Content Include="Paginas\Cliente\Tipos de polizas\Poliza.aspx" />
+    <Content Include="Paginas\Cliente\Poliza.aspx" />
     <Content Include="Paginas\Administrativo\Beneficiario.aspx" />
     <Content Include="Paginas\Administrativo\Persona.aspx" />
     <Content Include="PolizaUIMaster.Master" />
@@ -164,11 +164,11 @@
     <Compile Include="Paginas\Cliente\Venta.aspx.designer.cs">
       <DependentUpon>Venta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\Cliente\Tipos de polizas\Poliza.aspx.cs">
+    <Compile Include="Paginas\Cliente\Poliza.aspx.cs">
       <DependentUpon>Poliza.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Paginas\Cliente\Tipos de polizas\Poliza.aspx.designer.cs">
+    <Compile Include="Paginas\Cliente\Poliza.aspx.designer.cs">
       <DependentUpon>Poliza.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Administrativo\Beneficiario.aspx.cs">

@@ -28,7 +28,7 @@
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="../../PolizaUI Inicio.aspx">Inicio</a></li>
-                        <li class="active"><a href="../../Paginas/Tipos de polizas/Poliza.aspx">Paginas/Tipos de polizas.</a></li>
+                        <li class="active"><a href="../../Paginas/Cliente/Poliza.aspx">Paginas/Tipos de polizas.</a></li>
                         
                             
                         </li>

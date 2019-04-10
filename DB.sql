@@ -1,7 +1,10 @@
+use master
+go
 
 CREATE database [PROYECTOPROGRA4]
 GO
-/*drop data base [PROYECTOPROGRA4]
+
+/*drop database [PROYECTOPROGRA4]
 go*/
 
 USE PROYECTOPROGRA4
@@ -266,8 +269,8 @@ INSERT INTO [ADMINISTRATIVO].[PROVINCIA] ([ID_PROVINCIA],[NOMBRE]) VALUES
 (7, 'Limón');  
 
 GO
-INSERT INTO [ADMINISTRATIVO].[CANTON] ([ID_CANTON],[NOMBRE],[ID_PROVINCIA]) VALUES
 
+INSERT INTO [ADMINISTRATIVO].[CANTON] ([ID_CANTON],[NOMBRE],[ID_PROVINCIA]) VALUES
 --SAN JOSE
 (1, 'San José',1),
 (2, 'Escazú',1),
@@ -360,7 +363,8 @@ INSERT INTO [ADMINISTRATIVO].[CANTON] ([ID_CANTON],[NOMBRE],[ID_PROVINCIA]) VALU
 
 GO
 INSERT INTO [ADMINISTRATIVO].[DISTRITO]([ID_DISTRITO],[NOMBRE],[ID_CANTON]) VALUES
-((1,'SAN JOSE',1),
+
+(1,'SAN JOSE',1),
 (2,'El Carmen',1),
 (3,'Merced',1),
 (4,'Hospital',1),
@@ -822,6 +826,7 @@ INSERT INTO [ADMINISTRATIVO].[DISTRITO]([ID_DISTRITO],[NOMBRE],[ID_CANTON]) VALU
 (460,'Río Jiménez',82),
 (461,'Duacarí',82);
 GO
+
 INSERT INTO [ADMINISTRATIVO].[GENERO] ([ID_GENERO],[TIPO]) VALUES
 (1,'Masculino'), (2, 'Femenino')
 GO
@@ -862,12 +867,13 @@ INSERT INTO [COMERCIAL].[PLANES] ([ID_PLAN],[NOMBRE],[COSTO],[ID_COBERTURA]) VAL
 GO
 							      
 		--SP's
- CREATE PROCEDURE [dbo].[SP_Read_Persona]--LEER
+		--SP PERSONA
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_Read_Persona]--LEER
 AS
 BEGIN
 SELECT
 
-[ID_PERSONA] AS [ID_Persona]
+[ID_PERSONA] AS [ID_Persona],
 [NO_CEDULA] AS [Numero_Cedula],
 [NOMBRE] AS [Name],
 [APELLIDO1] AS [PrimerApellido],
@@ -875,12 +881,12 @@ SELECT
 [CORREO_ELECTRONICO] AS [Correo],
 [TELEFONO] [Numero_Telefonico],
 [FECHA_NACIMIENTO_CONSTITUCION] AS [FechaNacimiento],
-[APODERADO] AS [Apoderado]
-[ID_PROVINCIA]  AS [Provincia]
+[APODERADO] AS [Apoderado],
+[ID_PROVINCIA]  AS [Provincia],
 [ID_CANTON] AS [Canton],
-[ID_DISTRITO]  AS [Distrito]
-[ID_GENERO]  AS [Genero]
-[ID_ESTADO_CIVIL]  AS [Estado_Civil]
+[ID_DISTRITO]  AS [Distrito],
+[ID_GENERO]  AS [Genero],
+[ID_ESTADO_CIVIL]  AS [Estado_Civil],
 [ID_TIPO_IDENTIFICACION] AS [Tipo_Identificacion]
 FROM	[ADMINISTRATIVO].[PERSONA]
 END
@@ -888,7 +894,7 @@ GO
 
 
 
-CREATE PROCEDURE [dbo].[SP_Insert_Persona]--INSERT
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_Insert_Persona]--INSERT
 (
 @ID_Persona INT,
 @Num_Cedula INT,
@@ -918,7 +924,7 @@ VALUES (@ID_Persona,@Num_Cedula,@Nombre,@APELLIDO1,@APELLIDO2,@Correo_Electronic
 END
 GO
 
-CREATE PROCEDURE [dbo].[SP_Update_Persona]--UPDATE
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_Update_Persona]--UPDATE
 
 AS BEGIN
 
@@ -941,7 +947,7 @@ declare @Dato as varchar
 
 declare @UPDATE as varchar
 							 
-UPDATE [ADMINISTRATIVO].[PERSONA]  set [ID_PERSONA] = @Dato
+UPDATE [ADMINISTRATIVO].[PERSONA]  set [NO_CEDULA] = @Dato
 WHERE ([ID_PERSONA] = @ID_Persona and 
 [NO_CEDULA] = @Num_Cedula and
 [NOMBRE] = @Nombre and 
@@ -959,13 +965,329 @@ WHERE ([ID_PERSONA] = @ID_Persona and
 END
 GO
 
-CREATE PROCEDURE [dbo].[SP_Delete_Persona]--DELETE
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_Delete_Persona]--DELETE
 as 
 begin
 declare  @ID_Persona as INT 
 delete from [ADMINISTRATIVO].[PERSONA] 
 where ID_Persona = @ID_Persona
 end
+go
+
+
+
+--SP ESTADO CIVIL
+create proc [ADMINISTRATIVO].[SP_InsertEstCivil]
+(
+@ID_ESTADO_CIVIL int,
+@Estado varchar(25)
+)
+as 
+begin
+--Veo que solo habrian unos cuantos no hay necesidad de meter variables
+insert into  [ADMINISTRATIVO].[ESTADO_CIVIL] ([ID_ESTADO_CIVIL],
+[ESTADO])
+values (@ID_ESTADO_CIVIL,@Estado)
+end
+go
+
+
+create proc [ADMINISTRATIVO].[SP_SelectEstCivil]
+as 
+begin
+--Veo que solo habrian unos cuantos no hay necesidad de meter variables
+select 
+[ID_ESTADO_CIVIL],
+[ESTADO]
+from [ADMINISTRATIVO].[ESTADO_CIVIL]
+end
+go
+
+create proc [ADMINISTRATIVO].[SP_UpdateEstCivil]
+as
+begin
+declare @EstID as int
+declare @EstEstado as varchar
+update [ADMINISTRATIVO].[ESTADO_CIVIL] set Estado = @EstEstado 
+where [ID_ESTADO_CIVIL] = @EstID
+end
+go
+
+create proc [ADMINISTRATIVO].[SP_DeleteEstCivil]
+as 
+begin
+declare @EstID as int
+delete from [ADMINISTRATIVO].[ESTADO_CIVIL]
+where [ID_ESTADO_CIVIL] = @EstID
+end
+go
+	
+						      
+--SP Tipo identificacion
+
+GO
+
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_InsertTIPO_IDENTIFICACION]--INSERT
+(
+@ID_TIPO_IDENTIFICACION INT,
+@NOMBRE varchar(25)
+)
+AS BEGIN
+INSERT INTO [ADMINISTRATIVO].[TIPO_IDENTIFICACION] ([ID_TIPO_IDENTIFICACION],[NOMBRE])
+
+VALUES (@ID_TIPO_IDENTIFICACION,@NOMBRE)
+END
+GO
+
+
+
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_Update_TipoIden]--UPDATE
+
+AS BEGIN
+declare @ID_TIPO_IDENTIFICACION as INT
+declare @NOMBRE as VARCHAR(25)
+
+declare @Dato as varchar
+UPDATE [ADMINISTRATIVO].[TIPO_IDENTIFICACION] set ID_TIPO_IDENTIFICACION = @Dato
+WHERE (ID_TIPO_IDENTIFICACION = @ID_TIPO_IDENTIFICACION and Nombre = @Nombre)
+END
+GO
+
+create proc [ADMINISTRATIVO].[SP_SelectTipoIden]--SELECT
+as 
+begin
+select 
+[ID_TIPO_IDENTIFICACION],
+[Nombre]
+from [ADMINISTRATIVO].[TIPO_IDENTIFICACION]
+end
+go
+
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_Delete_TipoIdent]--DELETE
+as 
+begin
+declare  @ID_TIPO_IDENTIFICACION as INT 
+delete from [ADMINISTRATIVO].[TIPO_IDENTIFICACION]
+where [ID_TIPO_IDENTIFICACION] = @ID_TIPO_IDENTIFICACION
+end
 
 go
-							      
+
+
+--SP GENERO
+
+
+--------Genero Proc---------------
+
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_InsertGenero]--INSERT
+(
+@ID_Genero INT,
+@TIPO varchar(25)
+)
+AS BEGIN
+INSERT INTO [ADMINISTRATIVO].[Genero] ([ID_GENERO],[TIPO])
+
+VALUES (@ID_Genero,@TIPO)
+END
+GO
+
+
+create proc [ADMINISTRATIVO].[SP_SelectProcGenero]
+as 
+begin
+--Veo que solo habrian unos cuantos no hay necesidad de meter variables
+select 
+ID_Genero,
+Tipo 
+from [ADMINISTRATIVO].[Genero]
+end
+go
+
+create proc [ADMINISTRATIVO].[SP_UpdateGenero]
+as
+begin
+declare @GenID as int
+declare @GenTipo as varchar
+update [ADMINISTRATIVO].[Genero] set Tipo = @GenTipo 
+where ID_Genero = @GenID
+end
+go
+
+create proc [ADMINISTRATIVO].[SP_DeleteProcGenero]
+as 
+begin
+declare @GenID as int
+delete from [ADMINISTRATIVO].[Genero]
+where ID_Genero = @GenID
+end
+go 
+
+
+----USUARIO
+
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_InsertUsuario]--INSERT
+(
+@ID_USUARIO INT,
+@ID_PERSONA INT,
+@NOMBRE varchar(25),
+@CONTRASEÑA varchar(25),
+@ROL int
+)
+AS BEGIN
+INSERT INTO [ADMINISTRATIVO].[USUARIO] ([ID_USUARIO],[ID_PERSONA],[NOMBRE],[CONTRASEÑA],[ROL])
+
+VALUES (@ID_USUARIO,@ID_PERSONA,@NOMBRE,@CONTRASEÑA,@ROL)
+END
+GO
+
+
+create proc [ADMINISTRATIVO].[SP_SelectUsuario]
+as 
+begin
+--Veo que solo habrian unos cuantos no hay necesidad de meter variables
+select 
+[ID_USUARIO],
+[ID_PERSONA],
+[NOMBRE],
+[CONTRASEÑA],
+[ROL]
+from [ADMINISTRATIVO].[USUARIO]
+end
+go
+
+create proc [ADMINISTRATIVO].[SP_UpdateUsuario]
+as
+begin
+declare @ID_USUARIO as int
+declare @ID_PERSONA as int
+declare @NOMBRE  as  varchar
+declare @CONTRASEÑA  as  varchar
+declare @Rol as int
+update [ADMINISTRATIVO].[USUARIO] set Rol = @Rol 
+where @ID_USUARIO = @Rol
+end
+go
+
+create proc [ADMINISTRATIVO].[SP_DeleteUsuario]
+as 
+begin
+declare @ID_USUARIO as int
+delete from [ADMINISTRATIVO].[USUARIO]
+where [ID_USUARIO] = @ID_USUARIO
+end
+go 
+
+
+
+CREATE PROCEDURE [COMERCIAL].[Listar_Planes]
+AS
+
+BEGIN
+
+SELECT   [ID_Plan]
+		,[NOMBRE]
+		,[Costo]
+		,[ID_Cobertura]
+		FROM [COMERCIAL].[Planes]
+END
+GO
+
+CREATE PROCEDURE [COMERCIAL].[Listar_Cobertura]
+AS
+
+BEGIN
+
+SELECT  [ID_Cobertura]
+		,[Nombre]
+		,[Monto]
+		,[Cant_Eventos]
+		,[Cant_Beneficiarios]
+		FROM [COMERCIAL].[Cobertura]
+END
+GO
+
+
+
+
+CREATE PROCEDURE [Listar_Provicia]
+AS
+
+BEGIN
+
+SELECT	[ID_Provincia]
+		,[Nombre]
+		FROM [ADMINISTRATIVO].[Provincia]
+
+END
+GO
+
+CREATE PROCEDURE [Listar_Canton]
+AS
+
+BEGIN
+
+SELECT   [ID_Canton]
+		,[Nombre]
+		FROM [ADMINISTRATIVO].[Canton]
+END	
+GO
+
+CREATE PROCEDURE [Listar_Distrito]
+AS
+
+BEGIN
+
+SELECT  [ID_Distrito]
+		,[Nombre]
+		FROM [ADMINISTRATIVO].[Distrito]
+END
+GO
+
+--SP de Filtrar
+
+CREATE PROCEDURE [Filtrar_Provicia]
+(
+		@NombreProvincia varchar(20)
+)
+AS
+
+BEGIN
+
+SELECT	[ID_Provincia]
+		,[Nombre]
+		FROM [ADMINISTRATIVO].[Provincia]
+		WHERE [Nombre] like '%' + @NombreProvincia + '%'
+END
+GO
+
+CREATE PROCEDURE [Filtrar_Canton]
+(
+	@NombreCanton varchar(20)
+)
+AS
+BEGIN
+
+SELECT   [ID_Canton]
+		,[Nombre]
+		,[ID_Provincia]
+		FROM [ADMINISTRATIVO].[Canton]
+		WHERE [Nombre] like '%' + @NombreCanton + '%'
+END
+GO
+
+CREATE PROCEDURE [Filtrar_Distrito]
+(
+	@NombreDistrito varchar(20)
+)
+AS
+
+BEGIN
+
+SELECT  [ID_Distrito]
+		,[Nombre]
+		,[ID_Canton]
+		FROM [ADMINISTRATIVO].[Distrito]
+		WHERE [Nombre] like '%' + @NombreDistrito + '%'
+END
+GO
+

@@ -13,6 +13,7 @@ namespace DAL.DAL_ADMIN
         private string _sNombre_sp, _sNTablar, _sNombre_P;
 
         private DataSet DS;
+        
 
         public string sNombre_P
         {

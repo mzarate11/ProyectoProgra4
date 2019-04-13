@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cls_PolizaDAL.cs" />
+    <Compile Include="DAL_ADMIN\cls_Distrito_DAL.cs" />
     <Compile Include="DAL_ADMIN\cls_Provincia_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

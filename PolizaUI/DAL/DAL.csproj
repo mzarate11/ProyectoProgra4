@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cls_PolizaDAL.cs" />
+    <Compile Include="DAL_ADMIN\cls_Persona_DAL.cs" />
+    <Compile Include="DAL_ADMIN\cls_Planes_DAL.cs" />
+    <Compile Include="DAL_ADMIN\cls_PolizaDAL.cs" />
+    <Compile Include="DAL_ADMIN\cls_Canton_DAL.cs" />
     <Compile Include="DAL_ADMIN\cls_Distrito_DAL.cs" />
     <Compile Include="DAL_ADMIN\cls_Provincia_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

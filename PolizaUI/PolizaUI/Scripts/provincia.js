@@ -1,6 +1,3 @@
-﻿function error()
-{
-    var msj = "<%=sMsjError%>";
-    alert("hubo un error de sistema:"+msj);
-    return null;
-};
+﻿$(document).ready(function () {
+    $('#ContentPlaceHolder1_GV_provincia').DataTable();
+});

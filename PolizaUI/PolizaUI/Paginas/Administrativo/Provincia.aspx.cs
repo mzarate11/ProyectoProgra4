@@ -26,13 +26,13 @@ namespace PolizaUI.Paginas.Administrativo
             Obj_BLL.Listar_provincias(ref Obj_DAL, sMsjError);
             if (sMsjError == string.Empty)
             {
-                this.GV.DataSource = null;
-                this.GV.DataSource = Obj_DAL.DS1.Tables[0];
-                this.GV.DataBind();
+                this.GV_provincia.DataSource = null;
+                this.GV_provincia.DataSource = Obj_DAL.DS1.Tables[0];
+                this.GV_provincia.DataBind();
             }
             else
             {
-                GV.DataSource = null;
+                GV_provincia.DataSource = null;
 
             }
         }

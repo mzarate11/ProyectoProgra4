@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PolizaUIMaster.Master" AutoEventWireup="true" CodeBehind="Planes.aspx.cs" Inherits="PolizaUI.Paginas.Administrativo.Planes" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Poliza.Master" AutoEventWireup="true" CodeBehind="Planes.aspx.cs" Inherits="PolizaUI.Paginas.Administrativo.Planes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
             <meta http-equiv="content-type" content="text/html"; charset="utf-8"/>
    <link type="text/css" rel="../../Resources/bootstrap.min.css" />

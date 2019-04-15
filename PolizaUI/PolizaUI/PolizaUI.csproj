@@ -161,6 +161,8 @@
     <Content Include="DataTables\Select-1.3.0\js\select.jqueryui.min.js" />
     <Content Include="DataTables\Select-1.3.0\js\select.semanticui.js" />
     <Content Include="DataTables\Select-1.3.0\js\select.semanticui.min.js" />
+    <Content Include="index.html" />
+    <Content Include="IndexPoliza.aspx" />
     <Content Include="packages.config" />
     <Content Include="Paginas\Administrativo\Login.aspx" />
     <Content Include="Paginas\Administrativo\Planes.aspx" />
@@ -205,6 +207,7 @@
     <Content Include="Resources\Mascara\README_other.md" />
     <Content Include="DataTables\Buttons-1.5.6\css\common.scss" />
     <Content Include="DataTables\Buttons-1.5.6\css\mixins.scss" />
+    <Content Include="Poliza.Master" />
     <None Include="Service References\Svc_DataBase\cls_DB.wsdl" />
     <Content Include="Resources\bootstrap.min.css" />
     <Content Include="Resources\bootstrap.min.js" />
@@ -358,6 +361,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IndexPoliza.aspx.cs">
+      <DependentUpon>IndexPoliza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexPoliza.aspx.designer.cs">
+      <DependentUpon>IndexPoliza.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Administrativo\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -435,6 +445,13 @@
     <Compile Include="Paginas\Administrativo\Persona.aspx.designer.cs">
       <DependentUpon>Persona.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Poliza.Master.cs">
+      <DependentUpon>Poliza.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Poliza.Master.designer.cs">
+      <DependentUpon>Poliza.Master</DependentUpon>
+    </Compile>
     <Compile Include="PolizaUI Inicio.aspx.cs">
       <DependentUpon>PolizaUI Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -458,6 +475,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Index\" />
     <Folder Include="Models\" />
     <Folder Include="Resources\Slider\data1\" />
     <Folder Include="Resources\Slider\engine1\" />

@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Poliza.master.cs" Inherits="PolizaUI.Poliza" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+
+    <title>Seguros Americanos</title>
+    <!--
+
+    Template 2080 Minimax
+
+    http://www.tooplate.com/view/2080-minimax
+
+    -->
+    <!-- stylesheet css -->
+    <link rel="stylesheet" href="Index/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="Index/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="Index/css/nivo-lightbox.css"/>
+    <link rel="stylesheet" href="Index/css/nivo_themes/default/default.css"/>
+    <link rel="stylesheet" href="Index/css/style.css"/>
+    <!-- google web font css -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'/>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse">
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

@@ -13,13 +13,13 @@ namespace PolizaUI.Paginas {
     public partial class Persona {
         
         /// <summary>
-        /// Control planes.
+        /// Control persona.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        //protected global::System.Web.UI.HtmlControls.HtmlGenericControl planes;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl persona;
         
         /// <summary>
         /// Control GV.
@@ -28,6 +28,6 @@ namespace PolizaUI.Paginas {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        //protected global::System.Web.UI.WebControls.GridView GV;
+        protected global::System.Web.UI.WebControls.GridView GV;
     }
 }

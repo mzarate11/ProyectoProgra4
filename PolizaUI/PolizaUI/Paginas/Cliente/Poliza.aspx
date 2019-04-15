@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PolizaUIMaster.Master" AutoEventWireup="true" CodeBehind="Poliza.aspx.cs" Inherits="PolizaUI.Paginas.Persona" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Poliza.Master" AutoEventWireup="true" CodeBehind="Poliza.aspx.cs" Inherits="PolizaUI.Paginas.Poliza" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta http-equiv="content-type" content="text/html"; charset="utf-8"/>
     <title>Login</title>
@@ -10,6 +10,12 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     <div>
         <form>
             <div id="h">
@@ -211,7 +217,7 @@ Y es que por lo general, cuando planificamos un viaje en lo que menos pensamos e
       <br />    
       <div class="center-block">
 <%--     <p class="col-6"><input type="button" runat="server" value="Inicio" class="btn btn-primary dropdown-toggle" id="btn_A" href="../../Tipos%20de%20polizas/PolizaUI%20Inicio.aspx"/>--%>
-        <a href="../../PolizaUI%20Inicio.aspx">Inicio</a></p>
+        <a href="../../IndexPoliza.aspx">Inicio</a></p>
   <p>Para más informacion puede llamarnos  <strong>al : 2888-1111 o al 8107-3333.</strong><br /> Si aún ocupa mas información no dude en acercarsenos en la Avenida 4, Costa Rica, San José, San Pedro.</p>
 </div>
 

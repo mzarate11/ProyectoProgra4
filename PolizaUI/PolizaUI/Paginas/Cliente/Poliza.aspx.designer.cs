@@ -10,6 +10,6 @@
 namespace PolizaUI.Paginas {
     
     
-    public partial class Persona {
+    public partial class Poliza {
     }
 }

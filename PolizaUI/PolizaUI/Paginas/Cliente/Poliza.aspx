@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PolizaUIMaster.Master" AutoEventWireup="true" CodeBehind="Poliza.aspx.cs" Inherits="PolizaUI.Paginas.Persona" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PolizaUIMaster.Master" AutoEventWireup="true" CodeBehind="Poliza.aspx.cs" Inherits="PolizaUI.Paginas.Poliza" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta http-equiv="content-type" content="text/html"; charset="utf-8"/>
     <title>Login</title>

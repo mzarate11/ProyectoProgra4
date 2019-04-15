@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language ="C#"  Debug ="false" Service ="SVC.Contracts.cls_DB" %>

@@ -3,46 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <!-- navigation -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <!--titulo-->
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon icon-bar"></span>
-                    <span class="icon icon-bar"></span>
-                    <span class="icon icon-bar"></span>
-                </button>
-                <a href="IndexPoliza.aspx" class="navbar-brand smoothScroll">Seguros Americanos</a>
-            </div>
-            <div class="collapse navbar-collapse">
-
-                <!--pestañas-->
-                <ul class="nav navbar-nav">
-                         <li class="active"><a href="../../Paginas/Cliente/Poliza.aspx">Paginas/Tipos de polizas.</a></li>
-                        <li><a class="dropdown-toggle" data-toggle="dropdown" href="# ">Administrativo<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="Paginas/Administrativo/Persona.aspx">Personas</a></li>
-                                <li><a href="Paginas/Administrativo/">Identificacion</a></li>
-                                <li><a href="Paginas/Administrativo/Beneficiario.aspx">Beneficiario</a></li>
-                                <li><a href="Paginas/Administrativo/Poliza.aspx">Poliza</a></li>
-                                <li><a href="Paginas/Administrativo/Venta">Venta</a></li>
-                                <li><a href="Paginas/Administrativo/MetodoPago">MetodoPago</a></li>
-                                <li><a href="Paginas/TarjetaCreaditoDeb">Tarjeta_Cred_Deb</a></li>
-                                <li><a href="Paginas/Administrativo/Planes">Planes</a></li>
-                                <li><a href="Paginas/Administrativo/Cobertura">Cobertura</a></li>
-                                <li><a href="../../Paginas/Administrativo/Provincia.aspx">Provincia</a></li>
-                                <li><a href="#">Canton</a></li>
-                                <li><a href="#">Distrito</a></li>
-                            </ul>
-                        </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                        <li><a href="../../Paginas/Administrativo/Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-                    </ul>
-            </div>
-        </div>
-    </div>
-
     <!-- primer div -->
     <div id="home">
         <div class="container">

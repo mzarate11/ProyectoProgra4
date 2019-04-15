@@ -7,34 +7,74 @@
      <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
-
     <title>Seguros Americanos</title>
-    <!--
-
-    Template 2080 Minimax
-
-    http://www.tooplate.com/view/2080-minimax
-
-    -->
-    <!-- stylesheet css -->
     <link rel="stylesheet" href="Index/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="Index/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="Index/css/nivo-lightbox.css"/>
     <link rel="stylesheet" href="Index/css/nivo_themes/default/default.css"/>
     <link rel="stylesheet" href="Index/css/style.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/nivo-lightbox.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/jquery.nav.js"></script>
+    <script src="js/isotope.js"></script>
+    <script src="js/imagesloaded.min.js"></script>
+    <script src="js/custom.js"></script>
     <!-- google web font css -->
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'/>
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <!--titulo-->
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                </button>
+                <a href="IndexPoliza.aspx" class="navbar-brand smoothScroll">Seguros Americanos</a>
+            </div>
+            <div class="collapse navbar-collapse">
 
+                <!--pestañas-->
+                <ul class="nav navbar-nav">
+                         <li class="active"><a href="../../Paginas/Cliente/Poliza.aspx">Paginas/Tipos de polizas.</a></li>
+                        <li><a class="dropdown-toggle" data-toggle="dropdown" href="# ">Administrativo<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="Paginas/Administrativo/Persona.aspx">Personas</a></li>
+                                <li><a href="Paginas/Administrativo/">Identificacion</a></li>
+                                <li><a href="Paginas/Administrativo/Beneficiario.aspx">Beneficiario</a></li>
+                                <li><a href="Paginas/Administrativo/Poliza.aspx">Poliza</a></li>
+                                <li><a href="Paginas/Administrativo/Venta">Venta</a></li>
+                                <li><a href="Paginas/Administrativo/MetodoPago">MetodoPago</a></li>
+                                <li><a href="Paginas/TarjetaCreaditoDeb">Tarjeta_Cred_Deb</a></li>
+                                <li><a href="Paginas/Administrativo/Planes">Planes</a></li>
+                                <li><a href="Paginas/Administrativo/Cobertura">Cobertura</a></li>
+                                <li><a href="../../Paginas/Administrativo/Provincia.aspx">Provincia</a></li>
+                                <li><a href="#">Canton</a></li>
+                                <li><a href="#">Distrito</a></li>
+                            </ul>
+                        </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../../Paginas/Administrativo/Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+    </body>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-</head>
-<body data-spy="scroll" data-target=".navbar-collapse">
-    <form id="form1" runat="server">
-    <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
         </asp:ContentPlaceHolder>
-    </div>
-    </form>
-</body>
+      <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/nivo-lightbox.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/jquery.nav.js"></script>
+    <script src="js/isotope.js"></script>
+    <script src="js/imagesloaded.min.js"></script>
+    <script src="js/custom.js"></script>
 </html>

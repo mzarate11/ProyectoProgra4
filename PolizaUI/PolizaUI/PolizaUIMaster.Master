@@ -16,7 +16,6 @@
     <script src="Resources/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Resources/Slider/engine1/style.css" />
 	<script type="text/javascript" src="Resources/Slider/engine1/jquery.js"></script>
-    <script type="text/javascript" src="Scripts/link's.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">

@@ -1,14 +1,17 @@
 use master
 go
 
-CREATE database [PROYECTOPROGRA4]
-GO
-
 /*drop database [PROYECTOPROGRA4]
 go*/
 
+CREATE database [PROYECTOPROGRA4]
+GO
+
+
 USE PROYECTOPROGRA4
 GO
+
+
 CREATE SCHEMA [ADMINISTRATIVO]
 GO
 CREATE SCHEMA [COMERCIAL]
@@ -113,7 +116,7 @@ CONSTRAINT [PK_ID_USUARIO] PRIMARY KEY CLUSTERED
 GO
 CREATE TABLE [COMERCIAL].[POLIZA]
 (
-[ID_POLIZA]  int IDENTITY(1,1) NOT NULL,
+[ID_POLIZA]  int NOT NULL,
 [NOMBRE] varchar(50),
 [DESCRIPCION] varchar(25),
 [ID_BENEFICIARIO] INT NOT NULL,
@@ -152,7 +155,7 @@ CONSTRAINT [PK_ID_COBERTURA] PRIMARY KEY CLUSTERED
 GO
 CREATE TABLE [COMERCIAL].[TARJETA_CREDITO_DEBITO]
 (
-[ID_TARJETA_CREDITO_DEBITO]  int IDENTITY(1,1) NOT NULL,
+[ID_TARJETA_CREDITO_DEBITO]  int NOT NULL,
 [NUMERO] int,
 [BANCO_EMISOR] varchar(50),
 [FECHA_VENCIMIENTO] date,
@@ -164,7 +167,7 @@ CONSTRAINT [PK_ID_TARJETA_CREDITO_DEBITO] PRIMARY KEY CLUSTERED
 GO
 CREATE TABLE [COMERCIAL].[VENTA]
 (
-[ID_VENTA]  int IDENTITY(1,1) NOT NULL,
+[ID_VENTA]  int NOT NULL,
 [FECHA_EMISION] DATE NOT NULL,
 [ID_TARJETA_CREDITO_DEBITO]  int NOT NULL,
 CONSTRAINT [PK_ID_VENTA] PRIMARY KEY CLUSTERED
@@ -175,7 +178,7 @@ CONSTRAINT [PK_ID_VENTA] PRIMARY KEY CLUSTERED
 GO
 CREATE TABLE [COMERCIAL].[BENEFICIARIO]
 (
-[ID_BENEFICIARIO] INT IDENTITY(1,1) NOT NULL,
+[ID_BENEFICIARIO] INT  NOT NULL,
 [PORCENT_PRTICIPACION] INT NOT NULL,
 [NOMBRE] VARCHAR(50),
 [APELLIDO_1] VARCHAR(50),
@@ -865,10 +868,14 @@ INSERT INTO [COMERCIAL].[PLANES] ([ID_PLAN],[NOMBRE],[COSTO],[ID_COBERTURA]) VAL
 (26,'Formularios del Seguro Básico del Colegio de Medicos (Parcial)',417000,2),
 (27,'Formularios del Seguro Básico del Colegio de Medicos (Perosnal)',84000,3)
 GO
+
+
+
+
 							      
 		--SP's
 		--SP PERSONA
-CREATE PROCEDURE [ADMINISTRATIVO].[SP_Read_Persona]--LEER
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_Listar_Persona]--LEER
 AS
 BEGIN
 SELECT
@@ -1177,9 +1184,23 @@ where [ID_USUARIO] = @ID_USUARIO
 end
 go 
 
+--SP PLANES
+CREATE PROCEDURE [COMERCIAL].[Insert_Planes]--INSERT
+(
+@ID_Plan INT,
+@NOMBRE varchar(200),
+@Costo money,
+@ID_Cobertura int
+)
+AS BEGIN
+INSERT INTO [COMERCIAL].[PLANES] ([ID_PLAN],[NOMBRE],[COSTO],[ID_COBERTURA])
+
+VALUES (@ID_Plan,@NOMBRE,@NOMBRE,@Costo)
+END
+GO
 
 
-CREATE PROCEDURE [COMERCIAL].[Listar_Planes]
+CREATE PROCEDURE [COMERCIAL].[Listar_Planes]--SELECT
 AS
 
 BEGIN
@@ -1192,24 +1213,341 @@ SELECT   [ID_Plan]
 END
 GO
 
-CREATE PROCEDURE [COMERCIAL].[Listar_Cobertura]
+
+CREATE PROCEDURE [COMERCIAL].[Filtrar_Planes]--UPDATE
+AS
+declare @ID_Plan as int
+declare @NOMBRE as varchar(200)
+declare @Costo as  money
+declare @ID_Cobertura as int
+declare @plan as int
+BEGIN
+update [COMERCIAL].[PLANES] set ID_PLAN = @plan 
+where ID_PLAN = @plan
+end
+GO
+
+
+create proc [COMERCIAL].[SP_DeletePlan]--delete
+as 
+begin
+declare @ID_PLAN as int
+delete from [COMERCIAL].[PLANES]
+where [ID_PLAN] = @ID_PLAN
+end
+go 
+
+
+--SP TARJETA CRED/DEB
+CREATE PROCEDURE [COMERCIAL].[Insert_Tarjeta]--INSERT
+(
+@ID_TARJETA_CREDITO_DEBITO int,
+@Numero int ,
+@Banco_Emisor varchar(50),
+@Fecha_Vencimiento date
+)
+AS BEGIN
+INSERT INTO [COMERCIAL].[TARJETA_CREDITO_DEBITO] ([ID_TARJETA_CREDITO_DEBITO],[NUMERO],[FECHA_VENCIMIENTO],[BANCO_EMISOR])
+
+VALUES (@ID_TARJETA_CREDITO_DEBITO,@Numero,@Banco_Emisor,@Fecha_Vencimiento)
+END
+GO
+
+
+CREATE PROCEDURE [COMERCIAL].[Listar_TarjetaCredDeb]--select
 AS
 
 BEGIN
 
-SELECT  [ID_Cobertura]
-		,[Nombre]
-		,[Monto]
-		,[Cant_Eventos]
-		,[Cant_Beneficiarios]
-		FROM [COMERCIAL].[Cobertura]
+SELECT	[ID_TARJETA_CREDITO_DEBITO]
+		,[Numero]
+		,[Banco_Emisor]
+		,[Fecha_Vencimiento]
+		FROM [COMERCIAL].[TARJETA_CREDITO_DEBITO]
 END
 GO
 
 
 
+CREATE PROCEDURE [COMERCIAL].[Update_TarjetaCredDeb]
+AS
+declare @ID_TARJETA_CREDITO_DEBITO as int
+declare @Numero as varchar(200)
+declare @Banco_Emisor as  money
+declare @Fecha_Vencimiento as int
+declare @tarjeta as int
+BEGIN
+update [COMERCIAL].[TARJETA_CREDITO_DEBITO] set ID_TARJETA_CREDITO_DEBITO = @tarjeta 
+where ID_TARJETA_CREDITO_DEBITO = @tarjeta
+end
+GO
 
-CREATE PROCEDURE [Listar_Provicia]
+
+
+CREATE PROCEDURE [COMERCIAL].[SP_DeleteTarjeta]--delete
+as 
+begin
+declare @ID_Tarjetas int
+delete from [COMERCIAL].[TARJETA_CREDITO_DEBITO]
+where [ID_TARJETA_CREDITO_DEBITO] = @ID_Tarjetas
+end
+go 
+
+--**************
+--SP VENTA
+
+CREATE PROCEDURE [COMERCIAL].[Insert_Venta]--INSERT
+(
+@ID_Venta int,
+@Fecha_Emision date ,
+@ID_TARJETA_CREDITO_DEBITO int 
+)
+AS BEGIN
+INSERT INTO [COMERCIAL].[VENTA] ([ID_VENTA],[FECHA_EMISION],[ID_TARJETA_CREDITO_DEBITO])
+
+VALUES (@ID_Venta,@Fecha_Emision,@ID_TARJETA_CREDITO_DEBITO)
+END
+GO
+
+
+CREATE PROCEDURE [COMERCIAL].[Listar_Venta]--select
+AS
+
+BEGIN
+
+SELECT	[ID_VENTA],
+		[FECHA_EMISION],
+		[ID_TARJETA_CREDITO_DEBITO]
+		FROM [COMERCIAL].[VENTA]
+END
+GO
+
+
+
+CREATE PROCEDURE [COMERCIAL].[Update_Venta]
+AS
+declare @ID_Venta as int
+declare @Fecha_Emision as date
+declare @ID_TARJETA_CREDITO_DEBITO as int
+declare @venta int
+BEGIN
+update [COMERCIAL].[VENTA] set ID_VENTA = @venta 
+where ID_VENTA = @venta
+end
+GO
+
+
+
+CREATE PROCEDURE [COMERCIAL].[SP_DeleteVenta]--delete
+as 
+begin
+declare @ID_venta int
+delete from [COMERCIAL].[VENTA]
+where [ID_VENTA] = @ID_venta
+end
+go 
+
+
+
+-----**********************---
+--SP BENEFICIARIO
+
+CREATE PROCEDURE [COMERCIAL].[Insert_Beneficiario]--INSERT
+(
+@ID_Benficiario int,
+@Porcentaje int ,
+@Nombre varchar(50),
+@Apellido1 varchar(50),
+@Apellido2 varchar(50)
+)
+AS BEGIN
+INSERT INTO [COMERCIAL].[BENEFICIARIO] ([ID_BENEFICIARIO],[PORCENT_PRTICIPACION],[NOMBRE],[APELLIDO_1],[APELLIDO__2])
+
+VALUES (@ID_Benficiario,@Porcentaje,@Nombre,@Apellido1,@Apellido2)
+END
+GO
+
+
+CREATE PROCEDURE [COMERCIAL].[Listar_Beneficiario]---select
+AS
+
+BEGIN
+
+SELECT	[ID_BENEFICIARIO],
+		[PORCENT_PRTICIPACION],
+		[NOMBRE],
+		[APELLIDO_1],
+		[APELLIDO__2]
+		FROM [COMERCIAL].[BENEFICIARIO]
+END
+GO
+
+
+
+CREATE PROCEDURE [COMERCIAL].[Update_Beneficiario]
+AS
+declare @ID_Benficiario as int
+declare @Porcentaje as INT
+declare @Nombre as varchar(50)
+declare @Apellido1 varchar(50)
+declare @Apellido2 varchar(50)
+DECLARE @id_BENE as int
+BEGIN
+update [COMERCIAL].[BENEFICIARIO] set [ID_BENEFICIARIO] = @id_BENE 
+where [ID_BENEFICIARIO] = @id_BENE
+end
+GO
+
+
+
+CREATE PROCEDURE [COMERCIAL].[SP_DeleteBeneficiario]--delete
+as 
+begin
+declare @id_BENE int
+delete from [COMERCIAL].[BENEFICIARIO]
+where [ID_BENEFICIARIO] = @id_BENE
+end
+go 
+
+--**************************************
+--COBERTURA
+
+
+CREATE PROCEDURE [COMERCIAL].[Insert_COBERTURA]--INSERT
+(
+@ID_COBERTURA int,
+@Nombre varchar(25),
+@Monto money,
+@Cant_Eventos int,
+@Cant_Beneficiarios int
+)
+AS BEGIN
+INSERT INTO [COMERCIAL].[COBERTURA] ([ID_COBERTURA],[NOMBRE],[MONTO],[CANT_EVENTOS],[CANT_BENEFICIARIOS])
+
+VALUES (@ID_COBERTURA,@Nombre,@Monto,@Cant_Eventos,@Cant_Beneficiarios)
+END
+GO
+
+
+CREATE PROCEDURE [COMERCIAL].[Listar_COBERTURA]---select
+AS
+
+BEGIN
+
+SELECT	[ID_COBERTURA],
+		[NOMBRE],
+		[MONTO],
+		[CANT_EVENTOS],
+		[CANT_BENEFICIARIOS]
+		FROM [COMERCIAL].[COBERTURA]
+END
+GO
+
+
+
+CREATE PROCEDURE [COMERCIAL].[Update_COBERTURA]
+AS
+
+declare @ID_COBERTURA as int
+declare @Nombre as varchar(25)
+declare @Monto money
+declare @Cant_Eventos as int
+DECLARE @Cant_Beneficiarios as int
+declare @id_cober as int
+BEGIN
+update [COMERCIAL].[COBERTURA] set [ID_COBERTURA] = @id_cober 
+where [ID_COBERTURA] = @id_cober
+end
+GO
+
+
+
+CREATE PROCEDURE [COMERCIAL].[SP_DeleteCOBERTURA]--delete
+as 
+begin
+declare @id_cober int
+delete from [COMERCIAL].[COBERTURA]
+where ID_COBERTURA = @id_cober
+end
+go 
+
+
+
+------*******************************************
+--POLIZA
+
+
+
+CREATE PROCEDURE [COMERCIAL].[Insert_Poliza]--INSERT
+(
+@ID_POLIZA int,
+@Nombre varchar(50),
+@DESCRIPCION VARCHAR(25),
+@ID_BENEFICIARIO int,
+@ID_PLAN int,
+@ID_VENTA INT
+)
+AS BEGIN
+INSERT INTO [COMERCIAL].[POLIZA] ([ID_POLIZA],[NOMBRE],[DESCRIPCION],[ID_BENEFICIARIO],[ID_PLAN],[ID_VENTA])
+
+VALUES (@ID_POLIZA,@Nombre,@DESCRIPCION,@ID_BENEFICIARIO,@ID_PLAN,@ID_VENTA)
+END
+GO
+
+
+CREATE PROCEDURE [COMERCIAL].[Listar_Poliza]---select
+AS
+
+BEGIN
+
+SELECT	[ID_POLIZA],
+		[NOMBRE],
+		[DESCRIPCION],
+		[ID_BENEFICIARIO],
+		[ID_PLAN],
+		[ID_VENTA]
+		FROM [COMERCIAL].[POLIZA]
+END
+GO
+
+
+
+CREATE PROCEDURE [COMERCIAL].[Update_Poliza]
+AS
+
+declare @ID_POLIZA as int
+declare @Nombre as varchar(50)
+declare @DESCRIPCION as VARCHAR(25)
+declare @ID_BENEFICIARIO as int
+DECLARE @ID_PLAN as int
+declare @ID_VENTA as int
+declare @ID_poli as int
+BEGIN
+update [COMERCIAL].[POLIZA] set [ID_POLIZA] = @ID_poli 
+where [ID_POLIZA] = @ID_poli
+end
+GO
+
+
+
+CREATE PROCEDURE [COMERCIAL].[SP_DeletePoliza]--delete
+as 
+begin
+declare @ID_poli int
+delete from [COMERCIAL].[POLIZA]
+where [ID_POLIZA] = @ID_poli
+end
+go 
+
+
+
+
+
+--SP de Provincia---
+
+
+
+CREATE PROCEDURE [ADMINISTRATIVO].[Listar_Provicia]
 AS
 
 BEGIN
@@ -1221,73 +1559,114 @@ SELECT	[ID_Provincia]
 END
 GO
 
-CREATE PROCEDURE [Listar_Canton]
+
+CREATE PROCEDURE [ADMINISTRATIVO].[Update_Provincia]
+AS
+declare @ID_PROVINCIA as  INT
+declare @NOMBRE as VARCHAR(25) 
+declare @ID_provi  as  int
+BEGIN
+update [ADMINISTRATIVO].[PROVINCIA] set ID_PROVINCIA = @ID_provi 
+where ID_PROVINCIA = @ID_provi
+end
+GO
+
+
+
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_DeleteProvincia]--delete
+as 
+begin
+declare @ID_provi int
+delete from [ADMINISTRATIVO].[PROVINCIA]
+where [ID_PROVINCIA] = @ID_provi
+end
+go 
+
+
+
+
+
+--SP CANTONES -
+
+
+CREATE PROCEDURE [ADMINISTRATIVO].[Update_Canton]
+AS
+declare @ID_CANTON as  INT
+declare @NOMBRE as VARCHAR(25) 
+declare @ID_PROVINCIA  as  int
+declare @ID_cant as int
+BEGIN
+update [ADMINISTRATIVO].[CANTON] set ID_PROVINCIA = @ID_cant 
+where [ID_CANTON] = @ID_cant
+end
+GO
+
+
+
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_DeleteCanton]--delete
+as 
+begin
+declare @ID_cant int
+delete from [ADMINISTRATIVO].[CANTON]
+where [ID_CANTON] = @ID_cant
+end
+go 
+
+
+
+
+CREATE PROCEDURE [ADMINISTRATIVO].[Listar_Canton]
 AS
 
 BEGIN
 
 SELECT   [ID_Canton]
 		,[Nombre]
+		,[ID_PROVINCIA]
 		FROM [ADMINISTRATIVO].[Canton]
 END	
 GO
 
-CREATE PROCEDURE [Listar_Distrito]
+
+--sp distrito ---
+
+CREATE PROCEDURE [ADMINISTRATIVO].[Listar_Distrito]
 AS
 
 BEGIN
 
 SELECT  [ID_Distrito]
 		,[Nombre]
-		FROM [ADMINISTRATIVO].[Distrito]
+		,[ID_CANTON]
+		FROM [ADMINISTRATIVO].[DISTRITO]
 END
 GO
 
---SP de Filtrar
 
-CREATE PROCEDURE [Filtrar_Provicia]
-(
-		@NombreProvincia varchar(20)
-)
+
+CREATE PROCEDURE [ADMINISTRATIVO].[Update_Distrito]
 AS
-
+declare @ID_DISTRITO AS INT
+DECLARE @NOMBRE AS VARCHAR (20)
+DECLARE @ID_CANTON AS INT 
+declare @ID_distri as int
 BEGIN
-
-SELECT	[ID_Provincia]
-		,[Nombre]
-		FROM [ADMINISTRATIVO].[Provincia]
-		WHERE [Nombre] like '%' + @NombreProvincia + '%'
-END
+update [ADMINISTRATIVO].[DISTRITO] set ID_DISTRITO = @ID_distri 
+where [ID_CANTON] = @ID_distri
+end
 GO
 
-CREATE PROCEDURE [Filtrar_Canton]
-(
-	@NombreCanton varchar(20)
-)
-AS
-BEGIN
 
-SELECT   [ID_Canton]
-		,[Nombre]
-		,[ID_Provincia]
-		FROM [ADMINISTRATIVO].[Canton]
-		WHERE [Nombre] like '%' + @NombreCanton + '%'
-END
-GO
 
-CREATE PROCEDURE [Filtrar_Distrito]
-(
-	@NombreDistrito varchar(20)
-)
-AS
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_DeleteDistrito]--delete
+as 
+begin
+declare @ID_distri int
+delete from [ADMINISTRATIVO].[DISTRITO]
+where [ID_CANTON] = @ID_distri
+end
+go 
 
-BEGIN
 
-SELECT  [ID_Distrito]
-		,[Nombre]
-		,[ID_Canton]
-		FROM [ADMINISTRATIVO].[Distrito]
-		WHERE [Nombre] like '%' + @NombreDistrito + '%'
-END
-GO
+
 

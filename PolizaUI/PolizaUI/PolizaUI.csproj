@@ -165,8 +165,8 @@
     <Content Include="IndexPoliza.aspx" />
     <Content Include="packages.config" />
     <Content Include="Paginas\Administrativo\Login.aspx" />
-    <Content Include="Paginas\Administrativo\Planes.aspx" />
     <Content Include="Paginas\Administrativo\Cobertura.aspx" />
+    <Content Include="Paginas\Administrativo\Planes.aspx" />
     <Content Include="Paginas\Administrativo\Provincia.aspx" />
     <Content Include="Paginas\Administrativo\Registrar.aspx" />
     <Content Include="Paginas\Administrativo\TarjetaCreditoDeb.aspx" />
@@ -375,19 +375,19 @@
     <Compile Include="Paginas\Administrativo\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\Administrativo\Planes.aspx.cs">
-      <DependentUpon>Planes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Paginas\Administrativo\Planes.aspx.designer.cs">
-      <DependentUpon>Planes.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Paginas\Administrativo\Cobertura.aspx.cs">
       <DependentUpon>Cobertura.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Paginas\Administrativo\Cobertura.aspx.designer.cs">
       <DependentUpon>Cobertura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Planes.aspx.cs">
+      <DependentUpon>Planes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Planes.aspx.designer.cs">
+      <DependentUpon>Planes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Administrativo\Provincia.aspx.cs">
       <DependentUpon>Provincia.aspx</DependentUpon>

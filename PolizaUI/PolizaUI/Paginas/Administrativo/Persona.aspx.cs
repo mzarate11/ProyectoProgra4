@@ -27,13 +27,13 @@ namespace PolizaUI.Paginas
             Obj_BLL.Listar_Persona(ref Obj_DAL, sMsjError);
             if (sMsjError == string.Empty)
             {
-                this.GV.DataSource = null;
-                this.GV.DataSource = Obj_DAL.DS1.Tables[0];
-                this.GV.DataBind();
+                this.GV_persona.DataSource = null;
+                this.GV_persona.DataSource = Obj_DAL.DS1.Tables[0];
+                this.GV_persona.DataBind();
             }
             else
             {
-                GV.DataSource = null;
+                GV_persona.DataSource = null;
 
             }
         }

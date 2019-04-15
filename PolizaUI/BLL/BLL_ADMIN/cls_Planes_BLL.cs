@@ -11,7 +11,7 @@ namespace BLL.BLL_ADMIN
 {
     public class cls_Planes_BLL
     {
-        public void Listar_Planes(ref cls_PolizaDAL Obj_DAL, string sMsjError)
+        public void Listar_Planes(ref cls_Planes_DAL Obj_DAL, string sMsjError)
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
             Obj_DAL.DS1 = new System.Data.DataSet();

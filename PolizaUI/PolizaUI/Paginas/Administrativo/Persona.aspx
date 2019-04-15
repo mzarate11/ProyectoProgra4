@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="persona" runat="server">
-        <asp:GridView style="text-align:center" ID="GV" runat="server">
+        <asp:GridView style="text-align:center" ID="GV_persona" runat="server">
 
         </asp:GridView>
 

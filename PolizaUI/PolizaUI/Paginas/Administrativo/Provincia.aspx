@@ -7,6 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="provincia"  runat="server">
+        
         <asp:GridView  cssclass="table"  ID="GV_provincia" runat="server">
             <Columns> 
              <asp:TemplateField HeaderStyle-ForeColor="Black">

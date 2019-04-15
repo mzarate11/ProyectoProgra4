@@ -31,11 +31,14 @@ namespace BLL.BLL_ADMIN
            Obj_DAL.DS1.Tables.Add(ObjSVC.ListarDatos(Obj_DAL.sNombre_sp, ref sMsjError));
             
         }
-        public void Filtrar_provincias(ref cls_Provincia_DAL Obj_DAL, string sMsjError)
+        public void Filtrar_provincias(ref cls_Provincia_DAL Obj_DAL, string sMsjError, string sFiltro)
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
             Crear_tabla(ref Obj_DAL);
-            Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings[].ToString();
+            //Obj_DAL.dtParametros.Rows.Add("@NOMBRE", SqlDbType.VarChar, sFiltro);
+            Obj_DAL.sNombre_P = "@NOMBRE";
+            Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Filtrar_provincia"].ToString();
+            ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp, Obj_DAL.sNombre_P, ref sMsjError);
         }
     }
 }

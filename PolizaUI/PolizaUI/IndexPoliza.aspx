@@ -2,7 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <!-- navigation -->
+    
+
     <!-- primer div -->
     <div id="home">
         <div class="container">
@@ -368,14 +369,4 @@
     <!-- scrolltop section -->
     <a href="#top" class="go-top"><i class="fa fa-angle-up"></i></a>
 
-
-    <!-- javascript js -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/nivo-lightbox.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/jquery.nav.js"></script>
-    <script src="js/isotope.js"></script>
-    <script src="js/imagesloaded.min.js"></script>
-    <script src="js/custom.js"></script>
 </asp:Content>

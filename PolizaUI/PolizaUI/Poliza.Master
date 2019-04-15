@@ -77,6 +77,58 @@
         
         </asp:ContentPlaceHolder>
     </div>
+        <!-- footer section -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <h2>Dirección</h2>
+                    <p>Plaza Roosevelt, 150 oeste, San Pedro, San José</p>
+                    <p>Email: <span>info@segurosamericanos.com</span></p>
+                    <p>Tel: <span>2256-9078</span></p>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <h2>Redes Sociales</h2>
+                    <ul class="social-icons">
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-google-plus"></a></li>
+                        <li><a href="#" class="fa fa-dribbble"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- divider section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 col-sm-1"></div>
+            <div class="col-md-10 col-sm-10">
+                <hr>
+            </div>
+            <div class="col-md-1 col-sm-1"></div>
+        </div>
+    </div>
+
+    <!-- copyright section -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <p>
+                        Copyright &copy; 2016 SegurosAmericanos
+
+                        - Design: <a rel="nofollow" href="http://www.uam.ac.cr" target="_parent">Proyecto_Progra4</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- scrolltop section -->
+    <a href="#top" class="go-top"><i class="fa fa-angle-up"></i></a>
+
          <!-- javascript js -->
     <script src="Index/js/jquery.js"></script>
     <script src="Index/js/bootstrap.min.js"></script>

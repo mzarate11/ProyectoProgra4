@@ -161,6 +161,7 @@
     <Content Include="DataTables\Select-1.3.0\js\select.jqueryui.min.js" />
     <Content Include="DataTables\Select-1.3.0\js\select.semanticui.js" />
     <Content Include="DataTables\Select-1.3.0\js\select.semanticui.min.js" />
+    <Content Include="index.html" />
     <Content Include="packages.config" />
     <Content Include="Paginas\Administrativo\Login.aspx" />
     <Content Include="Paginas\Administrativo\Planes.aspx" />
@@ -458,6 +459,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Index\" />
     <Folder Include="Models\" />
     <Folder Include="Resources\Slider\data1\" />
     <Folder Include="Resources\Slider\engine1\" />

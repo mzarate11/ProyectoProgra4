@@ -1,3 +1,4 @@
+
 use master
 go
 
@@ -10,6 +11,7 @@ GO
 
 USE PROYECTOPROGRA4
 GO
+
 
 
 CREATE SCHEMA [ADMINISTRATIVO]
@@ -899,6 +901,32 @@ FROM	[ADMINISTRATIVO].[PERSONA]
 END
 GO
 
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_Filtrar_Persona]--FILTRO
+@ID_Persona varchar(20)
+AS
+BEGIN
+SELECT	ID_Persona AS [Persona],
+		NO_CEDULA AS [Numero_Cedula],
+		Nombre AS [Name],
+		[APELLIDO1] AS [PrimerApellido],
+		[APELLIDO2] AS [SegundoApellido],
+		Correo_Electronico AS [Correo],
+		Telefono AS [Numero_Telefonico],
+		[CORREO_ELECTRONICO] AS [Correo],
+		[TELEFONO] [Numero_Telefonico],
+		[FECHA_NACIMIENTO_CONSTITUCION] AS [FechaNacimiento],
+		[APODERADO] AS [Apoderado],
+		[ID_PROVINCIA]  AS [Provincia],
+		[ID_CANTON] AS [Canton],
+		[ID_DISTRITO]  AS [Distrito],
+		[ID_GENERO]  AS [Genero],
+		[ID_ESTADO_CIVIL]  AS [Estado_Civil],
+		[ID_TIPO_IDENTIFICACION] AS [Tipo_Identificacion]
+
+FROM	[ADMINISTRATIVO].[Persona]
+WHERE ID_Persona like '%' + @ID_Persona + '%'
+END
+GO
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_Insert_Persona]--INSERT
@@ -999,6 +1027,20 @@ end
 go
 
 
+
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_Filtrar_Estado]--FILTRO
+@Estado varchar (25)
+AS
+BEGIN
+SELECT	[ID_ESTADO_CIVIL] as [ID_Estado_Civil],
+		[ESTADO] as [Estado_Civil]
+from [ADMINISTRATIVO].[ESTADO_CIVIL]
+WHERE ID_ESTADO_CIVIL like '%' + @Estado + '%'
+END
+GO
+
+
+
 create proc [ADMINISTRATIVO].[SP_SelectEstCivil]
 as 
 begin
@@ -1046,6 +1088,19 @@ VALUES (@ID_TIPO_IDENTIFICACION,@NOMBRE)
 END
 GO
 
+
+
+
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_Filtrar_T_Identificacion]--FILTRO
+@Nombre varchar (20)
+AS
+BEGIN
+SELECT	[ID_TIPO_IDENTIFICACION] as [ID_Tipo_Identificacion],
+		[Nombre] as [Nombre_Identificacion]
+from [ADMINISTRATIVO].[TIPO_IDENTIFICACION]
+WHERE ID_TIPO_IDENTIFICACION like '%' + NOMBRE + '%'
+END
+GO
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_Update_TipoIden]--UPDATE
@@ -1099,7 +1154,19 @@ END
 GO
 
 
-create proc [ADMINISTRATIVO].[SP_SelectProcGenero]
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_Filtrar_Genero]--FILTRO
+@Tipo varchar (25)
+AS
+BEGIN
+SELECT	ID_Genero as [ID_Genero],
+Tipo as [Tipo_Genero] 
+from [ADMINISTRATIVO].[Genero]
+WHERE ID_GENERO like '%' + @Tipo + '%'
+END
+go
+
+
+create procedure [ADMINISTRATIVO].[SP_SelectProcGenero]
 as 
 begin
 --Veo que solo habrian unos cuantos no hay necesidad de meter variables
@@ -1110,7 +1177,7 @@ from [ADMINISTRATIVO].[Genero]
 end
 go
 
-create proc [ADMINISTRATIVO].[SP_UpdateGenero]
+create procedure [ADMINISTRATIVO].[SP_UpdateGenero]
 as
 begin
 declare @GenID as int
@@ -1148,7 +1215,23 @@ END
 GO
 
 
-create proc [ADMINISTRATIVO].[SP_SelectUsuario]
+
+CREATE PROCEDURE [ADMINISTRATIVO].[SP_Filtrar_Usuario]--FILTRO
+@Tipo varchar (25)
+AS
+BEGIN
+SELECT	[ID_USUARIO] as [ID_USUARIO],
+[ID_PERSONA] as [ID_Persona],
+[NOMBRE] as [Name],
+[CONTRASEÑA] as [Pass],
+[ROL]as [Type]
+from [ADMINISTRATIVO].[USUARIO]
+WHERE [ROL] like '%' + @Tipo + '%'
+END
+go
+
+
+create procedure [ADMINISTRATIVO].[SP_SelectUsuario]
 as 
 begin
 --Veo que solo habrian unos cuantos no hay necesidad de meter variables
@@ -1161,6 +1244,8 @@ select
 from [ADMINISTRATIVO].[USUARIO]
 end
 go
+
+
 
 create proc [ADMINISTRATIVO].[SP_UpdateUsuario]
 as
@@ -1213,8 +1298,24 @@ SELECT   [ID_Plan]
 END
 GO
 
+CREATE PROCEDURE [COMERCIAL].[Filtrar_PLanes]
+(
+	@Nombre varchar(200)
+)
+AS
+BEGIN
 
-CREATE PROCEDURE [COMERCIAL].[Filtrar_Planes]--UPDATE
+SELECT   [ID_Plan] as [ID_Plan]
+		,[Nombre] as [Nombre_Plan]
+		,[Costo] as [Costo_Plan]
+		,[ID_Cobertura] as [Coberuta_Plan]
+		FROM [COMERCIAL].[Planes]
+		WHERE NOMBRE like '%' + @Nombre + '%'
+END
+GO
+
+
+CREATE PROCEDURE [COMERCIAL].[Update_Planes]--UPDATE
 AS
 declare @ID_Plan as int
 declare @NOMBRE as varchar(200)
@@ -1250,6 +1351,27 @@ AS BEGIN
 INSERT INTO [COMERCIAL].[TARJETA_CREDITO_DEBITO] ([ID_TARJETA_CREDITO_DEBITO],[NUMERO],[FECHA_VENCIMIENTO],[BANCO_EMISOR])
 
 VALUES (@ID_TARJETA_CREDITO_DEBITO,@Numero,@Banco_Emisor,@Fecha_Vencimiento)
+END
+GO
+
+
+
+CREATE PROCEDURE [COMERCIAL].[Filtrar_TarjetaCredDeb]--FILTRO
+(
+		@Numero int,
+		@Banco_Emisor varchar(20)
+)
+AS
+
+BEGIN
+
+SELECT	[ID_TARJETA_CREDITO_DEBITO] as [ID_Tarjeta]
+		,[Numero] as [NUMERO_TARJETA]
+		,[Banco_Emisor] as [Banco_Emisor]
+		,[Fecha_Vencimiento] as [Fecha_Vencimiento]
+		FROM [COMERCIAL].[TARJETA_CREDITO_DEBITO]
+		WHERE [Numero] like '%' + @Numero + '%'
+		OR [Banco_Emisor] like '%' + @Banco_Emisor + '%'
 END
 GO
 
@@ -1310,6 +1432,23 @@ END
 GO
 
 
+CREATE PROCEDURE [COMERCIAL].[Filtrar_Venta]--FILTRO
+(
+		@IDVenta int	
+)
+AS
+
+BEGIN
+
+SELECT	[ID_VENTA] as [ID_venta],
+		[FECHA_EMISION]as [F_Emision],
+		[ID_TARJETA_CREDITO_DEBITO] as [Tarjeta]
+		FROM [COMERCIAL].[VENTA]
+		WHERE [ID_VENTA] like '%' + @IDVenta + '%'
+		END
+GO
+
+
 CREATE PROCEDURE [COMERCIAL].[Listar_Venta]--select
 AS
 
@@ -1365,6 +1504,27 @@ INSERT INTO [COMERCIAL].[BENEFICIARIO] ([ID_BENEFICIARIO],[PORCENT_PRTICIPACION]
 
 VALUES (@ID_Benficiario,@Porcentaje,@Nombre,@Apellido1,@Apellido2)
 END
+GO
+
+
+
+CREATE PROCEDURE [COMERCIAL].[Filtrar_Beneficiario]--FILTRO
+(
+		@ID_Beneficiario int
+		
+)
+AS
+
+BEGIN
+
+SELECT	[ID_BENEFICIARIO] as [ID_Beneficiario],
+		[PORCENT_PRTICIPACION]as [PorcentajeParticipacion],
+		[NOMBRE]as [NombreBeneficiario],
+		[APELLIDO_1]as [Apellido1],
+		[APELLIDO__2]as [Apellido2]
+		FROM [COMERCIAL].[BENEFICIARIO]
+		WHERE ID_BENEFICIARIO like '%' + @ID_Beneficiario+ '%'
+		END
 GO
 
 
@@ -1428,6 +1588,24 @@ VALUES (@ID_COBERTURA,@Nombre,@Monto,@Cant_Eventos,@Cant_Beneficiarios)
 END
 GO
 
+
+CREATE PROCEDURE [COMERCIAL].[Filtrar_Cobertura]
+(
+	@NombreCobertura varchar(50)
+)
+AS
+
+BEGIN
+
+SELECT  [ID_Cobertura]
+		,[Nombre]
+		,[Monto]
+		,[Cant_Eventos]
+		,[Cant_Beneficiarios]
+		FROM [COMERCIAL].[Cobertura]
+		WHERE [Nombre] like '%' + @NombreCobertura + '%'
+END
+GO
 
 CREATE PROCEDURE [COMERCIAL].[Listar_COBERTURA]---select
 AS
@@ -1511,6 +1689,26 @@ END
 GO
 
 
+CREATE PROCEDURE [COMERCIAL].[Filtrar_Plan]
+(
+	@Nombre varchar(50)
+)
+AS
+
+BEGIN
+
+SELECT  [ID_POLIZA],
+		[NOMBRE],
+		[DESCRIPCION],
+		[ID_BENEFICIARIO],
+		[ID_PLAN],
+		[ID_VENTA]
+		FROM [COMERCIAL].[POLIZA]
+		WHERE NOMBRE like '%' + NOMBRE + '%'
+END
+GO
+
+
 
 CREATE PROCEDURE [COMERCIAL].[Update_Poliza]
 AS
@@ -1544,6 +1742,21 @@ go
 
 
 --SP de Provincia---
+
+
+
+
+CREATE PROCEDURE [ADMINISTRATIVO].[Insert_Provincia]--INSERT
+(
+@ID_Provincia int,
+@Nombre varchar (25)
+)
+AS BEGIN
+INSERT INTO [ADMINISTRATIVO].[Provincia] ([ID_PROVINCIA],[NOMBRE])
+
+VALUES (@ID_Provincia,@Nombre)
+END
+GO
 
 
 
@@ -1589,6 +1802,22 @@ go
 --SP CANTONES -
 
 
+CREATE PROCEDURE [ADMINISTRATIVO].[Insert_Canton]--INSERT
+(
+@ID_Canton int,
+@Nombre varchar (25),
+@ID_Provincia int
+)
+AS BEGIN
+INSERT INTO [ADMINISTRATIVO].[CANTON] ([ID_CANTON],[NOMBRE],[ID_PROVINCIA])
+
+VALUES (@ID_Canton,@Nombre,@ID_Provincia)
+END
+GO
+
+
+
+
 CREATE PROCEDURE [ADMINISTRATIVO].[Update_Canton]
 AS
 declare @ID_CANTON as  INT
@@ -1630,6 +1859,20 @@ GO
 
 --sp distrito ---
 
+
+CREATE PROCEDURE [ADMINISTRATIVO].[Insert_Distrito]--INSERT
+(
+@ID_Distrito int,
+@Nombre varchar (25),
+@ID_Canton int
+)
+AS BEGIN
+INSERT INTO [ADMINISTRATIVO].[DISTRITO] ([ID_DISTRITO],[NOMBRE],[ID_CANTON])
+
+VALUES (@ID_Distrito,@Nombre,@ID_Canton)
+END
+GO
+
 CREATE PROCEDURE [ADMINISTRATIVO].[Listar_Distrito]
 AS
 
@@ -1669,4 +1912,51 @@ go
 
 
 
+
+
+CREATE PROCEDURE [Filtrar_Provicia]
+(
+		@NombreProvincia varchar(20)
+)
+AS
+
+BEGIN
+
+SELECT	[ID_Provincia]
+		,[Nombre]
+		FROM [ADMINISTRATIVO].[Provincia]
+		WHERE [NOMBRE] like '%' + @NombreProvincia + '%'
+END
+GO
+
+CREATE PROCEDURE [Filtrar_Canton]
+(
+	@NombreCanton varchar(20)
+)
+AS
+BEGIN
+
+SELECT   [ID_Canton]
+		,[Nombre]
+		,[ID_Provincia]
+		FROM [ADMINISTRATIVO].[Canton]
+		WHERE [Nombre] like '%' + @NombreCanton + '%'
+END
+GO
+
+CREATE PROCEDURE [Filtrar_Distrito]
+(
+	@NombreDistrito varchar(20)
+)
+AS
+
+BEGIN
+
+SELECT  [ID_Distrito]
+		,[Nombre]
+		,[ID_Canton]
+		FROM [ADMINISTRATIVO].[Distrito]
+		WHERE [Nombre] like '%' + @NombreDistrito + '%'
+END
+GO
 

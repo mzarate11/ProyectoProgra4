@@ -3,7 +3,7 @@
         <meta http-equiv="content-type" content="text/html"; charset="utf-8"/>
    <link type="text/css" rel="../../Resources/bootstrap.min.css" />
     <script type="text/javascript" src="../../Resources/jquery.min.js"></script>
-    <script type="text/javascript" src="../../Resources/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Resources/bootstrap.min.js"
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="provincia"  runat="server">

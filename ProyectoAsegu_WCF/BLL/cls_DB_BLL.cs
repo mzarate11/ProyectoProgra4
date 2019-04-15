@@ -102,7 +102,7 @@ namespace BLL
                 {
 
                    
-                    foreach (DataRow dr in Obj_DB_DAL.dtParametros.Rows)
+                    foreach (DataRow dr in dtParametros.Rows)
                     {
                         SqlDbType sqlDataType = SqlDbType.VarChar;
                         switch (dr[1].ToString())

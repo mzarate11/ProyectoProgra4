@@ -13,8 +13,8 @@ namespace DAL.DAL_ADMIN
         private string _sNombre_sp, _sNTablar, _sNombre_P;
 
         private DataSet DS;
-        
 
+        private DataTable _dtParametros;
         public string sNombre_P
         {
             get
@@ -51,6 +51,19 @@ namespace DAL.DAL_ADMIN
             set
             {
                 DS = value;
+            }
+        }
+
+        public DataTable dtParametros
+        {
+            get
+            {
+                return _dtParametros;
+            }
+
+            set
+            {
+                _dtParametros = value;
             }
         }
     }

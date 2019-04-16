@@ -902,7 +902,7 @@ END
 GO
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_Filtrar_Persona]--FILTRO
-@ID_Persona varchar(20)
+@ID_Persona int
 AS
 BEGIN
 SELECT	ID_Persona AS [Persona],
@@ -960,25 +960,27 @@ END
 GO
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_Update_Persona]--UPDATE
+(
 
+@ID_Persona INT,
+@Num_Cedula INT,
+@Nombre VARCHAR (25),
+@APELLIDO1 varchar(25),
+@APELLIDO2 varchar(25),
+@Correo_Electronico varchar (40),
+@Telefono int,
+@FechaNacimiento DATETIME,
+@Apoderado varchar (50),
+@ID_PROVINCIA int ,
+@ID_CANTON int, 
+@ID_DISTRITO  int ,
+@ID_GENERO  int,
+@ID_ESTADO_CIVIL  int,
+@Tipo_Identificacion int,
+@Dato  varchar (25)
+
+)
 AS BEGIN
-
-declare @ID_Persona as INT
-declare @Num_Cedula as INT
-declare @Nombre as VARCHAR (25)
-declare @APELLIDO1 as varchar(25)
-declare @APELLIDO2 as  varchar(25)
-declare @Correo_Electronico as varchar (40)
-declare @Telefono as int
-declare @FechaNacimiento as DATETIME
-declare @Apoderado as varchar (50)
-declare @ID_PROVINCIA as int 
-declare @ID_CANTON as int 
-declare @ID_DISTRITO as int 
-declare @ID_GENERO as int
-declare @ID_ESTADO_CIVIL as int
-declare @Tipo_Identificacion as int
-declare @Dato as varchar 
 
 declare @UPDATE as varchar
 							 
@@ -1001,9 +1003,10 @@ END
 GO
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_Delete_Persona]--DELETE
+(@ID_Persona  INT) 
 as 
 begin
-declare  @ID_Persona as INT 
+  
 delete from [ADMINISTRATIVO].[PERSONA] 
 where ID_Persona = @ID_Persona
 end
@@ -1029,7 +1032,7 @@ go
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_Filtrar_Estado]--FILTRO
-@Estado varchar (25)
+@Estado int
 AS
 BEGIN
 SELECT	[ID_ESTADO_CIVIL] as [ID_Estado_Civil],
@@ -1053,19 +1056,22 @@ end
 go
 
 create proc [ADMINISTRATIVO].[SP_UpdateEstCivil]
+(
+@EstID int,
+@EstEstado varchar(25)
+)
 as
 begin
-declare @EstID as int
-declare @EstEstado as varchar
 update [ADMINISTRATIVO].[ESTADO_CIVIL] set Estado = @EstEstado 
 where [ID_ESTADO_CIVIL] = @EstID
 end
 go
 
 create proc [ADMINISTRATIVO].[SP_DeleteEstCivil]
+( @EstID int)
 as 
 begin
-declare @EstID as int
+
 delete from [ADMINISTRATIVO].[ESTADO_CIVIL]
 where [ID_ESTADO_CIVIL] = @EstID
 end
@@ -1092,23 +1098,23 @@ GO
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_Filtrar_T_Identificacion]--FILTRO
-@Nombre varchar (20)
+@ID_TIPO_IDENTIFICACION int
 AS
 BEGIN
 SELECT	[ID_TIPO_IDENTIFICACION] as [ID_Tipo_Identificacion],
 		[Nombre] as [Nombre_Identificacion]
 from [ADMINISTRATIVO].[TIPO_IDENTIFICACION]
-WHERE ID_TIPO_IDENTIFICACION like '%' + NOMBRE + '%'
+WHERE ID_TIPO_IDENTIFICACION like '%' + @ID_TIPO_IDENTIFICACION + '%'
 END
 GO
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_Update_TipoIden]--UPDATE
-
+(
+@ID_TIPO_IDENTIFICACION INT,
+@NOMBRE varchar(25)
+)
 AS BEGIN
-declare @ID_TIPO_IDENTIFICACION as INT
-declare @NOMBRE as VARCHAR(25)
-
 declare @Dato as varchar
 UPDATE [ADMINISTRATIVO].[TIPO_IDENTIFICACION] set ID_TIPO_IDENTIFICACION = @Dato
 WHERE (ID_TIPO_IDENTIFICACION = @ID_TIPO_IDENTIFICACION and Nombre = @Nombre)
@@ -1126,9 +1132,10 @@ end
 go
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_Delete_TipoIdent]--DELETE
+@ID_TIPO_IDENTIFICACION INT 
 as 
 begin
-declare  @ID_TIPO_IDENTIFICACION as INT 
+  
 delete from [ADMINISTRATIVO].[TIPO_IDENTIFICACION]
 where [ID_TIPO_IDENTIFICACION] = @ID_TIPO_IDENTIFICACION
 end
@@ -1155,13 +1162,13 @@ GO
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_Filtrar_Genero]--FILTRO
-@Tipo varchar (25)
+@ID_GENERO int
 AS
 BEGIN
 SELECT	ID_Genero as [ID_Genero],
 Tipo as [Tipo_Genero] 
 from [ADMINISTRATIVO].[Genero]
-WHERE ID_GENERO like '%' + @Tipo + '%'
+WHERE ID_GENERO like '%' + @ID_GENERO + '%'
 END
 go
 
@@ -1178,19 +1185,21 @@ end
 go
 
 create procedure [ADMINISTRATIVO].[SP_UpdateGenero]
+(
+@GenID INT,
+@GenTipo varchar(25)
+)
 as
 begin
-declare @GenID as int
-declare @GenTipo as varchar
 update [ADMINISTRATIVO].[Genero] set Tipo = @GenTipo 
 where ID_Genero = @GenID
 end
 go
 
 create proc [ADMINISTRATIVO].[SP_DeleteProcGenero]
+@GenID INT
 as 
 begin
-declare @GenID as int
 delete from [ADMINISTRATIVO].[Genero]
 where ID_Genero = @GenID
 end
@@ -1217,7 +1226,7 @@ GO
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_Filtrar_Usuario]--FILTRO
-@Tipo varchar (25)
+@Tipo int
 AS
 BEGIN
 SELECT	[ID_USUARIO] as [ID_USUARIO],
@@ -1248,22 +1257,24 @@ go
 
 
 create proc [ADMINISTRATIVO].[SP_UpdateUsuario]
+(
+@ID_USUARIO INT,
+@ID_PERSONA INT,
+@NOMBRE varchar(25),
+@CONTRASEÑA varchar(25),
+@ROL int
+)
 as
 begin
-declare @ID_USUARIO as int
-declare @ID_PERSONA as int
-declare @NOMBRE  as  varchar
-declare @CONTRASEÑA  as  varchar
-declare @Rol as int
 update [ADMINISTRATIVO].[USUARIO] set Rol = @Rol 
 where @ID_USUARIO = @Rol
 end
 go
 
 create proc [ADMINISTRATIVO].[SP_DeleteUsuario]
+@ID_USUARIO  int
 as 
 begin
-declare @ID_USUARIO as int
 delete from [ADMINISTRATIVO].[USUARIO]
 where [ID_USUARIO] = @ID_USUARIO
 end
@@ -1316,12 +1327,16 @@ GO
 
 
 CREATE PROCEDURE [COMERCIAL].[Update_Planes]--UPDATE
+(
+@ID_Plan INT,
+@NOMBRE varchar(200),
+@Costo money,
+@ID_Cobertura int,
+@plan  int
+)
 AS
-declare @ID_Plan as int
-declare @NOMBRE as varchar(200)
-declare @Costo as  money
-declare @ID_Cobertura as int
-declare @plan as int
+
+
 BEGIN
 update [COMERCIAL].[PLANES] set ID_PLAN = @plan 
 where ID_PLAN = @plan
@@ -1330,9 +1345,9 @@ GO
 
 
 create proc [COMERCIAL].[SP_DeletePlan]--delete
+@ID_PLAN  int
 as 
-begin
-declare @ID_PLAN as int
+begin 
 delete from [COMERCIAL].[PLANES]
 where [ID_PLAN] = @ID_PLAN
 end
@@ -1359,7 +1374,7 @@ GO
 CREATE PROCEDURE [COMERCIAL].[Filtrar_TarjetaCredDeb]--FILTRO
 (
 		@Numero int,
-		@Banco_Emisor varchar(20)
+		@Banco_Emisor varchar(50)
 )
 AS
 
@@ -1392,12 +1407,14 @@ GO
 
 
 CREATE PROCEDURE [COMERCIAL].[Update_TarjetaCredDeb]
+(
+@ID_TARJETA_CREDITO_DEBITO int,
+@Numero int ,
+@Banco_Emisor varchar(50),
+@Fecha_Vencimiento date,
+@tarjeta  int
+)
 AS
-declare @ID_TARJETA_CREDITO_DEBITO as int
-declare @Numero as varchar(200)
-declare @Banco_Emisor as  money
-declare @Fecha_Vencimiento as int
-declare @tarjeta as int
 BEGIN
 update [COMERCIAL].[TARJETA_CREDITO_DEBITO] set ID_TARJETA_CREDITO_DEBITO = @tarjeta 
 where ID_TARJETA_CREDITO_DEBITO = @tarjeta
@@ -1464,11 +1481,13 @@ GO
 
 
 CREATE PROCEDURE [COMERCIAL].[Update_Venta]
+(
+@ID_Venta int,
+@Fecha_Emision date ,
+@ID_TARJETA_CREDITO_DEBITO int ,
+@venta int
+)
 AS
-declare @ID_Venta as int
-declare @Fecha_Emision as date
-declare @ID_TARJETA_CREDITO_DEBITO as int
-declare @venta int
 BEGIN
 update [COMERCIAL].[VENTA] set ID_VENTA = @venta 
 where ID_VENTA = @venta
@@ -1545,13 +1564,15 @@ GO
 
 
 CREATE PROCEDURE [COMERCIAL].[Update_Beneficiario]
+(
+@ID_Benficiario int,
+@Porcentaje int ,
+@Nombre varchar(50),
+@Apellido1 varchar(50),
+@Apellido2 varchar(50),
+@id_BENE  int
+)
 AS
-declare @ID_Benficiario as int
-declare @Porcentaje as INT
-declare @Nombre as varchar(50)
-declare @Apellido1 varchar(50)
-declare @Apellido2 varchar(50)
-DECLARE @id_BENE as int
 BEGIN
 update [COMERCIAL].[BENEFICIARIO] set [ID_BENEFICIARIO] = @id_BENE 
 where [ID_BENEFICIARIO] = @id_BENE
@@ -1591,7 +1612,7 @@ GO
 
 CREATE PROCEDURE [COMERCIAL].[Filtrar_Cobertura]
 (
-	@NombreCobertura varchar(50)
+	@NombreCobertura varchar(25)
 )
 AS
 
@@ -1624,14 +1645,15 @@ GO
 
 
 CREATE PROCEDURE [COMERCIAL].[Update_COBERTURA]
+(
+@ID_COBERTURA int,
+@Nombre varchar(25),
+@Monto money,
+@Cant_Eventos int,
+@Cant_Beneficiarios int,
+@id_cober  int
+)
 AS
-
-declare @ID_COBERTURA as int
-declare @Nombre as varchar(25)
-declare @Monto money
-declare @Cant_Eventos as int
-DECLARE @Cant_Beneficiarios as int
-declare @id_cober as int
 BEGIN
 update [COMERCIAL].[COBERTURA] set [ID_COBERTURA] = @id_cober 
 where [ID_COBERTURA] = @id_cober
@@ -1711,15 +1733,16 @@ GO
 
 
 CREATE PROCEDURE [COMERCIAL].[Update_Poliza]
-AS
-
-declare @ID_POLIZA as int
-declare @Nombre as varchar(50)
-declare @DESCRIPCION as VARCHAR(25)
-declare @ID_BENEFICIARIO as int
-DECLARE @ID_PLAN as int
-declare @ID_VENTA as int
-declare @ID_poli as int
+(
+@ID_POLIZA int,
+@Nombre varchar(50),
+@DESCRIPCION VARCHAR(25),
+@ID_BENEFICIARIO int,
+@ID_PLAN int,
+@ID_VENTA INT,
+@ID_poli  int
+)
+AS 
 BEGIN
 update [COMERCIAL].[POLIZA] set [ID_POLIZA] = @ID_poli 
 where [ID_POLIZA] = @ID_poli
@@ -1774,10 +1797,10 @@ GO
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[Update_Provincia]
-AS
-declare @ID_PROVINCIA as  INT
-declare @NOMBRE as VARCHAR(25) 
-declare @ID_provi  as  int
+@ID_Provincia int,
+@Nombre varchar (25),
+@ID_provi int
+AS 
 BEGIN
 update [ADMINISTRATIVO].[PROVINCIA] set ID_PROVINCIA = @ID_provi 
 where ID_PROVINCIA = @ID_provi
@@ -1787,9 +1810,11 @@ GO
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_DeleteProvincia]--delete
+(
+@ID_provi int
+)
 as 
-begin
-declare @ID_provi int
+begin 
 delete from [ADMINISTRATIVO].[PROVINCIA]
 where [ID_PROVINCIA] = @ID_provi
 end
@@ -1819,11 +1844,13 @@ GO
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[Update_Canton]
+(
+@ID_Canton int,
+@Nombre varchar (25),
+@ID_Provincia int,
+@ID_cant int
+)
 AS
-declare @ID_CANTON as  INT
-declare @NOMBRE as VARCHAR(25) 
-declare @ID_PROVINCIA  as  int
-declare @ID_cant as int
 BEGIN
 update [ADMINISTRATIVO].[CANTON] set ID_PROVINCIA = @ID_cant 
 where [ID_CANTON] = @ID_cant
@@ -1833,9 +1860,9 @@ GO
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_DeleteCanton]--delete
+(@ID_cant int)
 as 
-begin
-declare @ID_cant int
+begin 
 delete from [ADMINISTRATIVO].[CANTON]
 where [ID_CANTON] = @ID_cant
 end
@@ -1888,11 +1915,13 @@ GO
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[Update_Distrito]
+(
+@ID_Distrito int,
+@Nombre varchar (25),
+@ID_Canton int,
+@ID_distri  int
+)
 AS
-declare @ID_DISTRITO AS INT
-DECLARE @NOMBRE AS VARCHAR (20)
-DECLARE @ID_CANTON AS INT 
-declare @ID_distri as int
 BEGIN
 update [ADMINISTRATIVO].[DISTRITO] set ID_DISTRITO = @ID_distri 
 where [ID_CANTON] = @ID_distri
@@ -1902,9 +1931,9 @@ GO
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_DeleteDistrito]--delete
+@ID_distri int
 as 
-begin
-declare @ID_distri int
+begin 
 delete from [ADMINISTRATIVO].[DISTRITO]
 where [ID_CANTON] = @ID_distri
 end

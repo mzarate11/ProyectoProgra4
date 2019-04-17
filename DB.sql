@@ -172,6 +172,7 @@ CREATE TABLE [COMERCIAL].[VENTA]
 [ID_VENTA]  int NOT NULL,
 [FECHA_EMISION] DATE NOT NULL,
 [ID_TARJETA_CREDITO_DEBITO]  int NOT NULL,
+[ID_USUARIO] int NOT NULL,
 CONSTRAINT [PK_ID_VENTA] PRIMARY KEY CLUSTERED
 (
 	ID_VENTA
@@ -246,6 +247,12 @@ ADD CONSTRAINT [FK_ID_TARJETA_CREDITO_DEBITO]
 	FOREIGN KEY (ID_TARJETA_CREDITO_DEBITO)
 	REFERENCES [COMERCIAL].[TARJETA_CREDITO_DEBITO]
 GO
+ALTER TABLE [COMERCIAL].[VENTA]
+ADD CONSTRAINT [FK_USUARIO]
+	FOREIGN KEY (ID_USUARIO)
+	REFERENCES [ADMINISTRATIVO].[USUARIO]
+	GO
+
 ALTER TABLE [COMERCIAL].[POLIZA]
 ADD CONSTRAINT [FK_ID_BENEFICIARIO]
 	FOREIGN KEY (ID_BENEFICIARIO)
@@ -851,9 +858,9 @@ INSERT INTO [COMERCIAL].[PLANES] ([ID_PLAN],[NOMBRE],[COSTO],[ID_COBERTURA]) VAL
 (7,'Poliza de seguro médico voluntario (completa)',417000,1),
 (8,'Poliza de seguro médico voluntario (Parcial)',417000,2),
 (9,'Poliza de seguro médico voluntario (Personal)',84000,3),
-(10,'Poliza de seguro de vida 01-16VIC-299 (completa)',417000,1),
-(11,'Poliza de seguro de vida 01-16VIC-299 (Parcial)',417000,2),
-(12,'Poliza de seguro de vida 01-16VIC-299 (Personal)',84000,3),
+(10,'Poliza de seguro de Automovilistico (completa)',417000,1),
+(11,'Poliza de seguro de Automovilistico (Parcial)',417000,2),
+(12,'Poliza de seguro Automovilistico (Personal)',84000,3),
 (13,'Reclamos  y solicitud de beneficiarios (completa)',417000,1),
 (14,'Reclamos  y solicitud de beneficiarios (Parcial)',417000,2),
 (15,'Reclamos  y solicitud de beneficiarios (Personal)',84000,3),
@@ -1802,7 +1809,7 @@ CREATE PROCEDURE [ADMINISTRATIVO].[Update_Provincia]
 @ID_provi int
 AS 
 BEGIN
-update [ADMINISTRATIVO].[PROVINCIA] set ID_PROVINCIA = @ID_provi 
+update [ADMINISTRATIVO].[PROVINCIA] set [NOMBRE] = @Nombre 
 where ID_PROVINCIA = @ID_provi
 end
 GO
@@ -1852,7 +1859,7 @@ CREATE PROCEDURE [ADMINISTRATIVO].[Update_Canton]
 )
 AS
 BEGIN
-update [ADMINISTRATIVO].[CANTON] set ID_PROVINCIA = @ID_cant 
+update [ADMINISTRATIVO].[CANTON] set [NOMBRE] = @Nombre  
 where [ID_CANTON] = @ID_cant
 end
 GO
@@ -1923,7 +1930,7 @@ CREATE PROCEDURE [ADMINISTRATIVO].[Update_Distrito]
 )
 AS
 BEGIN
-update [ADMINISTRATIVO].[DISTRITO] set ID_DISTRITO = @ID_distri 
+update [ADMINISTRATIVO].[DISTRITO] set [NOMBRE] = @Nombre  
 where [ID_CANTON] = @ID_distri
 end
 GO
@@ -1943,7 +1950,7 @@ go
 
 
 
-CREATE PROCEDURE [Filtrar_Provicia]
+CREATE PROCEDURE [ADMINISTRATIVO].[Filtrar_Provicia]
 (
 		@NombreProvincia varchar(20)
 )
@@ -1958,7 +1965,7 @@ SELECT	[ID_Provincia]
 END
 GO
 
-CREATE PROCEDURE [Filtrar_Canton]
+CREATE PROCEDURE [ADMINISTRATIVO].[Filtrar_Canton]
 (
 	@NombreCanton varchar(20)
 )
@@ -1973,7 +1980,7 @@ SELECT   [ID_Canton]
 END
 GO
 
-CREATE PROCEDURE [Filtrar_Distrito]
+CREATE PROCEDURE [ADMINISTRATIVO].[Filtrar_Distrito]
 (
 	@NombreDistrito varchar(20)
 )

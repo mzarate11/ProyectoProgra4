@@ -34,9 +34,7 @@ namespace BLL.BLL_ADMIN
         public void Filtrar_Canton(ref cls_Canton_DAL Obj_DAL, string sMsjError, string sFiltro)
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
-            Obj_DAL.DS1 = new System.Data.DataSet();
-            Crear_tabla(ref Obj_DAL);
-            Obj_DAL.dtParametros.Rows.Add("NOMBRE", SqlDbType.VarChar, sFiltro);
+            Obj_DAL.DS1 = new DataSet();
             Obj_DAL.sNombre_P = "Nombre";
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Filtrar_Cantones"].ToString();
             Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp,Obj_DAL.sNombre_P,SqlDbType.VarChar,sFiltro, ref sMsjError));
@@ -59,6 +57,14 @@ namespace BLL.BLL_ADMIN
             Obj_DAL.dtParametros.Rows.Add("ID_CANTON", 1, sValor);
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Delete_Cantones"].ToString();
             ObjSVC.Consultas_sin_I(Obj_DAL.sNombre_sp, Obj_DAL.dtParametros, ref sMsjError);
+        }
+        public void filtro_drop(ref cls_Canton_DAL Obj_DAL, string iFiltro, ref string sMsjError)
+        {
+            Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
+            Obj_DAL.sNombre_P = "@ID_PROVINCIA";
+            Obj_DAL.DS1 = new DataSet();
+            Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["drop_cant"].ToString();
+            Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp, Obj_DAL.sNombre_P, SqlDbType.Int, iFiltro, ref sMsjError));
         }
 
     }

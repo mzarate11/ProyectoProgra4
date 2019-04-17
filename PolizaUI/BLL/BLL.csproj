@@ -45,10 +45,12 @@
   <ItemGroup>
     <Compile Include="BLL_ADMIN\cls_Canton_BLL.cs" />
     <Compile Include="BLL_ADMIN\cls_Distrito_BLL.cs" />
+    <Compile Include="BLL_ADMIN\cls_Genero_BLL.cs" />
     <Compile Include="BLL_ADMIN\cls_Persona_BLL.cs" />
     <Compile Include="BLL_ADMIN\cls_Planes_BLL.cs" />
     <Compile Include="BLL_ADMIN\cls_Provincia_BLL.cs" />
     <Compile Include="BLL_ADMIN\cls_Poliza_BLL.cs" />
+    <Compile Include="BLL_ADMIN\cls_TipoID_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\Svc_DataBase\Reference.cs">
       <AutoGen>True</AutoGen>

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="Index/css/nivo_themes/default/default.css"/>
     <link rel="stylesheet" href="Index/css/style.css"/>
     <script type="text/javascript" src="Resources/Validaciones.js"></script>
+    <script type="text/javascript" src="Scripts/Login.js"></script>
      <!--<link rel="stylesheet" href="Resources/MasterStyle.css"/-->
     <!-- google web font css -->
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'/>
@@ -68,7 +69,8 @@
                         </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                        <li><a href="../../Paginas/Administrativo/Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        <li id="admin"><a href="../../Paginas/Administrativo/Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        <li><label id="Usuario"></label></li>
                     </ul>
             </div>
         </div>

@@ -40,16 +40,13 @@
             <div class="form-horizontal">
               <label>Fecha de nacimiento<input class="form-control" type="date" runat="server"  id="Text6"/></label>
                      
-<asp:DropDownList style="background-color:#104b59;" runat="server" class="btn btn-primary dropdown-toggle">
-      <asp:listitem Text="Provincia" value="0"></asp:listitem>
+<asp:DropDownList style="background-color:#104b59;" AutoPostBack="true" OnSelectedIndexChanged="dd_pro_SelectedIndexChanged" ID="dd_pro" runat="server" class="btn btn-primary dropdown-toggle">
   </asp:DropDownList>
 
-<asp:DropDownList style="background-color:#104b59;" runat="server" class="btn btn-primary dropdown-toggle">
-      <asp:listitem Text="Cantón" value="0"></asp:listitem>
+<asp:DropDownList style="background-color:#104b59;" AutoPostBack="true" OnSelectedIndexChanged="dd_can_SelectedIndexChanged" ID="dd_can" runat="server" class="btn btn-primary dropdown-toggle">
   </asp:DropDownList>  
 
-  <asp:DropDownList style="background-color:#104b59;" runat="server" class="btn btn-primary dropdown-toggle">
-      <asp:listitem Text="Distrito" value="0"></asp:listitem>
+  <asp:DropDownList style="background-color:#104b59;" ID="dd_dis" runat="server" class="btn btn-primary dropdown-toggle">
   </asp:DropDownList>
 
   <asp:DropDownList style="background-color:#104b59;" runat="server" class="btn btn-primary dropdown-toggle">
@@ -60,8 +57,11 @@
 <br/>
   <div class="form-horizontal">
       <label>Apoderado<input type="text" class="form-control" runat="server"  disabled="disabled"  id="txt_A" onkeypress="return controlEspacio()" /></label>
-      <asp:DropDownList style="background-color:#104b59;" runat="server" class="btn btn-primary dropdown-toggle">
-      <asp:listitem text="Tipo de Identificación" value="0"></asp:listitem>
+      <asp:DropDownList style="background-color:#104b59;" ID="dd_tid" runat="server" class="btn btn-primary dropdown-toggle">
+      
+  </asp:DropDownList>
+      <asp:DropDownList style="background-color:#104b59;" ID="dd_ec" runat="server" class="btn btn-primary dropdown-toggle">
+      
   </asp:DropDownList>  
   </div>               
 <br />

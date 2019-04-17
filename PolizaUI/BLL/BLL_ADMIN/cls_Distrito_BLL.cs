@@ -9,7 +9,7 @@ using System.Data;
 
 namespace BLL.BLL_ADMIN
 {
-    class cls_Distrito_BLL
+   public class cls_Distrito_BLL
     {
         public void Crear_tabla(ref cls_Distrito_DAL Obj_DAL)
         {
@@ -33,8 +33,6 @@ namespace BLL.BLL_ADMIN
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
             Obj_DAL.DS1 = new System.Data.DataSet();
-            Crear_tabla(ref Obj_DAL);
-            Obj_DAL.dtParametros.Rows.Add("NOMBRE", SqlDbType.VarChar, sFiltro);
             Obj_DAL.sNombre_P = "Nombre";
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Filtrar_ Distrito"].ToString();
             Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp, Obj_DAL.sNombre_P,SqlDbType.VarChar,sFiltro, ref sMsjError));
@@ -57,6 +55,14 @@ namespace BLL.BLL_ADMIN
             Obj_DAL.dtParametros.Rows.Add("ID_Distrito", 1, sValor);
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Delete_Distrito"].ToString();
             ObjSVC.Consultas_sin_I(Obj_DAL.sNombre_sp, Obj_DAL.dtParametros, ref sMsjError);
+        }
+        public void Filtro_drop(ref cls_Distrito_DAL Obj_DAL, string iFiltro, ref string sMsjError)
+        {
+            Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
+            Obj_DAL.DS1 = new DataSet();
+            Obj_DAL.sNombre_P = "@ID_CANTON";
+            Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["drop_distr"].ToString();
+           Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp, Obj_DAL.sNombre_P, SqlDbType.Int, iFiltro, ref sMsjError));
         }
     }
 }

@@ -35,8 +35,6 @@ namespace BLL.BLL_ADMIN
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
             Obj_DAL.DS1 = new System.Data.DataSet();
-            Crear_tabla(ref Obj_DAL);
-           Obj_DAL.dtParametros.Rows.Add("@NombreProvincia", 2, sFiltro);
             Obj_DAL.sNombre_P = "@NombreProvincia";
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Filtrar_provincia"].ToString();
             Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp, Obj_DAL.sNombre_P,SqlDbType.VarChar , sFiltro, ref sMsjError));

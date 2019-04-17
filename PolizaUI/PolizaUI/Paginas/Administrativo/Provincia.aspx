@@ -20,7 +20,7 @@
                 <asp:TemplateField HeaderText="Editar columnas" HeaderStyle-ForeColor="Black">
           
                     <ItemTemplate>
-                        <input type="button" class="btn btn-success" id="btn_E" runat="server" value="Editar" />
+                        <input type="button" style="display:none" class="btn btn-success" id="btn_E" runat="server" value="Editar" />
                         <input type="button"  class="btn btn-danger" id="btn_D" data-toggle="modal" data-target="#delete" value="Eliminar" runat="server"/>
                         <!--el Command name es lo que genera el select de cada Row -->
                         <asp:button CssClass="btn btn-primary" CommandName="Select" Text="seleccionar"  runat="server"/>

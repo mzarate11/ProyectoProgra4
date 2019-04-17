@@ -55,7 +55,7 @@ namespace BLL.BLL_ADMIN
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
             Crear_tabla(ref Obj_DAL);
-            Obj_DAL.dtParametros.Rows.Add("ID_PROVINCIA", 1, sValor);
+            Obj_DAL.dtParametros.Rows.Add("ID_provi", 1, sValor);
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Delete_Provincia"].ToString();
             ObjSVC.Consultas_sin_I(Obj_DAL.sNombre_sp, Obj_DAL.dtParametros, ref sMsjError);
         }

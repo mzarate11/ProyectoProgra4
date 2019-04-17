@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BLL_ADMIN\cls_Canton_BLL.cs" />
     <Compile Include="BLL_ADMIN\cls_Distrito_BLL.cs" />
+    <Compile Include="BLL_ADMIN\cls_estadoC_BLL.cs" />
     <Compile Include="BLL_ADMIN\cls_Genero_BLL.cs" />
     <Compile Include="BLL_ADMIN\cls_Persona_BLL.cs" />
     <Compile Include="BLL_ADMIN\cls_Planes_BLL.cs" />

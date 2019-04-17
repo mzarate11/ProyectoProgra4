@@ -42,8 +42,26 @@ namespace PolizaUI.Paginas.Administrativo
             {
                 //errores.
             }
+            cls_tipoID_DAL Obj_DALid = new cls_tipoID_DAL();
+            cls_TipoID_BLL Obj_BLLid = new cls_TipoID_BLL();
+            Obj_BLLid.Listar_TipoID(ref Obj_DALid, sMsjError);
+            if (sMsjError == string.Empty)
+            {
+                this.dd_pro.DataSource = null;
+                this.dd_pro.DataSource = Obj_DALid.DS1;
+                this.dd_pro.DataValueField = "ID_TIPO_IDENTIFICACION";
+                this.dd_pro.DataTextField = "Nombre";
+                this.dd_pro.DataBind();
+                this.dd_pro.Items.Insert(0, new ListItem("Provincia", "0"));
+
+
+            }
+            else
+            {
+                //errores.
+            }
             
-            
+
         }
 
         protected void dd_pro_SelectedIndexChanged(object sender, EventArgs e)

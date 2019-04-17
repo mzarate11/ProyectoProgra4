@@ -36,10 +36,10 @@ namespace BLL.BLL_ADMIN
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
             Obj_DAL.DS1 = new System.Data.DataSet();
             Crear_tabla(ref Obj_DAL);
-           Obj_DAL.dtParametros.Rows.Add("NOMBRE", SqlDbType.VarChar, sFiltro);
+           Obj_DAL.dtParametros.Rows.Add("@NombreProvincia", SqlDbType.VarChar, sFiltro);
             Obj_DAL.sNombre_P = "Nombre";
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Filtrar_provincia"].ToString();
-            Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp, Obj_DAL.sNombre_P, ref sMsjError));
+            ObjSVC.Consultas_sin_I(Obj_DAL.sNombre_sp, Obj_DAL.dtParametros, ref sMsjError);
         }
         public void Insertar_provincias(ref cls_Provincia_DAL Obj_DAL,string sValor1,string sValor2, ref string sMsjError)
         {

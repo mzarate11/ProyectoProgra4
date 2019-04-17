@@ -76,6 +76,33 @@ namespace PolizaUI.Paginas.Administrativo {
         protected global::System.Web.UI.HtmlControls.HtmlInputButton btn_a;
         
         /// <summary>
+        /// TxtIDE control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TxtIDE;
+        
+        /// <summary>
+        /// TxtNE control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TxtNE;
+        
+        /// <summary>
+        /// BtnE control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton BtnE;
+        
+        /// <summary>
         /// btn_S control.
         /// </summary>
         /// <remarks>

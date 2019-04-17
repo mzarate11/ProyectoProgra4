@@ -4,6 +4,7 @@
    <link type="text/css" rel="../../Resources/bootstrap.min.css" />
     <script type="text/javascript" src="../../Resources/jquery.min.js"></script>
     <script type="text/javascript" src="../../Resources/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/Login.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br>  <!--hay que ver de que manera resolvemoos esto -->
@@ -20,7 +21,7 @@
                 <asp:TemplateField HeaderText="Editar columnas" HeaderStyle-ForeColor="Black">
           
                     <ItemTemplate>
-                        <input type="button" style="display:none" class="btn btn-success" id="btn_E" runat="server" value="Editar" />
+                        <input type="button" class="btn btn-success" style="display:none" id="btn_E" runat="server" value="Editar" />
                         <input type="button"  class="btn btn-danger" id="btn_D" data-toggle="modal" data-target="#delete" value="Eliminar" runat="server"/>
                         <!--el Command name es lo que genera el select de cada Row -->
                         <asp:button CssClass="btn btn-primary" CommandName="Select" Text="seleccionar"  runat="server"/>
@@ -39,8 +40,8 @@
         <h4 class="modal-title">Insertar Nuevo Resgistro</h4>
       </div>
       <div class="modal-body">
-       <label>ID_provincia:  <input type="text" id="txt_ID" runat="server" class="form-control" /></label> 
-        <label>Nombre:  <input type="text" id="txt_nombre" runat="server" class="form-control" /></label>
+       <label>ID_provincia:  <input type="text" id="txt_ID" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label> 
+        <label>Nombre:  <input type="text" id="txt_nombre" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
 <input type="button" value="aceptar" runat="server" id="btn_a" class="btn btn-success" onserverclick="btn_a_ServerClick" />
       </div>
       <div class="modal-footer">

@@ -42,7 +42,7 @@
                     <span class="icon icon-bar"></span>
                     <span class="icon icon-bar"></span>
                 </button>
-                <a href="IndexPoliza.aspx" class="navbar-brand smoothScroll">Seguros Americanos</a>
+                <a href="../../IndexPoliza.aspx" class="navbar-brand smoothScroll">Seguros Americanos</a>
             </div>
             <div class="collapse navbar-collapse">
 

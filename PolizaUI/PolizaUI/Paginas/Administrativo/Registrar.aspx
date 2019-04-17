@@ -15,7 +15,8 @@
             <div id="h">
                 <h1 class="H1Global">Registro de Usuario Nuevo</h1>
             </div>
-            
+            <br>
+            <br>
             <div class="form-horizontal">
                
                 <label>Usuario<input class="form-control" type="text" runat="server" id="Txt_Usuario" onkeypress="return controlEspacio()"/></label>

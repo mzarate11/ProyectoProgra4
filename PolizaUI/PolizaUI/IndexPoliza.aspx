@@ -11,7 +11,7 @@
                     <h1><strong>Seguros Americanos</strong></h1>
 
                     <!--Direcciona a registrarse-->
-                    <a href="#service" class="btn btn-default smoothScroll">Registrarse</a>
+                    <a href="../../Paginas/Administrativo/Registrar.aspx" class="btn btn-default smoothScroll">Registrarse</a>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
                     <i class="fa fa-group"></i>
 
                     <h3>Registrarse</h3>
-                    <p>Como primer paso, deberá registrarse en nuestra pagina.<a href="index.html" target="registro">dar clic aquí</a></p>
+                    <p>Como primer paso, deberá registrarse en nuestra pagina.<a href="../../Paginas/Administrativo/Registrar.aspx" target="registro">dar clic aquí</a></p>
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <i class="fa fa-cogs"></i>

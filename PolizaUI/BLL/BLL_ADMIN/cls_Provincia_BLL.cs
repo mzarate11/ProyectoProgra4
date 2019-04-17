@@ -59,5 +59,6 @@ namespace BLL.BLL_ADMIN
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Delete_Provincia"].ToString();
             ObjSVC.Consultas_sin_I(Obj_DAL.sNombre_sp, Obj_DAL.dtParametros, ref sMsjError);
         }
+       
     }
 }

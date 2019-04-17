@@ -21,11 +21,11 @@ namespace SVC.Contracts
 
         }
 
-        public DataTable FiltrarDatos(string sNombreSP, string sNombreParametro, ref string sMsjError)
+        public DataTable FiltrarDatos(string sNombreSP, string sNombreParametro, SqlDbType DBType , string sValor, ref string sMsjError)
         {
             cls_DB_BLL Obj_DB_BLL = new cls_DB_BLL();
 
-            return Obj_DB_BLL.Ejec_DataAdapter(sNombreSP, sNombreParametro, SqlDbType.VarChar, "", ref sMsjError);
+            return Obj_DB_BLL.Ejec_DataAdapter(sNombreSP, sNombreParametro, SqlDbType.VarChar, sValor, ref sMsjError);
 
         }
         public bool Consultas_sin_I(string sNombreSP, DataTable dtParametros, ref string sMsjError)

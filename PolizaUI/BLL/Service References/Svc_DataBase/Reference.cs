@@ -96,14 +96,22 @@ namespace BLL.Svc_DataBase {
         public string sNombreParametro;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public System.Data.SqlDbType DBType;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string sValor;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
         public string sMsjError;
         
         public FiltrarDatosRequest() {
         }
         
-        public FiltrarDatosRequest(string sNombreSP, string sNombreParametro, string sMsjError) {
+        public FiltrarDatosRequest(string sNombreSP, string sNombreParametro, System.Data.SqlDbType DBType, string sValor, string sMsjError) {
             this.sNombreSP = sNombreSP;
             this.sNombreParametro = sNombreParametro;
+            this.DBType = DBType;
+            this.sValor = sValor;
             this.sMsjError = sMsjError;
         }
     }
@@ -274,10 +282,12 @@ namespace BLL.Svc_DataBase {
             return base.Channel.FiltrarDatos(request);
         }
         
-        public System.Data.DataTable FiltrarDatos(string sNombreSP, string sNombreParametro, ref string sMsjError) {
+        public System.Data.DataTable FiltrarDatos(string sNombreSP, string sNombreParametro, System.Data.SqlDbType DBType, string sValor, ref string sMsjError) {
             BLL.Svc_DataBase.FiltrarDatosRequest inValue = new BLL.Svc_DataBase.FiltrarDatosRequest();
             inValue.sNombreSP = sNombreSP;
             inValue.sNombreParametro = sNombreParametro;
+            inValue.DBType = DBType;
+            inValue.sValor = sValor;
             inValue.sMsjError = sMsjError;
             BLL.Svc_DataBase.FiltrarDatosResponse retVal = ((BLL.Svc_DataBase.I_DB)(this)).FiltrarDatos(inValue);
             sMsjError = retVal.sMsjError;

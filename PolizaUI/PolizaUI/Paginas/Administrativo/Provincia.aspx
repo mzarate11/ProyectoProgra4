@@ -12,7 +12,7 @@
     <br>
     <div id="provincia" style="text-align: match-parent" runat="server">
         <label>Filtro:
-            <input type="text" id="txt_filtro" readonly="readonly" runat="server" class="form-control" />
+            <input type="text" id="txt_filtro" runat="server" class="form-control" />
             <input type="button" id="btn_f" value="Buscar" runat="server" class="btn" onserverclick="btn_f_ServerClick" /></label>
         <button type="button" data-toggle="modal" data-target="#insert">Nuevo Registro</button>
         <asp:GridView OnSelectedIndexChanged="GV_provincia_SelectedIndexChanged" CssClass="table table-bordered" ID="GV_provincia" runat="server">
@@ -58,7 +58,7 @@
             </div>
            
 
-              <div id="edit" class="modal fade" role="dialog">
+             <div id="edit" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
                 <!-- Modal edit-->
@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 </div>
-            </div>    
+            </div>  
 
                 
 

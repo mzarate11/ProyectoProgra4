@@ -17,7 +17,7 @@ namespace SVC.Interfaces
         DataTable ListarDatos(string sNombreSP, ref string sMsjError);
 
         [OperationContract]
-        DataTable FiltrarDatos(string sNombreSP, string sNombreParametro, ref string sMsjError);
+        DataTable FiltrarDatos(string sNombreSP, string sNombreParametro, SqlDbType DBType ,string sValor, ref string sMsjError);
 
         [OperationContract]
         bool Consultas_sin_I(string sNombreSP, DataTable dtParametros, ref string sMsjError);

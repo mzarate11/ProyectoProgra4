@@ -40,7 +40,7 @@ namespace PolizaUI.Paginas.Administrativo
             }
             else
             {
-                Obj_BLL.Filtrar_provincias(ref Obj_DAL, sMsjError, txt_filtro.Value);//le faltan arreglos
+                Obj_BLL.Filtrar_provincias(ref Obj_DAL, txt_filtro.Value,ref sMsjError);//le faltan arreglos
                 if (sMsjError == string.Empty)
                 {
                     this.GV_provincia.DataSource = null;
@@ -104,7 +104,7 @@ namespace PolizaUI.Paginas.Administrativo
             cls_Provincia_DAL Obj_DAL = new cls_Provincia_DAL();
             cls_Provincia_BLL Obj_BLL = new cls_Provincia_BLL();
             string sMsjError = string.Empty;
-            Obj_BLL.Editar_provincias(ref Obj_DAL, Convert.ToInt32(txt_ID.Value), txt_nombre.Value, ref sMsjError);
+            Obj_BLL.Editar_provincias(ref Obj_DAL, Convert.ToInt32(TxtIDE.Value), TxtNE.Value, ref sMsjError);
             if (sMsjError == string.Empty)
             {
                 cargarDatos(ref sMsjError);

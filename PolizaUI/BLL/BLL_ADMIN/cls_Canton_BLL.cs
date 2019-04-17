@@ -39,7 +39,7 @@ namespace BLL.BLL_ADMIN
             Obj_DAL.dtParametros.Rows.Add("NOMBRE", SqlDbType.VarChar, sFiltro);
             Obj_DAL.sNombre_P = "Nombre";
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Filtrar_Cantones"].ToString();
-            Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp, Obj_DAL.sNombre_P, ref sMsjError));
+            Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp,Obj_DAL.sNombre_P,SqlDbType.VarChar,sFiltro, ref sMsjError));
         }
         public void Insertar_Canton(ref cls_Canton_DAL Obj_DAL, string sValor1, string sValor2, string sValor3, ref string sMsjError)
         {

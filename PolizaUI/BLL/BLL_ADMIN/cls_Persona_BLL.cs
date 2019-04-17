@@ -38,7 +38,7 @@ namespace BLL.BLL_ADMIN
             Obj_DAL.dtParametros.Rows.Add("NOMBRE", SqlDbType.VarChar, sFiltro);
             Obj_DAL.sNombre_P = "ID_Persona";
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Filtrar_Persona"].ToString();
-            Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp, Obj_DAL.sNombre_P, ref sMsjError));
+            Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp,Obj_DAL.sNombre_P,SqlDbType.VarChar,sFiltro, ref sMsjError));
         }
         public void Insertar_Persona(ref cls_Persona_DAL Obj_DAL, string sValor1, string sValor2, string sValor3, string sValor4, string sValor5, string sValor6, string sValor7, string sValor8, string sValor9, string sValor10, string sValor11, string sValor12, string sValor13, string sValor14, string sValor15, ref string sMsjError)
         {

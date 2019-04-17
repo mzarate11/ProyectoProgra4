@@ -31,15 +31,15 @@ namespace BLL.BLL_ADMIN
            Obj_DAL.DS1.Tables.Add(ObjSVC.ListarDatos(Obj_DAL.sNombre_sp, ref sMsjError));
             
         }
-        public void Filtrar_provincias(ref cls_Provincia_DAL Obj_DAL, string sMsjError, string sFiltro)
+        public void Filtrar_provincias(ref cls_Provincia_DAL Obj_DAL, string sFiltro, ref string sMsjError)
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
             Obj_DAL.DS1 = new System.Data.DataSet();
             Crear_tabla(ref Obj_DAL);
-           Obj_DAL.dtParametros.Rows.Add("@NombreProvincia", SqlDbType.VarChar, sFiltro);
-            Obj_DAL.sNombre_P = "Nombre";
+           Obj_DAL.dtParametros.Rows.Add("@NombreProvincia", 2, sFiltro);
+            Obj_DAL.sNombre_P = "@NombreProvincia";
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Filtrar_provincia"].ToString();
-            ObjSVC.Consultas_sin_I(Obj_DAL.sNombre_sp, Obj_DAL.dtParametros, ref sMsjError);
+            Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp, Obj_DAL.sNombre_P,SqlDbType.VarChar , sFiltro, ref sMsjError));
         }
         public void Insertar_provincias(ref cls_Provincia_DAL Obj_DAL,string sValor1,string sValor2, ref string sMsjError)
         {

@@ -47,12 +47,12 @@ namespace PolizaUI.Paginas.Administrativo
             Obj_BLLid.Listar_TipoID(ref Obj_DALid, sMsjError);
             if (sMsjError == string.Empty)
             {
-                this.dd_pro.DataSource = null;
-                this.dd_pro.DataSource = Obj_DALid.DS1;
-                this.dd_pro.DataValueField = "ID_TIPO_IDENTIFICACION";
-                this.dd_pro.DataTextField = "Nombre";
-                this.dd_pro.DataBind();
-                this.dd_pro.Items.Insert(0, new ListItem("Provincia", "0"));
+                this.dd_tid.DataSource = null;
+                this.dd_tid.DataSource = Obj_DALid.DS1;
+                this.dd_tid.DataValueField = "ID_TIPO_IDENTIFICACION";
+                this.dd_tid.DataTextField = "Nombre";
+                this.dd_tid.DataBind();
+                this.dd_tid.Items.Insert(0, new ListItem("Tipo_ID", "0"));
 
 
             }

@@ -1809,7 +1809,7 @@ CREATE PROCEDURE [ADMINISTRATIVO].[Update_Provincia]
 @ID_provi int
 AS 
 BEGIN
-update [ADMINISTRATIVO].[PROVINCIA] set ID_PROVINCIA = @ID_provi 
+update [ADMINISTRATIVO].[PROVINCIA] set [NOMBRE] = @Nombre 
 where ID_PROVINCIA = @ID_provi
 end
 GO
@@ -1859,7 +1859,7 @@ CREATE PROCEDURE [ADMINISTRATIVO].[Update_Canton]
 )
 AS
 BEGIN
-update [ADMINISTRATIVO].[CANTON] set ID_PROVINCIA = @ID_cant 
+update [ADMINISTRATIVO].[CANTON] set [NOMBRE] = @Nombre  
 where [ID_CANTON] = @ID_cant
 end
 GO
@@ -1930,7 +1930,7 @@ CREATE PROCEDURE [ADMINISTRATIVO].[Update_Distrito]
 )
 AS
 BEGIN
-update [ADMINISTRATIVO].[DISTRITO] set ID_DISTRITO = @ID_distri 
+update [ADMINISTRATIVO].[DISTRITO] set [NOMBRE] = @Nombre  
 where [ID_CANTON] = @ID_distri
 end
 GO

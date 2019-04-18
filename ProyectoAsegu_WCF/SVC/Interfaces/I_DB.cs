@@ -17,12 +17,12 @@ namespace SVC.Interfaces
         DataTable ListarDatos(string sNombreSP, ref string sMsjError);
 
         [OperationContract]
-        DataTable FiltrarDatos(string sNombreSP, string sNombreParametro, SqlDbType DBType ,string sValor, ref string sMsjError);
+        DataTable FiltrarDatos(string sNombreSP, string sNombreParametro, SqlDbType DBType, string sValor, ref string sMsjError);
 
         [OperationContract]
         bool Consultas_sin_I(string sNombreSP, DataTable dtParametros, ref string sMsjError);
 
         [OperationContract]
-        string Consuultas_con_I(string sNombreSP, DataTable dtParametros, ref string sValorScalar, ref string sMsjError);
+        bool Consultas_con_I(string sNombreSP, DataTable dtParametros, ref int iValorScalar, ref string sMsjError);
     }
 }

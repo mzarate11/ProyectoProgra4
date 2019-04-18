@@ -25,11 +25,11 @@
   <wsdl:message name="I_DB_Consultas_sin_I_OutputMessage">
     <wsdl:part name="parameters" element="tns:Consultas_sin_IResponse" />
   </wsdl:message>
-  <wsdl:message name="I_DB_Consuultas_con_I_InputMessage">
-    <wsdl:part name="parameters" element="tns:Consuultas_con_I" />
+  <wsdl:message name="I_DB_Consultas_con_I_InputMessage">
+    <wsdl:part name="parameters" element="tns:Consultas_con_I" />
   </wsdl:message>
-  <wsdl:message name="I_DB_Consuultas_con_I_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Consuultas_con_IResponse" />
+  <wsdl:message name="I_DB_Consultas_con_I_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Consultas_con_IResponse" />
   </wsdl:message>
   <wsdl:portType name="I_DB">
     <wsdl:operation name="ListarDatos">
@@ -44,9 +44,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/I_DB/Consultas_sin_I" message="tns:I_DB_Consultas_sin_I_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/I_DB/Consultas_sin_IResponse" message="tns:I_DB_Consultas_sin_I_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Consuultas_con_I">
-      <wsdl:input wsaw:Action="http://tempuri.org/I_DB/Consuultas_con_I" message="tns:I_DB_Consuultas_con_I_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/I_DB/Consuultas_con_IResponse" message="tns:I_DB_Consuultas_con_I_OutputMessage" />
+    <wsdl:operation name="Consultas_con_I">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_DB/Consultas_con_I" message="tns:I_DB_Consultas_con_I_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_DB/Consultas_con_IResponse" message="tns:I_DB_Consultas_con_I_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_I_DB" type="tns:I_DB">
@@ -78,8 +78,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Consuultas_con_I">
-      <soap:operation soapAction="http://tempuri.org/I_DB/Consuultas_con_I" style="document" />
+    <wsdl:operation name="Consultas_con_I">
+      <soap:operation soapAction="http://tempuri.org/I_DB/Consultas_con_I" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

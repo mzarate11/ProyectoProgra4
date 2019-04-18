@@ -89,7 +89,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Consuultas_con_I">
+  <xs:element name="Consultas_con_I">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="sNombreSP" nillable="true" type="xs:string" />
@@ -106,16 +106,16 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element minOccurs="0" name="sValorScalar" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iValorScalar" type="xs:int" />
         <xs:element minOccurs="0" name="sMsjError" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Consuultas_con_IResponse">
+  <xs:element name="Consultas_con_IResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Consuultas_con_IResult" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="sValorScalar" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Consultas_con_IResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="iValorScalar" type="xs:int" />
         <xs:element minOccurs="0" name="sMsjError" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>

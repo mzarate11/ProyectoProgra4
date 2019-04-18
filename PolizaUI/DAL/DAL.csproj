@@ -50,6 +50,7 @@
     <Compile Include="DAL_ADMIN\cls_Distrito_DAL.cs" />
     <Compile Include="DAL_ADMIN\cls_Provincia_DAL.cs" />
     <Compile Include="DAL_ADMIN\cls_tipoID_DAL.cs" />
+    <Compile Include="DAL_ADMIN\cls_usuarios_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

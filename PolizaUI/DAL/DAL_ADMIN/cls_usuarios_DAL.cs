@@ -3,45 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Configuration;
 using System.Data;
-
 
 namespace DAL.DAL_ADMIN
 {
-    public class cls_Persona_DAL
+    public class cls_usuarios_DAL
     {
-        private string _sNombre_sp, _sNTablar, _sNombre_P;
-
-        private int iValorS;
-
-        private DataTable _dtParametros;
+        private string _sNombre_p, _sNombre_SP;
 
         private DataSet DS;
 
-        public string sNombre_P
+        private DataTable _dtParametros;
+
+        public string sNombre_p
         {
             get
             {
-                return _sNombre_P;
+                return _sNombre_p;
             }
 
             set
             {
-                _sNombre_P = value;
+                _sNombre_p = value;
             }
         }
 
-        public string sNombre_sp
+        public string sNombre_SP
         {
             get
             {
-                return _sNombre_sp;
+                return _sNombre_SP;
             }
 
             set
             {
-                _sNombre_sp = value;
+                _sNombre_SP = value;
             }
         }
 
@@ -68,19 +64,6 @@ namespace DAL.DAL_ADMIN
             set
             {
                 _dtParametros = value;
-            }
-        }
-
-        public int IValorS
-        {
-            get
-            {
-                return iValorS;
-            }
-
-            set
-            {
-                iValorS = value;
             }
         }
     }

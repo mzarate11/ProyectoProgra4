@@ -40,6 +40,15 @@ namespace PolizaUI.Paginas.Administrativo {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Txt_N;
         
         /// <summary>
+        /// Txtcel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Txtcel;
+        
+        /// <summary>
         /// Txt_ape1 control.
         /// </summary>
         /// <remarks>
@@ -67,13 +76,13 @@ namespace PolizaUI.Paginas.Administrativo {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Txt_C;
         
         /// <summary>
-        /// Text6 control.
+        /// TxtF control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Text6;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl TxtF;
         
         /// <summary>
         /// dd_pro control.
@@ -103,6 +112,15 @@ namespace PolizaUI.Paginas.Administrativo {
         protected global::System.Web.UI.WebControls.DropDownList dd_dis;
         
         /// <summary>
+        /// ddg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddg;
+        
+        /// <summary>
         /// txt_A control.
         /// </summary>
         /// <remarks>
@@ -128,6 +146,15 @@ namespace PolizaUI.Paginas.Administrativo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dd_ec;
+        
+        /// <summary>
+        /// email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl email;
         
         /// <summary>
         /// chk_A control.

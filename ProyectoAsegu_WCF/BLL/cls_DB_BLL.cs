@@ -13,16 +13,6 @@ namespace BLL
     public class cls_DB_BLL
     {
     
-        //se Crea en e web!!!!
-        //Obj_DAL.dtParametros = new DataTable("Parametros");
-        //    DataColumn dcNombre = new DataColumn(@"Nombre", typeof(string));
-        //    DataColumn dcTipoDato = new DataColumn(@"TipoDato", typeof(string));
-        //    DataColumn dcValor = new DataColumn(@"Valor", typeof(string));
-
-        //    Obj_DAL.dtParametros.Columns.Add(dcNombre);
-        //    Obj_DAL.dtParametros.Columns.Add(dcTipoDato);
-        //    Obj_DAL.dtParametros.Columns.Add(dcValor);
-
         public DataTable Ejec_DataAdapter(string sNombre_SP, string sNombreParametro, SqlDbType DbType, string sValorParametro, ref string sMsjError)
         {
             cls_DB_DAL ObjDB_DAL = new cls_DB_DAL();
@@ -159,7 +149,7 @@ namespace BLL
             }
         }
             
-        public string ExecuteScalar(string sNombre_SP, DataTable dtParametros, ref string sValorScalar ,ref string sMsjError)
+        public bool ExecuteScalar(string sNombre_SP, DataTable dtParametros, int iValorScalar, ref string sMsjError)
         {
             cls_DB_DAL Obj_DB_DAL = new cls_DB_DAL();
             try
@@ -182,7 +172,7 @@ namespace BLL
                 {
 
 
-                    foreach (DataRow dr in Obj_DB_DAL.dtParametros.Rows)
+                    foreach (DataRow dr in dtParametros.Rows)
                     {
                         SqlDbType sqlDataType = SqlDbType.VarChar;
                         switch (dr[1].ToString())
@@ -213,16 +203,16 @@ namespace BLL
                         Obj_DB_DAL.sql_CMD.Parameters.Add(dr[0].ToString(), sqlDataType).Value = dr[2].ToString();
                     }
                 }
-               Obj_DB_DAL.iValorScalar = Obj_DB_DAL.sql_CMD.ExecuteNonQuery();
+               iValorScalar = Convert.ToInt32(Obj_DB_DAL.sql_CMD.ExecuteScalar());
 
                 sMsjError = string.Empty;
-                return sValorScalar;
+                return true;
             }
 
             catch (SqlException ex)
             {
                 sMsjError = ex.Message.ToString();
-                return null;
+                return false;
             }
             finally
             {

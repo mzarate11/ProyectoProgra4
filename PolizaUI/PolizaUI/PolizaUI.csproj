@@ -223,13 +223,13 @@
     <Content Include="Service References\Svc_DataBase\PolizaUI.Svc_DataBase.Consultas_sin_IResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\Svc_DataBase\PolizaUI.Svc_DataBase.Consuultas_con_IResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\Svc_DataBase\PolizaUI.Svc_DataBase.FiltrarDatosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\Svc_DataBase\PolizaUI.Svc_DataBase.ListarDatosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Svc_DataBase\PolizaUI.Svc_DataBase.Consultas_con_IResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\Svc_DataBase\servicio.xsd">

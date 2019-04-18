@@ -67,8 +67,10 @@ function validarCookies() {
     }
     
 };
-function esconder_controles()
-{
+function esconder_controles() {
     var admin = document.getElementById("admin");
     admin.style.visibility = "hidden";
-}
+};
+function msj() {
+    $("#msj").dialog();
+};

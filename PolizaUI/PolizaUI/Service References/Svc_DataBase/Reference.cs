@@ -36,12 +36,12 @@ namespace PolizaUI.Svc_DataBase {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_DB/Consultas_sin_I", ReplyAction="http://tempuri.org/I_DB/Consultas_sin_IResponse")]
         System.Threading.Tasks.Task<PolizaUI.Svc_DataBase.Consultas_sin_IResponse> Consultas_sin_IAsync(PolizaUI.Svc_DataBase.Consultas_sin_IRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_DB/Consuultas_con_I", ReplyAction="http://tempuri.org/I_DB/Consuultas_con_IResponse")]
-        PolizaUI.Svc_DataBase.Consuultas_con_IResponse Consuultas_con_I(PolizaUI.Svc_DataBase.Consuultas_con_IRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_DB/Consultas_con_I", ReplyAction="http://tempuri.org/I_DB/Consultas_con_IResponse")]
+        PolizaUI.Svc_DataBase.Consultas_con_IResponse Consultas_con_I(PolizaUI.Svc_DataBase.Consultas_con_IRequest request);
         
         // CODEGEN: Generating message contract since the operation has multiple return values.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_DB/Consuultas_con_I", ReplyAction="http://tempuri.org/I_DB/Consuultas_con_IResponse")]
-        System.Threading.Tasks.Task<PolizaUI.Svc_DataBase.Consuultas_con_IResponse> Consuultas_con_IAsync(PolizaUI.Svc_DataBase.Consuultas_con_IRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_DB/Consultas_con_I", ReplyAction="http://tempuri.org/I_DB/Consultas_con_IResponse")]
+        System.Threading.Tasks.Task<PolizaUI.Svc_DataBase.Consultas_con_IResponse> Consultas_con_IAsync(PolizaUI.Svc_DataBase.Consultas_con_IRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -182,8 +182,8 @@ namespace PolizaUI.Svc_DataBase {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Consuultas_con_I", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class Consuultas_con_IRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Consultas_con_I", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Consultas_con_IRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
         public string sNombreSP;
@@ -192,42 +192,42 @@ namespace PolizaUI.Svc_DataBase {
         public System.Data.DataTable dtParametros;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
-        public string sValorScalar;
+        public int iValorScalar;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
         public string sMsjError;
         
-        public Consuultas_con_IRequest() {
+        public Consultas_con_IRequest() {
         }
         
-        public Consuultas_con_IRequest(string sNombreSP, System.Data.DataTable dtParametros, string sValorScalar, string sMsjError) {
+        public Consultas_con_IRequest(string sNombreSP, System.Data.DataTable dtParametros, int iValorScalar, string sMsjError) {
             this.sNombreSP = sNombreSP;
             this.dtParametros = dtParametros;
-            this.sValorScalar = sValorScalar;
+            this.iValorScalar = iValorScalar;
             this.sMsjError = sMsjError;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Consuultas_con_IResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class Consuultas_con_IResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Consultas_con_IResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Consultas_con_IResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public string Consuultas_con_IResult;
+        public bool Consultas_con_IResult;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
-        public string sValorScalar;
+        public int iValorScalar;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
         public string sMsjError;
         
-        public Consuultas_con_IResponse() {
+        public Consultas_con_IResponse() {
         }
         
-        public Consuultas_con_IResponse(string Consuultas_con_IResult, string sValorScalar, string sMsjError) {
-            this.Consuultas_con_IResult = Consuultas_con_IResult;
-            this.sValorScalar = sValorScalar;
+        public Consultas_con_IResponse(bool Consultas_con_IResult, int iValorScalar, string sMsjError) {
+            this.Consultas_con_IResult = Consultas_con_IResult;
+            this.iValorScalar = iValorScalar;
             this.sMsjError = sMsjError;
         }
     }
@@ -318,24 +318,24 @@ namespace PolizaUI.Svc_DataBase {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PolizaUI.Svc_DataBase.Consuultas_con_IResponse PolizaUI.Svc_DataBase.I_DB.Consuultas_con_I(PolizaUI.Svc_DataBase.Consuultas_con_IRequest request) {
-            return base.Channel.Consuultas_con_I(request);
+        PolizaUI.Svc_DataBase.Consultas_con_IResponse PolizaUI.Svc_DataBase.I_DB.Consultas_con_I(PolizaUI.Svc_DataBase.Consultas_con_IRequest request) {
+            return base.Channel.Consultas_con_I(request);
         }
         
-        public string Consuultas_con_I(string sNombreSP, System.Data.DataTable dtParametros, ref string sValorScalar, ref string sMsjError) {
-            PolizaUI.Svc_DataBase.Consuultas_con_IRequest inValue = new PolizaUI.Svc_DataBase.Consuultas_con_IRequest();
+        public bool Consultas_con_I(string sNombreSP, System.Data.DataTable dtParametros, ref int iValorScalar, ref string sMsjError) {
+            PolizaUI.Svc_DataBase.Consultas_con_IRequest inValue = new PolizaUI.Svc_DataBase.Consultas_con_IRequest();
             inValue.sNombreSP = sNombreSP;
             inValue.dtParametros = dtParametros;
-            inValue.sValorScalar = sValorScalar;
+            inValue.iValorScalar = iValorScalar;
             inValue.sMsjError = sMsjError;
-            PolizaUI.Svc_DataBase.Consuultas_con_IResponse retVal = ((PolizaUI.Svc_DataBase.I_DB)(this)).Consuultas_con_I(inValue);
-            sValorScalar = retVal.sValorScalar;
+            PolizaUI.Svc_DataBase.Consultas_con_IResponse retVal = ((PolizaUI.Svc_DataBase.I_DB)(this)).Consultas_con_I(inValue);
+            iValorScalar = retVal.iValorScalar;
             sMsjError = retVal.sMsjError;
-            return retVal.Consuultas_con_IResult;
+            return retVal.Consultas_con_IResult;
         }
         
-        public System.Threading.Tasks.Task<PolizaUI.Svc_DataBase.Consuultas_con_IResponse> Consuultas_con_IAsync(PolizaUI.Svc_DataBase.Consuultas_con_IRequest request) {
-            return base.Channel.Consuultas_con_IAsync(request);
+        public System.Threading.Tasks.Task<PolizaUI.Svc_DataBase.Consultas_con_IResponse> Consultas_con_IAsync(PolizaUI.Svc_DataBase.Consultas_con_IRequest request) {
+            return base.Channel.Consultas_con_IAsync(request);
         }
     }
 }

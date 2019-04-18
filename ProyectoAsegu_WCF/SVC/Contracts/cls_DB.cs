@@ -34,10 +34,10 @@ namespace SVC.Contracts
             return Obj_BD_BLL.ExecuteNonQuery(sNombreSP, dtParametros, ref sMsjError);
         }
 
-        public string Consuultas_con_I(string sNombreSP, DataTable dtParametros, ref string sValorScalar, ref string sMsjError)
+        public bool Consultas_con_I(string sNombreSP, DataTable dtParametros, ref int iValorScalar, ref string sMsjError)
         {
             cls_DB_BLL Obj_DB_BLL = new cls_DB_BLL();
-            return Obj_DB_BLL.ExecuteScalar(sNombreSP, dtParametros, ref sValorScalar, ref sMsjError);
+            return Obj_DB_BLL.ExecuteScalar(sNombreSP, dtParametros,iValorScalar, ref sMsjError);
         }
     }
 }

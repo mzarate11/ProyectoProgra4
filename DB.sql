@@ -1231,18 +1231,17 @@ END
 
 
 CREATE PROCEDURE [ADMINISTRATIVO].[SP_Filtrar_Usuario]--FILTRO
-@Tipo int
+(
+@NOMBRE varchar(25)
+)
 AS
 BEGIN
-SELECT	[ID_USUARIO] as [ID_USUARIO],
-[NO_CEDULA] as [NO_CEDULA],
-[NOMBRE] as [Name],
-[CONTRASEÑA] as [Pass],
-[ROL]as [Type]
+SELECT	
+	[NOMBRE]
+	,[ROl]
 from [ADMINISTRATIVO].[USUARIO]
-WHERE [ROL] = @Tipo
+WHERE [NOMBRE] like '%'+ @NOMBRE +'%'
 END
-go
 
 
 create procedure [ADMINISTRATIVO].[SP_SelectUsuario]
@@ -2094,3 +2093,13 @@ VALUES (@Num_Cedula,@Nombre,@APELLIDO1,@APELLIDO2,@Correo_Electronico,
 @Telefono,@FechaNacimiento,@ID_PROVINCIA,@ID_CANTON,@ID_DISTRITO,
 @ID_GENERO,@ID_ESTADO_CIVIL,@Tipo_Identificacion)
 END
+GO
+create procedure [ADMINISTRATIVO].[LISTAR_USUARIOS]
+AS
+BEGIN
+	SELECT
+		 NOMBRE
+		,ROL
+	FROM [ADMINISTRATIVO].[USUARIO]
+END
+GO

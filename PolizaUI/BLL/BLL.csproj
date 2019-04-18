@@ -85,6 +85,9 @@
     <None Include="Service References\Svc_DataBase\BLL.Svc_DataBase.ListarDatosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\Svc_DataBase\BLL.Svc_DataBase.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Svc_DataBase\cls_DB.wsdl" />
     <None Include="Service References\Svc_DataBase\servicio.xsd">
       <SubType>Designer</SubType>

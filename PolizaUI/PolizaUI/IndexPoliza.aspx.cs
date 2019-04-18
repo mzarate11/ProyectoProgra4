@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DAL.DAL_ADMIN;
+using BLL.BLL_ADMIN;
 
 namespace PolizaUI
 {
@@ -11,7 +13,8 @@ namespace PolizaUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+          
         }
+     
     }
 }

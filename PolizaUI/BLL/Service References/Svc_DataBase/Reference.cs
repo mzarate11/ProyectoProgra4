@@ -42,6 +42,13 @@ namespace BLL.Svc_DataBase {
         // CODEGEN: Generating message contract since the operation has multiple return values.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_DB/Consultas_con_I", ReplyAction="http://tempuri.org/I_DB/Consultas_con_IResponse")]
         System.Threading.Tasks.Task<BLL.Svc_DataBase.Consultas_con_IResponse> Consultas_con_IAsync(BLL.Svc_DataBase.Consultas_con_IRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_DB/Login", ReplyAction="http://tempuri.org/I_DB/LoginResponse")]
+        BLL.Svc_DataBase.LoginResponse Login(BLL.Svc_DataBase.LoginRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_DB/Login", ReplyAction="http://tempuri.org/I_DB/LoginResponse")]
+        System.Threading.Tasks.Task<BLL.Svc_DataBase.LoginResponse> LoginAsync(BLL.Svc_DataBase.LoginRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -232,6 +239,50 @@ namespace BLL.Svc_DataBase {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Login", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class LoginRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string sNombreSP;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public System.Data.DataTable dtParametros;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string sMsjError;
+        
+        public LoginRequest() {
+        }
+        
+        public LoginRequest(string sNombreSP, System.Data.DataTable dtParametros, string sMsjError) {
+            this.sNombreSP = sNombreSP;
+            this.dtParametros = dtParametros;
+            this.sMsjError = sMsjError;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="LoginResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class LoginResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public int LoginResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string sMsjError;
+        
+        public LoginResponse() {
+        }
+        
+        public LoginResponse(int LoginResult, string sMsjError) {
+            this.LoginResult = LoginResult;
+            this.sMsjError = sMsjError;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface I_DBChannel : BLL.Svc_DataBase.I_DB, System.ServiceModel.IClientChannel {
     }
@@ -336,6 +387,25 @@ namespace BLL.Svc_DataBase {
         
         public System.Threading.Tasks.Task<BLL.Svc_DataBase.Consultas_con_IResponse> Consultas_con_IAsync(BLL.Svc_DataBase.Consultas_con_IRequest request) {
             return base.Channel.Consultas_con_IAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.Svc_DataBase.LoginResponse BLL.Svc_DataBase.I_DB.Login(BLL.Svc_DataBase.LoginRequest request) {
+            return base.Channel.Login(request);
+        }
+        
+        public int Login(string sNombreSP, System.Data.DataTable dtParametros, ref string sMsjError) {
+            BLL.Svc_DataBase.LoginRequest inValue = new BLL.Svc_DataBase.LoginRequest();
+            inValue.sNombreSP = sNombreSP;
+            inValue.dtParametros = dtParametros;
+            inValue.sMsjError = sMsjError;
+            BLL.Svc_DataBase.LoginResponse retVal = ((BLL.Svc_DataBase.I_DB)(this)).Login(inValue);
+            sMsjError = retVal.sMsjError;
+            return retVal.LoginResult;
+        }
+        
+        public System.Threading.Tasks.Task<BLL.Svc_DataBase.LoginResponse> LoginAsync(BLL.Svc_DataBase.LoginRequest request) {
+            return base.Channel.LoginAsync(request);
         }
     }
 }

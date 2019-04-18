@@ -33,6 +33,11 @@ namespace SVC.Contracts
             cls_DB_BLL Obj_BD_BLL = new cls_DB_BLL();
             return Obj_BD_BLL.ExecuteNonQuery(sNombreSP, dtParametros, ref sMsjError);
         }
+        public int Login(string sNombreSP, DataTable dtParametros, ref string sMsjError)
+        {
+            cls_DB_BLL OBJ_BD_BLL = new cls_DB_BLL();
+            return OBJ_BD_BLL.ExecuteNonQueryL(sNombreSP, dtParametros, ref sMsjError);
+        }
 
         public bool Consultas_con_I(string sNombreSP, DataTable dtParametros, ref int iValorScalar, ref string sMsjError)
         {

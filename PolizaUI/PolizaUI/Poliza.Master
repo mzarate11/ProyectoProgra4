@@ -70,7 +70,8 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                         <li id="admin"><a href="../../Paginas/Administrativo/Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-                        <li><label id="Usuario"></label></li>
+                        <br>
+                        <li><label id="Usuario" runat="server"></label></li>
                     </ul>
             </div>
         </div>

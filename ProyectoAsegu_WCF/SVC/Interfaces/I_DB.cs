@@ -24,5 +24,8 @@ namespace SVC.Interfaces
 
         [OperationContract]
         bool Consultas_con_I(string sNombreSP, DataTable dtParametros, ref int iValorScalar, ref string sMsjError);
+
+        [OperationContract]
+        int Login(string sNombreSP, DataTable dtParametros, ref string sMsjError);
     }
 }

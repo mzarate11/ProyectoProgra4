@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Poliza.Master" AutoEventWireup="true" CodeBehind="IndexPoliza.aspx.cs" Inherits="PolizaUI.IndexPoliza" %>
+﻿<%@ Page Title="" Language="C#" EnableEventValidation="true" MasterPageFile="~/Poliza.Master" AutoEventWireup="true" CodeBehind="IndexPoliza.aspx.cs" Inherits="PolizaUI.IndexPoliza" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

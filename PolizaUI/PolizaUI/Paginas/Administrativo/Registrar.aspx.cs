@@ -181,7 +181,7 @@ namespace PolizaUI.Paginas.Administrativo
             {
                 Obj_BLLu.Insertar_Usuarios(ref Obj_DALu, ref iValor, Txt_C.Value, Txt_Usuario.Value, txt_Contraseña.Value, "2", ref sMsjError2);
             }
-
+            
 
         }
     }

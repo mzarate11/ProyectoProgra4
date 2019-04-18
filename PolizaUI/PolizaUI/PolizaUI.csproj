@@ -232,6 +232,9 @@
     <Content Include="Service References\Svc_DataBase\PolizaUI.Svc_DataBase.Consultas_con_IResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\Svc_DataBase\PolizaUI.Svc_DataBase.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\Svc_DataBase\servicio.xsd">
       <SubType>Designer</SubType>
     </None>

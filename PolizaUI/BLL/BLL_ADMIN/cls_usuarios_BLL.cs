@@ -34,10 +34,8 @@ namespace BLL.BLL_ADMIN
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
             Obj_DAL.DS1 = new System.Data.DataSet();
-            Crear_tabla(ref Obj_DAL);
-            Obj_DAL.dtParametros.Rows.Add("NOMBRE", SqlDbType.VarChar, sFiltro);
-            Obj_DAL.sNombre_p = "ID_Persona";
-            Obj_DAL.sNombre_SP = ConfigurationManager.AppSettings["Filtrar_Persona"].ToString();
+            Obj_DAL.sNombre_p = "NOMBRE";
+            Obj_DAL.sNombre_SP = ConfigurationManager.AppSettings["filtrar_usuarios"].ToString();
             Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_SP, Obj_DAL.sNombre_p, SqlDbType.VarChar, sFiltro, ref sMsjError));
         }
         public void Insertar_Usuarios(ref cls_usuarios_DAL Obj_DAL, ref int iValorS, string sValor1, string sValor2, string sValor3,string sValor4, ref string sMsjError)
@@ -51,6 +49,15 @@ namespace BLL.BLL_ADMIN
             Obj_DAL.DS1 = new DataSet();
             Obj_DAL.sNombre_SP = ConfigurationManager.AppSettings["Insert_Usuario"].ToString();
             ObjSVC.Consultas_con_I(Obj_DAL.sNombre_SP, Obj_DAL.dtParametros, ref iValorS, ref sMsjError);
+        }
+        public int Login(ref cls_usuarios_DAL Obj_DAL, string sMsjError, string svalor1, string svalor2)
+        {
+            Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
+            Crear_tabla(ref Obj_DAL);
+            Obj_DAL.dtParametros.Rows.Add("@NOMBRE",2, svalor1);
+            Obj_DAL.dtParametros.Rows.Add("@CONTRASEÑA", 2, svalor2);
+            Obj_DAL.sNombre_SP = ConfigurationManager.AppSettings["login"].ToString();
+            return ObjSVC.Login(Obj_DAL.sNombre_SP, Obj_DAL.dtParametros, ref sMsjError);
         }
     }
 }

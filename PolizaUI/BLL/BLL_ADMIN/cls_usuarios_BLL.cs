@@ -44,7 +44,7 @@ namespace BLL.BLL_ADMIN
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
             Crear_tabla(ref Obj_DAL);
-            Obj_DAL.dtParametros.Rows.Add("ID_PERSONA", 1, sValor1);
+            Obj_DAL.dtParametros.Rows.Add("NO_CEDULA", 1, sValor1);
             Obj_DAL.dtParametros.Rows.Add("NOMBRE", 2, sValor2);
             Obj_DAL.dtParametros.Rows.Add(@"CONTRASEÑA", 2, sValor3);
             Obj_DAL.dtParametros.Rows.Add("ROL", 1, sValor4);

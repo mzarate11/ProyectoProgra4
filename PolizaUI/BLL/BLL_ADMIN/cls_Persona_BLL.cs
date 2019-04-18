@@ -40,11 +40,11 @@ namespace BLL.BLL_ADMIN
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Filtrar_Persona"].ToString();
             Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp,Obj_DAL.sNombre_P,SqlDbType.VarChar,sFiltro, ref sMsjError));
         }
-        public void Insertar_Persona(ref cls_Persona_DAL Obj_DAL, int iValorS, string sValor2, string sValor3, string sValor4, string sValor5, string sValor6, string sValor7, string sValor8, string sValor9, string sValor10, string sValor11, string sValor12, string sValor13, string sValor14, string sValor15, ref string sMsjError)
+        public void Insertar_Persona(ref cls_Persona_DAL Obj_DAL, string sValor2, string sValor3, string sValor4, string sValor5, string sValor6, string sValor7, string sValor8, string sValor9, string sValor10, string sValor11, string sValor12, string sValor13, string sValor14, string sValor15, ref string sMsjError)
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
             Crear_tabla(ref Obj_DAL);
-            Obj_DAL.dtParametros.Rows.Add("Num_Cedula", 1, sValor2);
+            Obj_DAL.dtParametros.Rows.Add("@Num_Cedula", 1, sValor2);
             Obj_DAL.dtParametros.Rows.Add("Nombre", 2, sValor3);
             Obj_DAL.dtParametros.Rows.Add("APELLIDO1", 2, sValor4);
             Obj_DAL.dtParametros.Rows.Add("APELLIDO2", 2, sValor5);
@@ -59,13 +59,13 @@ namespace BLL.BLL_ADMIN
             Obj_DAL.dtParametros.Rows.Add("ID_ESTADO_CIVIL", 1, sValor14);
             Obj_DAL.dtParametros.Rows.Add("Tipo_Identificacion", 1, sValor15);
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Insert_Persona"].ToString();// aqui se lee el stored procedure siempre desde el web config y el nombre del key
-            ObjSVC.Consultas_con_I(Obj_DAL.sNombre_sp, Obj_DAL.dtParametros,ref iValorS ,ref sMsjError);
+            ObjSVC.Consultas_sin_I(Obj_DAL.sNombre_sp, Obj_DAL.dtParametros,ref sMsjError);
         }
-        public void Insertar_Personab(ref cls_Persona_DAL Obj_DAL, int iValorS, string sValor2, string sValor3, string sValor4, string sValor5, string sValor6, string sValor7, string sValor8, string sValor10, string sValor11, string sValor12, string sValor13, string sValor14, string sValor15, ref string sMsjError)
+        public void Insertar_Personab(ref cls_Persona_DAL Obj_DAL, string sValor2, string sValor3, string sValor4, string sValor5, string sValor6, string sValor7, string sValor8, string sValor10, string sValor11, string sValor12, string sValor13, string sValor14, string sValor15, ref string sMsjError)
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
             Crear_tabla(ref Obj_DAL);
-            Obj_DAL.dtParametros.Rows.Add("Num_Cedula", 1, sValor2);
+            Obj_DAL.dtParametros.Rows.Add("@Num_Cedula", 1, sValor2);
             Obj_DAL.dtParametros.Rows.Add("Nombre", 2, sValor3);
             Obj_DAL.dtParametros.Rows.Add("APELLIDO1", 2, sValor4);
             Obj_DAL.dtParametros.Rows.Add("APELLIDO2", 2, sValor5);
@@ -79,7 +79,7 @@ namespace BLL.BLL_ADMIN
             Obj_DAL.dtParametros.Rows.Add("ID_ESTADO_CIVIL", 1, sValor14);
             Obj_DAL.dtParametros.Rows.Add("Tipo_Identificacion", 1, sValor15);
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Insert_Persona2"].ToString();// aqui se lee el stored procedure siempre desde el web config y el nombre del key
-            ObjSVC.Consultas_con_I(Obj_DAL.sNombre_sp, Obj_DAL.dtParametros, ref iValorS, ref sMsjError);
+            ObjSVC.Consultas_sin_I(Obj_DAL.sNombre_sp, Obj_DAL.dtParametros, ref sMsjError);
         }
         public void Delete_Persona(ref cls_Persona_DAL Obj_DAL, string sValor, ref string sMsjError)
         {

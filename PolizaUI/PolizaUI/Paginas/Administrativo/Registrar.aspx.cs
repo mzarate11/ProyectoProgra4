@@ -158,45 +158,31 @@ namespace PolizaUI.Paginas.Administrativo
                 cls_Persona_DAL Obj_DALpers = new cls_Persona_DAL();
                 cls_Persona_BLL Obj_BLLpers = new cls_Persona_BLL();
                 string sMsjError = string.Empty;
-                int iValorS = 0;
-                Obj_BLLpers.Insertar_Persona(ref Obj_DALpers, iValorS, Txt_C.Value, Txt_N.Value, Txt_ape1.Value, txt_ape2.Value, email.Value, Txtcel.Value, TxtF.Value, txt_A.Value, dd_pro.SelectedValue, dd_can.SelectedValue, dd_dis.SelectedValue, ddg.SelectedValue, dd_ec.SelectedValue, dd_tid.SelectedValue, ref sMsjError);
-                cls_usuarios_DAL Obj_DALu = new cls_usuarios_DAL();
-                cls_usuarios_BLL Obj_BLLu = new cls_usuarios_BLL();
-                string sMsjError2 = string.Empty;
-                int iValor2 = 0;
-                if (chk_A.Checked == true)
-                {
-                    Obj_BLLu.Insertar_Usuarios(ref Obj_DALu, ref iValor2, iValorS.ToString(), Txt_Usuario.Value, txt_Contraseña.Value, "1", ref sMsjError2);
-                }
-                else
-                {
-                    Obj_BLLu.Insertar_Usuarios(ref Obj_DALu, ref iValor2, iValorS.ToString(), Txt_Usuario.Value, txt_Contraseña.Value, "2", ref sMsjError2);
-                }
+                Obj_BLLpers.Insertar_Persona(ref Obj_DALpers, Txt_C.Value, Txt_N.Value, Txt_ape1.Value, txt_ape2.Value, email.Value, Txtcel.Value, TxtF.Value, txt_A.Value, dd_pro.SelectedValue, dd_can.SelectedValue, dd_dis.SelectedValue, ddg.SelectedValue, dd_ec.SelectedValue, dd_tid.SelectedValue, ref sMsjError);
+               
             }
             else
             {
                 cls_Persona_DAL Obj_DALpers = new cls_Persona_DAL();
                 cls_Persona_BLL Obj_BLLpers = new cls_Persona_BLL();
                 string sMsjError = string.Empty;
-                int iValorS = 0;
-                Obj_BLLpers.Insertar_Personab(ref Obj_DALpers, iValorS, Txt_C.Value, Txt_N.Value, Txt_ape1.Value, txt_ape2.Value, email.Value, Txtcel.Value, TxtF.Value, dd_pro.SelectedValue, dd_can.SelectedValue, dd_dis.SelectedValue, ddg.SelectedValue, dd_ec.SelectedValue, dd_tid.SelectedValue, ref sMsjError);
-                iValorS = iValorS+1;
-                cls_usuarios_DAL Obj_DALu = new cls_usuarios_DAL();
-                cls_usuarios_BLL Obj_BLLu = new cls_usuarios_BLL();
-                string sMsjError2 = string.Empty;
-                int iValor2 = 0;
-                if (chk_A.Checked == true)
-                {
-                    Obj_BLLu.Insertar_Usuarios(ref Obj_DALu, ref iValor2, iValorS.ToString() , Txt_Usuario.Value, txt_Contraseña.Value, "1", ref sMsjError2);
-                }
-                else
-                {
-                    Obj_BLLu.Insertar_Usuarios(ref Obj_DALu, ref iValor2, iValorS.ToString() , Txt_Usuario.Value, txt_Contraseña.Value, "2", ref sMsjError2);
-                }
+                Obj_BLLpers.Insertar_Personab(ref Obj_DALpers, Txt_C.Value, Txt_N.Value, Txt_ape1.Value, txt_ape2.Value, email.Value, Txtcel.Value, TxtF.Value, dd_pro.SelectedValue, dd_can.SelectedValue, dd_dis.SelectedValue, ddg.SelectedValue, dd_ec.SelectedValue, dd_tid.SelectedValue, ref sMsjError);
+                
             }
-            
-            
-            
+            cls_usuarios_DAL Obj_DALu = new cls_usuarios_DAL();
+            cls_usuarios_BLL Obj_BLLu = new cls_usuarios_BLL();
+            string sMsjError2 = string.Empty;
+            int iValor = 0;
+            if (chk_A.Checked == true)
+            {
+                Obj_BLLu.Insertar_Usuarios(ref Obj_DALu, ref iValor, Txt_C.Value, Txt_Usuario.Value, txt_Contraseña.Value, "1", ref sMsjError2);
+            }
+            else
+            {
+                Obj_BLLu.Insertar_Usuarios(ref Obj_DALu, ref iValor, Txt_C.Value, Txt_Usuario.Value, txt_Contraseña.Value, "2", ref sMsjError2);
+            }
+
+
         }
     }
 }

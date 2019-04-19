@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PolizaUI.Paginas
+namespace PolizaUI.Paginas.Cliente
 {
     public partial class Poliza : System.Web.UI.Page
     {

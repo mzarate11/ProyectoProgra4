@@ -8,7 +8,7 @@ using DAL.DAL_ADMIN;
 using BLL.BLL_ADMIN;
 
 
-namespace PolizaUI.Paginas
+namespace PolizaUI.Paginas.Administrativo
 {
     public partial class Persona : System.Web.UI.Page
     {
@@ -17,7 +17,7 @@ namespace PolizaUI.Paginas
             string sMsjError = string.Empty;
             if (!IsPostBack)
             {
-                cargarDatos(ref sMsjError);
+                //cargarDatos(ref sMsjError);
             }
         }
         public void cargarDatos(ref string sMsjError)

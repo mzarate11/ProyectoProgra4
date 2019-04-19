@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PolizaUI.Paginas
+namespace PolizaUI.Paginas.Administrativo
 {
     public partial class Beneficiario : System.Web.UI.Page
     {

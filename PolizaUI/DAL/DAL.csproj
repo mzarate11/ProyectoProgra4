@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_ADMIN\cls_Beneficiario_DAL.cs" />
     <Compile Include="DAL_ADMIN\cls_estadoC_DAL.cs" />
     <Compile Include="DAL_ADMIN\cls_genero_DAL.cs" />
     <Compile Include="DAL_ADMIN\cls_Persona_DAL.cs" />

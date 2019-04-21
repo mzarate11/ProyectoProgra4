@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL_ADMIN\cls_Beneficiario_BLL.cs" />
     <Compile Include="BLL_ADMIN\cls_Canton_BLL.cs" />
     <Compile Include="BLL_ADMIN\cls_Distrito_BLL.cs" />
     <Compile Include="BLL_ADMIN\cls_estadoC_BLL.cs" />

@@ -54,17 +54,17 @@
                         <li><a class="dropdown-toggle" data-toggle="dropdown" href="# ">Administrativo<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="Paginas/Administrativo/Persona.aspx">Personas</a></li>
-                                <li><a href="Paginas/Administrativo/">Identificacion</a></li>
+                                <li><a href="Paginas/Administrativo/Identificacion.aspx">Identificacion</a></li>
                                 <li><a href="Paginas/Administrativo/Beneficiario.aspx">Beneficiario</a></li>
                                 <li><a href="Paginas/Administrativo/Poliza.aspx">Poliza</a></li>
-                                <li><a href="Paginas/Administrativo/Venta">Venta</a></li>
-                                <li><a href="Paginas/Administrativo/MetodoPago">MetodoPago</a></li>
-                                <li><a href="Paginas/TarjetaCreaditoDeb">Tarjeta_Cred_Deb</a></li>
-                                <li><a href="Paginas/Administrativo/Planes">Planes</a></li>
-                                <li><a href="Paginas/Administrativo/Cobertura">Cobertura</a></li>
-                                <li><a href="../../Paginas/Administrativo/Provincia.aspx">Provincia</a></li>
-                                <li><a href="#">Canton</a></li>
-                                <li><a href="#">Distrito</a></li>
+                                <li><a href="Paginas/Cliente/Venta.aspx">Venta</a></li>
+                                <li><a href="Paginas/Administrativo/MetodoPago.aspx">MetodoPago</a></li>
+                                <li><a href="Paginas/Administrativo/TarjetaCreaditoDeb.aspx">Tarjeta_Cred_Deb</a></li>
+                                <li><a href="Paginas/Administrativo/Planes.aspx">Planes</a></li>
+                                <li><a href="Paginas/Administrativo/Cobertura.aspx">Cobertura</a></li>
+                                <li><a href="Paginas/Administrativo/Provincia.aspx">Provincia</a></li>
+                                <li><a href="Paginas/Administrativo/Canton.aspx">Canton</a></li>
+                                <li><a href="Paginas/Administrativo/Distrito.aspx">Distrito</a></li>
                             </ul>
                         </li>
                 </ul>

@@ -71,6 +71,10 @@
     <Content Include="index.html" />
     <Content Include="IndexPoliza.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Paginas\Administrativo\Canton.aspx" />
+    <Content Include="Paginas\Administrativo\Distrito.aspx" />
+    <Content Include="Paginas\Administrativo\Genero.aspx" />
+    <Content Include="Paginas\Administrativo\Identificacion.aspx" />
     <Content Include="Paginas\Administrativo\Login.aspx" />
     <Content Include="Paginas\Administrativo\Cobertura.aspx" />
     <Content Include="Paginas\Administrativo\Planes.aspx" />
@@ -275,6 +279,34 @@
     </Compile>
     <Compile Include="IndexPoliza.aspx.designer.cs">
       <DependentUpon>IndexPoliza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Canton.aspx.cs">
+      <DependentUpon>Canton.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Canton.aspx.designer.cs">
+      <DependentUpon>Canton.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Distrito.aspx.cs">
+      <DependentUpon>Distrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Distrito.aspx.designer.cs">
+      <DependentUpon>Distrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Genero.aspx.cs">
+      <DependentUpon>Genero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Genero.aspx.designer.cs">
+      <DependentUpon>Genero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Identificacion.aspx.cs">
+      <DependentUpon>Identificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Identificacion.aspx.designer.cs">
+      <DependentUpon>Identificacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Administrativo\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

@@ -76,49 +76,31 @@ namespace PolizaUI.Paginas.Administrativo {
         protected global::System.Web.UI.HtmlControls.HtmlInputButton btn_a;
         
         /// <summary>
-        /// TxtIDE control.
+        /// TxtCan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TxtIDE;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TxtCan;
         
         /// <summary>
-        /// TxtBenPor control.
+        /// TxtNom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TxtBenPor;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TxtNom;
         
         /// <summary>
-        /// TxtNE control.
+        /// TxtPro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TxtNE;
-        
-        /// <summary>
-        /// Txtap1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Txtap1;
-        
-        /// <summary>
-        /// Txtap2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Txtap2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TxtPro;
         
         /// <summary>
         /// BtnE control.

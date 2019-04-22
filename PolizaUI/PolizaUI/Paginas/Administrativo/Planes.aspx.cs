@@ -41,7 +41,7 @@ namespace PolizaUI.Paginas.Administrativo
             }
             else
             {
-                Obj_BLL.Filtrar_Planes(ref Obj_DAL, txt_filtro.Value, ref sMsjError);//le faltan arreglos
+                Obj_BLL.Filtrar_Planes(ref Obj_DAL, txt_filtro.Value, sMsjError);//le faltan arreglos
                 if (sMsjError == string.Empty)
                 {
                     this.GV_planes.DataSource = null;
@@ -67,7 +67,7 @@ namespace PolizaUI.Paginas.Administrativo
             cls_Planes_DAL Obj_DAL = new cls_Planes_DAL();
             cls_Planes_BLL Obj_BLL = new cls_Planes_BLL();
             string sMsjError = string.Empty;
-            Obj_BLL.Insertar_Planes(ref Obj_DAL, txt_ID.Value, txt_nombre.Value, ref sMsjError);//funciona
+            //Obj_BLL.Insertar_Planes(ref Obj_DAL, txt_ID.Value, txt_nombre.Value, ref sMsjError);//funciona
             cargarDatos(ref sMsjError);
         }
 
@@ -105,7 +105,7 @@ namespace PolizaUI.Paginas.Administrativo
             cls_Planes_DAL Obj_DAL = new cls_Planes_DAL();
             cls_Planes_BLL Obj_BLL = new cls_Planes_BLL();
             string sMsjError = string.Empty;
-            Obj_BLL.Editar_provincias(ref Obj_DAL, Convert.ToInt32(TxtIDE.Value), TxtNE.Value, ref sMsjError);
+            Obj_BLL.Editar_Planes(ref Obj_DAL, Convert.ToInt32(TxtIDE.Value), TxtNE.Value, ref sMsjError);
             if (sMsjError == string.Empty)
             {
                 cargarDatos(ref sMsjError);

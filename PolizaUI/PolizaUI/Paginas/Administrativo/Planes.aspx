@@ -48,6 +48,10 @@
                             <input type="text" id="txt_ID" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
                         <label>Nombre: 
                             <input type="text" id="txt_nombre" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
+                        <label>Costo: 
+                            <input type="text" id="TxtCosto" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
+                        <label>ID_Cobertura: 
+                            <input type="text" id="TxtCobertura" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
                         <input type="button" value="aceptar" runat="server" id="btn_a" class="btn btn-success" onserverclick="btn_a_ServerClick" />
                     </div>
                     <div class="modal-footer">

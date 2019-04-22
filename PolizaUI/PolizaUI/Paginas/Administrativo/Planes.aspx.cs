@@ -67,7 +67,7 @@ namespace PolizaUI.Paginas.Administrativo
             cls_Planes_DAL Obj_DAL = new cls_Planes_DAL();
             cls_Planes_BLL Obj_BLL = new cls_Planes_BLL();
             string sMsjError = string.Empty;
-            //Obj_BLL.Insertar_Planes(ref Obj_DAL, txt_ID.Value, txt_nombre.Value, ref sMsjError);//funciona
+            Obj_BLL.Insertar_Planes(ref Obj_DAL, txt_ID.Value,txt_nombre.Value,TxtCosto.Value,TxtCobertura.Value, ref sMsjError);//funciona
             cargarDatos(ref sMsjError);
         }
 

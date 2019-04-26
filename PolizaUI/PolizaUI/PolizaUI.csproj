@@ -68,10 +68,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="IMG\team1.jpg" />
+    <Content Include="IMG\team2.jpg" />
+    <Content Include="IMG\team3.jpg" />
+    <Content Include="IMG\team4.jpg" />
+    <Content Include="IMG\team6.jpg" />
     <Content Include="index.html" />
     <Content Include="IndexPoliza.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Paginas\Administrativo\Acercade.aspx" />
     <Content Include="Paginas\Administrativo\Canton.aspx" />
     <Content Include="Paginas\Administrativo\Contactenos.aspx" />
     <Content Include="Paginas\Administrativo\Distrito.aspx" />
@@ -289,6 +295,13 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Administrativo\Acercade.aspx.cs">
+      <DependentUpon>Acercade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Acercade.aspx.designer.cs">
+      <DependentUpon>Acercade.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Administrativo\Canton.aspx.cs">
       <DependentUpon>Canton.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -433,7 +446,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="css\" />
     <Folder Include="fonts\" />
-    <Folder Include="IMG\" />
     <Folder Include="js\" />
     <Folder Include="Models\" />
     <Folder Include="Resources\Slider\data1\" />

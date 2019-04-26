@@ -1,8 +1,34 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Poliza.Master" AutoEventWireup="true" CodeBehind="Contactenos.aspx.cs" Inherits="PolizaUI.Paginas.Administrativo.Contactenos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+   
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/nivo-lightbox.css"/>
+	<link rel="stylesheet" href="css/nivo_themes/default/default.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+
+	<!-- google web font css -->
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'/>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6">
@@ -24,6 +50,4 @@
                 </div>
             </div>
         </div>
-
-
 </asp:Content>

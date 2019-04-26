@@ -43,35 +43,36 @@
 				<span class="icon icon-bar"></span>
 				<span class="icon icon-bar"></span>
 			</button>
-			<a href="Inicio.aspx" class="navbar-brand smoothScroll">Seguros Americanos</a>
+			<a href=""Inicio.aspx"" class="navbar-brand smoothScroll">Seguros Americanos</a>
 		</div>
 
 <%--BARRA DE OPCIONES--%>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">			
-				<li><a href="Servicios.aspx" class="smoothScroll">Servicio</a></li>
-				<li><a href="#about" class="smoothScroll">Acerca de nosotros</a></li>
-				<li><a href="Contactenos.aspx" class="smoothScroll">Contáctenos</a></li>
+				<li><a href="Paginas/Cliente/Poliza.aspx" class="smoothScroll">Servicio</a></li>
+                <li><a href="Paginas/Administrativo/Acercade.aspx" class="smoothScroll">Acerca de nosotros</a></li>
+				<li><a href="Paginas/Administrativo/Contactenos.aspx" class="smoothScroll">Contáctenos</a></li>
 <%--MENU DESPLEGABLE--%>
                        <li><a class="dropdown-toggle" data-toggle="dropdown" href="# ">Administrativo<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="Paginas/Administrativo/Persona.aspx">Personas</a></li>
-                                <li><a href="Paginas/Administrativo/">Identificacion</a></li>
+                                <li><a href="Paginas/Administrativo/Identificacion.aspx">Identificacion</a></li>
                                 <li><a href="Paginas/Administrativo/Beneficiario.aspx">Beneficiario</a></li>
-                                <li><a href="Paginas/Administrativo/Poliza.aspx">Poliza</a></li>
-                                <li><a href="Paginas/Administrativo/Venta">Venta</a></li>
-                                <li><a href="Paginas/Administrativo/MetodoPago">MetodoPago</a></li>
-                                <li><a href="Paginas/TarjetaCreaditoDeb">Tarjeta_Cred_Deb</a></li>
-                                <li><a href="Paginas/Administrativo/Planes">Planes</a></li>
-                                <li><a href="Paginas/Administrativo/Cobertura">Cobertura</a></li>
-                                <li><a href="../../Paginas/Administrativo/Provincia.aspx">Provincia</a></li>
-                                <li><a href="#">Canton</a></li>
-                                <li><a href="#">Distrito</a></li>
+                                <li><a href="Paginas/Cliente/Poliza.aspx">Poliza</a></li>
+                                <li><a href="Paginas/Cliente/Venta.aspx">Venta</a></li>
+                                <li><a href="Paginas/Administrativo/MetodoPago.aspx">MetodoPago</a></li>
+                                <li><a href="Paginas/Administrativo/TarjetaCreditoDeb.aspx">Tarjeta_Cred_Deb</a></li>
+                                <li><a href="Paginas/Administrativo/Planes.aspx">Planes</a></li>
+                                <li><a href="Paginas/Administrativo/Cobertura.aspx">Cobertura</a></li>
+                                <li><a href="Paginas/Administrativo/Provincia.aspx">Provincia</a></li>
+                                <li><a href="Paginas/Administrativo/Canton.aspx">Canton</a></li>
+                                <li><a href="Paginas/Administrativo/Distrito.aspx">Distrito</a></li>
                             </ul>
                         </li>
                             <ul class="nav navbar-nav navbar-right">
-                                <li id="admin"><a href="../../Paginas/Administrativo/Login.aspx">Login</a></li>
+                                <li id="admin"><a href="Paginas/Administrativo/Login.aspx">Login</a></li>
                                 <li><label id="Usuario" runat="server"></label></li>
+
                             </ul>            
 			</ul>
 		</div>
@@ -85,7 +86,7 @@
 			<div class="col-md-offset-6 col-md-6 col-sm-offset-6 col-sm-6">
 				<h2>Bienvenido a</h2>
                 <h1> <strong>Seguros Americanos</strong></h1>
-                <a href="Login.aspx" class="btn btn-default smoothScroll">Iniciar sesión</a>	
+                <a href="Paginas/Administrativo/Login.aspx" class="btn btn-default smoothScroll">Iniciar sesión</a>	
             </div>
 		</div>
 	</div>

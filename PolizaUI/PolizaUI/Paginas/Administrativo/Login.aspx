@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" EnableEventValidation="false" MasterPageFile="~/Poliza.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="PolizaUI.Paginas.Administrativo.Login" %>
 <asp:Content ID="Login_head" ContentPlaceHolderID="head" runat="server">
-  
+ 
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br>

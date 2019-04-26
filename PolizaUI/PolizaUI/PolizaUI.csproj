@@ -73,6 +73,7 @@
     <Content Include="Inicio.aspx" />
     <Content Include="packages.config" />
     <Content Include="Paginas\Administrativo\Canton.aspx" />
+    <Content Include="Paginas\Administrativo\Contactenos.aspx" />
     <Content Include="Paginas\Administrativo\Distrito.aspx" />
     <Content Include="Paginas\Administrativo\Genero.aspx" />
     <Content Include="Paginas\Administrativo\Identificacion.aspx" />
@@ -83,7 +84,6 @@
     <Content Include="Paginas\Administrativo\Registrar.aspx" />
     <Content Include="Paginas\Administrativo\TarjetaCreditoDeb.aspx" />
     <Content Include="Paginas\Administrativo\MetodoPago.aspx" />
-    <Content Include="Paginas\Administrativo\WebForm1.aspx" />
     <Content Include="Paginas\Cliente\Venta.aspx" />
     <Content Include="Paginas\Cliente\Poliza.aspx" />
     <Content Include="Paginas\Administrativo\Beneficiario.aspx" />
@@ -296,6 +296,13 @@
     <Compile Include="Paginas\Administrativo\Canton.aspx.designer.cs">
       <DependentUpon>Canton.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Administrativo\Contactenos.aspx.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Administrativo\Contactenos.aspx.designer.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Administrativo\Distrito.aspx.cs">
       <DependentUpon>Distrito.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -365,13 +372,6 @@
     </Compile>
     <Compile Include="Paginas\Administrativo\MetodoPago.aspx.designer.cs">
       <DependentUpon>MetodoPago.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Paginas\Administrativo\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Paginas\Administrativo\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Cliente\Venta.aspx.cs">
       <DependentUpon>Venta.aspx</DependentUpon>

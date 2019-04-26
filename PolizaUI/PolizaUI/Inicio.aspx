@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="css/nivo-lightbox.css"/>
 	<link rel="stylesheet" href="css/nivo_themes/default/default.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
+
 	<!-- google web font css -->
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'/>
     

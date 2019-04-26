@@ -14,6 +14,7 @@
                 <div class="col-md-6 col-sm-6">
                     <h2>Redes Sociales</h2>
                     <ul class="social-icons">
+
                         <li><a href="#" class="fa fa-facebook"></a></li>
                         <li><a href="#" class="fa fa-twitter"></a></li>
                         <li><a href="#" class="fa fa-google-plus"></a></li>

@@ -1,12 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" EnableEventValidation="false" MasterPageFile="~/Poliza.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="PolizaUI.Paginas.Administrativo.Login" %>
 <asp:Content ID="Login_head" ContentPlaceHolderID="head" runat="server">
-    <meta http-equiv="content-type" content="text/html"; charset="utf-8"/>
-    <title>Login</title>
-    <link rel="stylesheet" href="Resources/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../../styles/Login.css"/>
-    <script type="text/javascript" src="../../Resources/jquery.min.js"></script>
-    <script type="text/javascript" src="../../Resources/bootstrap.min.js" ></script>
-    <script type="text/javascript" src="../../Scripts/Login.js"></script>
+  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br>
@@ -34,5 +28,5 @@
        <p >No tienes cuenta? <a href="Registrar.aspx">Crea una nueva cuenta aqui</a></p>
    </div>
 </form>
-    </div>
+    
 </asp:Content>

@@ -16,7 +16,7 @@ namespace PolizaUI.Paginas.Administrativo
             string sMsjError = string.Empty;
             if (!IsPostBack)
             {
-                //cargarDatos(ref sMsjError);
+                cargarDatos(ref sMsjError);
             }
         }
 
@@ -95,8 +95,10 @@ namespace PolizaUI.Paginas.Administrativo
             string sMsjError = string.Empty;
             Obj_BLL.Listar_Planes(ref Obj_DAL, sMsjError);
             GridViewRow row = GV_planes.SelectedRow;
-            TxtIDE.Value = row.Cells[1].Text;
-            TxtNE.Value = row.Cells[2].Text;
+            Text1.Value = row.Cells[1].Text;
+            Text2.Value = row.Cells[2].Text;
+            Text3.Value = row.Cells[3].Text;
+            Text4.Value = row.Cells[4].Text;
         }
 
         protected void btn_E_ServerClick(object sender, EventArgs e)
@@ -105,7 +107,7 @@ namespace PolizaUI.Paginas.Administrativo
             cls_Planes_DAL Obj_DAL = new cls_Planes_DAL();
             cls_Planes_BLL Obj_BLL = new cls_Planes_BLL();
             string sMsjError = string.Empty;
-            Obj_BLL.Editar_Planes(ref Obj_DAL, Convert.ToInt32(TxtIDE.Value), TxtNE.Value, ref sMsjError);
+            Obj_BLL.Editar_Planes(ref Obj_DAL, Text1.Value, Text2.Value, Text3.Value, Text4.Value, ref sMsjError);
             if (sMsjError == string.Empty)
             {
                 cargarDatos(ref sMsjError);

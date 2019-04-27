@@ -73,9 +73,14 @@
                     </div>
                     <div class="modal-body">
                         <label>ID_Planes: 
-                            <input type="text" id="TxtIDE" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                            <input type="text" id="Text1" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <label>Nombre: 
-                            <input type="text" id="TxtNE" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                            <input type="text" id="Text2" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                        <label>Costo: 
+                            <input type="text" id="Text3" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                        <label>ID_Cobertura: 
+                            <input type="text" id="Text4" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                        
                         <input type="button" value="aceptar"  runat="server" id="BtnE" class="btn btn-success" onserverclick="btn_E_ServerClick" />
                     </div>
                     <div class="modal-footer">

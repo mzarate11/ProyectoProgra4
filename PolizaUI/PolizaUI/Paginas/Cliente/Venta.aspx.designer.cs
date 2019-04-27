@@ -40,6 +40,42 @@ namespace PolizaUI.Paginas.Cliente {
         protected global::System.Web.UI.HtmlControls.HtmlInputText nced;
         
         /// <summary>
+        /// Control ProvRes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ProvRes;
+        
+        /// <summary>
+        /// Control CantonOp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CantonOp;
+        
+        /// <summary>
+        /// Control DistritoOp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DistritoOp;
+        
+        /// <summary>
+        /// Control PolizaOp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList PolizaOp;
+        
+        /// <summary>
         /// Control btn_S.
         /// </summary>
         /// <remarks>

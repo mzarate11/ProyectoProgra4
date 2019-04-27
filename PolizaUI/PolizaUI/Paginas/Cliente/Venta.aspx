@@ -29,21 +29,60 @@
     <h4>Provincia de residencia:</h4>
 
     <%--Aqui van drop down list con las provincias--%>
+    <asp:DropDownList style="background-color:#104b59;" runat="server" ID="ProvRes" class="btn btn-primary dropdown-toggle">
+     <%-- <asp:listitem Text="San José" value="0"></asp:listitem>
+      <asp:listitem Text="Alajuela" value="1"></asp:listitem>
+      <asp:listitem Text="Cartago" value="2"></asp:listitem>
+      <asp:listitem Text="Heredia" value="3"></asp:listitem>
+      <asp:listitem Text="Guanacaste" value="4"></asp:listitem>
+      <asp:listitem Text="Puntarenas" value="5"></asp:listitem>
+      <asp:listitem Text="Limón" value="6"></asp:listitem>--%>
+
+  </asp:DropDownList>  
 
     <br />
     <h4>Canton:</h4>
     <%--Aqui van drop down list con los cantones segun la provincia--%>
+    <asp:DropDownList style="background-color:#104b59;" runat="server" ID="CantonOp" class="btn btn-primary dropdown-toggle">
+      <%--<asp:listitem Text="Polizas" value="0"></asp:listitem>
+      <asp:listitem Text="Póliza Colectiva de Vida." value="1"></asp:listitem>
+      <asp:listitem Text="Póliza de Seguro Médico Básico." value="2"></asp:listitem>
+      <asp:listitem Text="Seguro Grupal de Responsabilidad Civil Profesional." value="3"></asp:listitem>
+      <asp:listitem Text="Pólizas de Seguros Médicos Voluntarios." value="4"></asp:listitem>
+      <asp:listitem Text="Póliza de Seguro Voluntario Automóvilisticos" value="5"></asp:listitem>
+      <asp:listitem Text="Procedimiento para la presentación de reclamos y Solicitud de Beneficios." value="6"></asp:listitem>
+      <asp:listitem Text="Médicos Pensionados." value="7"></asp:listitem>
+      <asp:listitem Text="Seguro de Asistencia al Viajero." value="8"></asp:listitem>
+      <asp:listitem Text="Póliza Colectiva de Vida." value="9"></asp:listitem>
+      <asp:listitem Text="Formularios del Seguro Básico del Colegio de Médicos." value="10"></asp:listitem>--%>
+
+  </asp:DropDownList>  
+
 
 
     <br />
     <h4>Distrito:</h4>
 
     <%--Aqui van drop down list con los distritos segun el canton--%>
+    <asp:DropDownList style="background-color:#104b59;" runat="server" ID="DistritoOp" class="btn btn-primary dropdown-toggle">
+      <%--<asp:listitem Text="Polizas" value="0"></asp:listitem>
+      <asp:listitem Text="Póliza Colectiva de Vida." value="1"></asp:listitem>
+      <asp:listitem Text="Póliza de Seguro Médico Básico." value="2"></asp:listitem>
+      <asp:listitem Text="Seguro Grupal de Responsabilidad Civil Profesional." value="3"></asp:listitem>
+      <asp:listitem Text="Pólizas de Seguros Médicos Voluntarios." value="4"></asp:listitem>
+      <asp:listitem Text="Póliza de Seguro Voluntario Automóvilisticos" value="5"></asp:listitem>
+      <asp:listitem Text="Procedimiento para la presentación de reclamos y Solicitud de Beneficios." value="6"></asp:listitem>
+      <asp:listitem Text="Médicos Pensionados." value="7"></asp:listitem>
+      <asp:listitem Text="Seguro de Asistencia al Viajero." value="8"></asp:listitem>
+      <asp:listitem Text="Póliza Colectiva de Vida." value="9"></asp:listitem>
+      <asp:listitem Text="Formularios del Seguro Básico del Colegio de Médicos." value="10"></asp:listitem>--%>
+
+  </asp:DropDownList>  
 
 
     <br />
     <h4>Poliza a optar:</h4>
-    <asp:DropDownList style="background-color:#104b59;" runat="server" class="btn btn-primary dropdown-toggle">
+    <asp:DropDownList style="background-color:#104b59;" runat="server" ID="PolizaOp" class="btn btn-primary dropdown-toggle">
       <asp:listitem Text="Polizas" value="0"></asp:listitem>
       <asp:listitem Text="Póliza Colectiva de Vida." value="1"></asp:listitem>
       <asp:listitem Text="Póliza de Seguro Médico Básico." value="2"></asp:listitem>

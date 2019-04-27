@@ -52,7 +52,7 @@
                 <li><a href="../../Paginas/Administrativo/Acercade.aspx" class="smoothScroll">Acerca de nosotros</a></li>
 				<li><a href="../../Paginas/Administrativo/Contactenos.aspx" class="smoothScroll">Contáctenos</a></li>
 <%--MENU DESPLEGABLE--%>
-                       <li><a class="dropdown-toggle" data-toggle="dropdown" href="# ">Administrativo<span class="caret"></span></a>
+                       <li id="administrador" runat="server"><a class="dropdown-toggle" data-toggle="dropdown" href="# ">Administrativo<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="../../Paginas/Administrativo/Persona.aspx">Personas</a></li>
                                 <li><a href="../../Paginas/Administrativo/Identificacion.aspx">Identificacion</a></li>
@@ -69,10 +69,10 @@
                             </ul>
                         </li>
                             <ul class="nav navbar-nav navbar-right">
-                                <li id="admin"><a href="../../Paginas/Administrativo/Login.aspx">Login</a></li>
-                                <li><label id="Usuario" runat="server"></label></li>
-
-                            </ul>            
+                                <li id="login" runat="server"><a href="../../Paginas/Administrativo/Login.aspx">Login</a></li>
+                                <li><a id="Usuario" runat="server"></a></li>
+                            </ul>
+                                 
 			</ul>
 		</div>
 

@@ -16,7 +16,7 @@ namespace PolizaUI.Paginas.Administrativo
             string sMsjError = string.Empty;
             if (!IsPostBack)
             {
-                //cargarDatos(ref sMsjError);
+                cargarDatos(ref sMsjError);
             }
         }
 

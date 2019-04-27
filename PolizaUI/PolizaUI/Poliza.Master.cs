@@ -29,6 +29,7 @@ namespace PolizaUI
             {
                 Usuario.InnerHtml = Convert.ToString(Session["user"]) + " Usuario";
                 login.Style.Add("display", "none");
+                administrador.Style.Add("display", "none");
             }
             else
             {

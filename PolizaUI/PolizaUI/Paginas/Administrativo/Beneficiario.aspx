@@ -46,8 +46,14 @@
                     <div class="modal-body">
                         <label>ID_beneficiario: 
                             <input type="text" id="txt_ID" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
+                        <label>Porcentaje: 
+                            <input type="text" id="Txtporcentaje" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
                         <label>Nombre: 
                             <input type="text" id="txt_nombre" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
+                        <label>Apellido1:
+                            <input type="text" id="Text_Apellido1" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
+                        <label>Apellido2: 
+                            <input type="text" id="Text_Apellido2" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
                         <input type="button" value="aceptar" runat="server" id="btn_a" class="btn btn-success" onserverclick="btn_a_ServerClick" />
                     </div>
                     <div class="modal-footer">

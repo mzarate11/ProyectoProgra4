@@ -58,6 +58,15 @@ namespace PolizaUI.Paginas.Administrativo {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txt_ID;
         
         /// <summary>
+        /// Txtporcentaje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Txtporcentaje;
+        
+        /// <summary>
         /// txt_nombre control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,24 @@ namespace PolizaUI.Paginas.Administrativo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txt_nombre;
+        
+        /// <summary>
+        /// Text_Apellido1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text_Apellido1;
+        
+        /// <summary>
+        /// Text_Apellido2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text_Apellido2;
         
         /// <summary>
         /// btn_a control.

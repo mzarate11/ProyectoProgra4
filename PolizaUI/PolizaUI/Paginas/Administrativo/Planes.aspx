@@ -73,7 +73,7 @@
                     </div>
                     <div class="modal-body">
                         <label>ID_Planes: 
-                            <input type="text" id="Text1" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                            <input type="text" id="Text1" onkeypress="return controlEspacio()" runat="server" class="form-control" disabled/></label>
                         <label>Nombre: 
                             <input type="text" id="Text2" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <label>Costo: 

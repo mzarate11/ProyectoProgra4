@@ -97,7 +97,6 @@ namespace PolizaUI.Paginas.Administrativo
             GridViewRow row = GV_planes.SelectedRow;
             Text1.Value = row.Cells[1].Text;
             Text2.Value = row.Cells[2].Text;
-            Text3.Value = row.Cells[3].Text;
             Text4.Value = row.Cells[4].Text;
         }
 

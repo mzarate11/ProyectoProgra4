@@ -36,7 +36,7 @@
         
         <div id="insert" class="modal fade" role="dialog">
             <div class="modal-dialog">
-
+                <!--Insercion->
                 <!-- Modal insert-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -45,15 +45,15 @@
                     </div>
                     <div class="modal-body">
                         <label>ID_beneficiario: 
-                            <input type="text" id="txt_ID" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
+                            <input type="text" id="Text1" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <label>Porcentaje: 
-                            <input type="text" id="Txtporcentaje" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
+                            <input type="text" id="Text2" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <label>Nombre: 
-                            <input type="text" id="txt_nombre" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
-                        <label>Apellido1:
-                            <input type="text" id="Text_Apellido1" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
-                        <label>Apellido2: 
-                            <input type="text" id="Text_Apellido2" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
+                            <input type="text" id="Text3" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                        <label>Primer apellido: 
+                            <input type="text" id="Text4" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                        <label>Segundo apellido: 
+                            <input type="text" id="Text5" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <input type="button" value="aceptar" runat="server" id="btn_a" class="btn btn-success" onserverclick="btn_a_ServerClick" />
                     </div>
                     <div class="modal-footer">
@@ -81,9 +81,9 @@
                         <label>Nombre: 
                             <input type="text" id="TxtNE" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <label>Primer apellido: 
-                            <input type="text" id="Txtap1" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label
+                            <input type="text" id="Txtap1" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <label>Segundo apellido: 
-                            <input type="text" id="Txtap2" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label
+                            <input type="text" id="Txtap2" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <input type="button" value="aceptar"  runat="server" id="BtnE" class="btn btn-success" onserverclick="btn_E_ServerClick" />
                     </div>
                     <div class="modal-footer">

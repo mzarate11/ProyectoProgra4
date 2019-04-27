@@ -67,7 +67,7 @@ namespace PolizaUI.Paginas.Administrativo
             cls_Beneficiario_DAL Obj_DAL = new cls_Beneficiario_DAL();
             cls_Beneficiario_BLL Obj_BLL = new cls_Beneficiario_BLL();
             string sMsjError = string.Empty;
-            Obj_BLL.Insertar_Beneficiario(ref Obj_DAL, txt_ID.Value,TxtBenPor.Value,TxtNE.Value,Txtap1.Value,Txtap2.Value, ref sMsjError);//funciona
+            Obj_BLL.Insertar_Beneficiario(ref Obj_DAL, Text1.Value, Text2.Value, Text3.Value, Text4.Value, Text5.Value, ref sMsjError);//funciona
             cargarDatos(ref sMsjError);
         }
 
@@ -90,10 +90,10 @@ namespace PolizaUI.Paginas.Administrativo
 
         protected void GV_beneficiario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cls_Provincia_DAL Obj_DAL = new cls_Provincia_DAL();
-            cls_Provincia_BLL Obj_BLL = new cls_Provincia_BLL();
+            cls_Beneficiario_DAL Obj_DAL = new cls_Beneficiario_DAL();
+            cls_Beneficiario_BLL Obj_BLL = new cls_Beneficiario_BLL();
             string sMsjError = string.Empty;
-            Obj_BLL.Listar_provincias(ref Obj_DAL, sMsjError);
+            Obj_BLL.Listar_Beneficiario(ref Obj_DAL, ref sMsjError);
             GridViewRow row = GV_beneficiario.SelectedRow;
             TxtIDE.Value = row.Cells[1].Text;
             TxtNE.Value = row.Cells[2].Text;
@@ -102,10 +102,10 @@ namespace PolizaUI.Paginas.Administrativo
         protected void btn_E_ServerClick(object sender, EventArgs e)
         {
 
-            cls_Provincia_DAL Obj_DAL = new cls_Provincia_DAL();
-            cls_Provincia_BLL Obj_BLL = new cls_Provincia_BLL();
+            cls_Beneficiario_DAL Obj_DAL = new cls_Beneficiario_DAL();
+            cls_Beneficiario_BLL Obj_BLL = new cls_Beneficiario_BLL();
             string sMsjError = string.Empty;
-            Obj_BLL.Editar_provincias(ref Obj_DAL, Convert.ToInt32(TxtIDE.Value), TxtNE.Value, ref sMsjError);
+            Obj_BLL.Editar_Beneficiario(ref Obj_DAL, TxtIDE.Value, TxtBenPor.Value, TxtNE.Value, Txtap1.Value, Txtap2.Value, ref sMsjError);
             if (sMsjError == string.Empty)
             {
                 cargarDatos(ref sMsjError);
@@ -114,11 +114,6 @@ namespace PolizaUI.Paginas.Administrativo
             {
                 //control de mensaje aún falta esto
             }
-        }
-
-        protected void btn_E_ServerClick1(object sender, EventArgs e)
-        {
-
         }
     }
 }

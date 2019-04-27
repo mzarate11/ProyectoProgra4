@@ -13,20 +13,27 @@ namespace PolizaUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
+            if (!IsPostBack)
             {
                 datos_login();
             }
         }
         public void datos_login()
         {
-            if (Convert.ToString(Session["Rol"]) == "1")
+            if (Convert.ToString(Session["Rol"]) == "1"&&Session["user"]!=null)
             {
-                Usuario.InnerText = Session["user"].ToString() + " Administrador";
+                Usuario.InnerHtml = Session["user"].ToString() + " Administrador";
+                login.Style.Add("display","none");
+            }
+            else if (Convert.ToString(Session["Rol"]) == "2" &&Session["user"]!=null)
+            {
+                Usuario.InnerHtml = Convert.ToString(Session["user"]) + " Usuario";
+                login.Style.Add("display", "none");
+                administrador.Style.Add("display", "none");
             }
             else
             {
-                Usuario.InnerText = Convert.ToString(Session["user"]) + " Usuario";
+                administrador.Style.Add("display", "none");
             }
         }
     }

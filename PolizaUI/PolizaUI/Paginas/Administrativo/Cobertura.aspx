@@ -44,10 +44,16 @@
                         <h4 class="modal-title">Insertar Nuevo Resgistro</h4>
                     </div>
                     <div class="modal-body">
-                        <label>ID_cobertura: 
-                            <input type="text" id="txt_ID" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
+                        <label>ID_Cobertura: 
+                            <input type="text" id="Text1" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <label>Nombre: 
-                            <input type="text" id="txt_nombre" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
+                            <input type="text" id="Text2" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                        <label>Monto: 
+                            <input type="text" id="Text3" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                        <label>Cantidad de eventos: 
+                            <input type="text" id="Text4" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                        <label>Cantidad de beneficiarios: 
+                            <input type="text" id="Text5" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <input type="button" value="aceptar" runat="server" id="btn_a" class="btn btn-success" onserverclick="btn_a_ServerClick" />
                     </div>
                     <div class="modal-footer">
@@ -68,10 +74,16 @@
                         <h4 class="modal-title">Insertar Nuevo Resgistro</h4>
                     </div>
                     <div class="modal-body">
-                        <label>ID_cobertura: 
-                            <input type="text" id="TxtIDE" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                        <label>ID_Cobertura: 
+                            <input type="text" id="Text6" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <label>Nombre: 
-                            <input type="text" id="TxtNE" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                            <input type="text" id="Text7" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                        <label>Monto: 
+                            <input type="text" id="Text8" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                        <label>Cantidad de eventos: 
+                            <input type="text" id="Text9" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                        <label>Cantidad de beneficiarios: 
+                            <input type="text" id="Text10" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <input type="button" value="aceptar"  runat="server" id="BtnE" class="btn btn-success" onserverclick="btn_E_ServerClick" />
                     </div>
                     <div class="modal-footer">

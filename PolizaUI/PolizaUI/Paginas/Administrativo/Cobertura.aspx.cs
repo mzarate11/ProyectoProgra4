@@ -22,11 +22,11 @@ namespace PolizaUI.Paginas.Administrativo
 
         public void cargarDatos(ref string sMsjError)
         {
-            cls_Provincia_DAL Obj_DAL = new cls_Provincia_DAL();
-            cls_Provincia_BLL Obj_BLL = new cls_Provincia_BLL();
+            cls_Cobertura_DAL Obj_DAL = new cls_Cobertura_DAL();
+            cls_Cobertura_BLL Obj_BLL = new cls_Cobertura_BLL();
             if (txt_filtro.Value == string.Empty)
             {
-                Obj_BLL.Listar_provincias(ref Obj_DAL, sMsjError);
+                Obj_BLL.Listar_Cobertura(ref Obj_DAL, ref sMsjError);
                 if (sMsjError == string.Empty)
                 {
                     this.GV_cobertura.DataSource = null;
@@ -41,7 +41,7 @@ namespace PolizaUI.Paginas.Administrativo
             }
             else
             {
-                Obj_BLL.Filtrar_provincias(ref Obj_DAL, txt_filtro.Value, ref sMsjError);//le faltan arreglos
+                Obj_BLL.Filtrar_Cobertura(ref Obj_DAL, txt_filtro.Value, ref sMsjError);//le faltan arreglos
                 if (sMsjError == string.Empty)
                 {
                     this.GV_cobertura.DataSource = null;
@@ -64,20 +64,20 @@ namespace PolizaUI.Paginas.Administrativo
 
         protected void btn_a_ServerClick(object sender, EventArgs e)
         {
-            cls_Provincia_DAL Obj_DAL = new cls_Provincia_DAL();
-            cls_Provincia_BLL Obj_BLL = new cls_Provincia_BLL();
+            cls_Cobertura_DAL Obj_DAL = new cls_Cobertura_DAL();
+            cls_Cobertura_BLL Obj_BLL = new cls_Cobertura_BLL();
             string sMsjError = string.Empty;
-            Obj_BLL.Insertar_provincias(ref Obj_DAL, txt_ID.Value, txt_nombre.Value, ref sMsjError);//funciona
+            Obj_BLL.Insertar_Cobertura(ref Obj_DAL, Text1.Value, Text2.Value, Text3.Value, Text4.Value, Text5.Value, ref sMsjError);//funciona
             cargarDatos(ref sMsjError);
         }
 
         protected void btn_S_ServerClick(object sender, EventArgs e)
         {
-            cls_Provincia_DAL Obj_DAL = new cls_Provincia_DAL();
-            cls_Provincia_BLL Obj_BLL = new cls_Provincia_BLL();
+            cls_Cobertura_DAL Obj_DAL = new cls_Cobertura_DAL();
+            cls_Cobertura_BLL Obj_BLL = new cls_Cobertura_BLL();
             string sMsjError = string.Empty;
             GridViewRow row = GV_cobertura.SelectedRow;//apunta al row seleccionado el cells es el espacio en ese Row
-            Obj_BLL.Delete_provincias(ref Obj_DAL, row.Cells[1].Text, ref sMsjError);//funciona pero hay que cambiar el sp la forma de declarar las variables estan mal
+            Obj_BLL.Delete_Cobertura(ref Obj_DAL, row.Cells[1].Text, ref sMsjError);//funciona pero hay que cambiar el sp la forma de declarar las variables estan mal
             if (sMsjError == string.Empty)
             {
                 cargarDatos(ref sMsjError);
@@ -90,22 +90,22 @@ namespace PolizaUI.Paginas.Administrativo
 
         protected void GV_cobertura_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cls_Provincia_DAL Obj_DAL = new cls_Provincia_DAL();
-            cls_Provincia_BLL Obj_BLL = new cls_Provincia_BLL();
+            cls_Cobertura_DAL Obj_DAL = new cls_Cobertura_DAL();
+            cls_Cobertura_BLL Obj_BLL = new cls_Cobertura_BLL();
             string sMsjError = string.Empty;
-            Obj_BLL.Listar_provincias(ref Obj_DAL, sMsjError);
+            Obj_BLL.Listar_Cobertura(ref Obj_DAL, ref sMsjError);
             GridViewRow row = GV_cobertura.SelectedRow;
-            TxtIDE.Value = row.Cells[1].Text;
-            TxtNE.Value = row.Cells[2].Text;
+            /*TxtIDE.Value = row.Cells[1].Text;
+            TxtNE.Value = row.Cells[2].Text;*/
         }
 
         protected void btn_E_ServerClick(object sender, EventArgs e)
         {
 
-            cls_Provincia_DAL Obj_DAL = new cls_Provincia_DAL();
-            cls_Provincia_BLL Obj_BLL = new cls_Provincia_BLL();
+            cls_Cobertura_DAL Obj_DAL = new cls_Cobertura_DAL();
+            cls_Cobertura_BLL Obj_BLL = new cls_Cobertura_BLL();
             string sMsjError = string.Empty;
-            Obj_BLL.Editar_provincias(ref Obj_DAL, Convert.ToInt32(TxtIDE.Value), TxtNE.Value, ref sMsjError);
+            Obj_BLL.Editar_Cobertura(ref Obj_DAL, Text6.Value, Text7.Value, Text8.Value, Text9.Value, Text10.Value, ref sMsjError);
             if (sMsjError == string.Empty)
             {
                 cargarDatos(ref sMsjError);

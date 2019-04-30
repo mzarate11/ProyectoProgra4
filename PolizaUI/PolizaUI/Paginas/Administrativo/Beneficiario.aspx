@@ -45,7 +45,7 @@
                     </div>
                     <div class="modal-body">
                         <label>ID_beneficiario: 
-                            <input type="text" id="Text1" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                            <input type="text" id="Text1" onkeypress="return controlEspacio()" runat="server" class="form-control" /></label>
                         <label>Porcentaje: 
                             <input type="text" id="Text2" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <label>Nombre: 
@@ -75,7 +75,7 @@
                     </div>
                     <div class="modal-body">
                         <label>ID_beneficiario: 
-                            <input type="text" id="TxtIDE" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                            <input type="text" id="TxtIDE" onkeypress="return controlEspacio()" runat="server" class="form-control" disabled/></label>
                         <label>Porcentaje: 
                             <input type="text" id="TxtBenPor" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <label>Nombre: 

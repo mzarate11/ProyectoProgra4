@@ -75,7 +75,7 @@
                     </div>
                     <div class="modal-body">
                         <label>ID_Cobertura: 
-                            <input type="text" id="Text6" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
+                            <input type="text" id="Text6" onkeypress="return controlEspacio()" runat="server" class="form-control" disabled/></label>
                         <label>Nombre: 
                             <input type="text" id="Text7" onkeypress="return controlEspacio()" runat="server" class="form-control"/></label>
                         <label>Monto: 

@@ -34,10 +34,8 @@ namespace BLL.BLL_ADMIN
         public void Filtrar_Planes(ref cls_Planes_DAL Obj_DAL, string sMsjError, string sFiltro)
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
-            Obj_DAL.DS1 = new System.Data.DataSet();
-            Crear_tabla(ref Obj_DAL);
-            Obj_DAL.dtParametros.Rows.Add("NOMBRE", SqlDbType.VarChar, sFiltro);
-            Obj_DAL.sNombre_P = "Nombre";
+            Obj_DAL.DS1 = new DataSet();
+            Obj_DAL.sNombre_P = "@Nombre";
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Filtrar_Planes"].ToString();
             Obj_DAL.DS1.Tables.Add(ObjSVC.FiltrarDatos(Obj_DAL.sNombre_sp, Obj_DAL.sNombre_P,SqlDbType.VarChar,sFiltro, ref sMsjError));
         }
@@ -45,11 +43,11 @@ namespace BLL.BLL_ADMIN
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
             Crear_tabla(ref Obj_DAL);
-            Obj_DAL.dtParametros.Rows.Add("ID_PLAN", 1, sValor1); //el número corresponde al valor dentro del switch creado en el wfc -
+            Obj_DAL.dtParametros.Rows.Add("ID_Plan", 1, sValor1); //el número corresponde al valor dentro del switch creado en el wfc -
                                                                        //en el metodo excecute nonquery cambia dependiedo del tipo de dato a insertar o valorar
             Obj_DAL.dtParametros.Rows.Add("NOMBRE", 2, sValor2);
-            Obj_DAL.dtParametros.Rows.Add("COSTO", 4, sValor3);
-            Obj_DAL.dtParametros.Rows.Add("ID_COBERTURA", 1, sValor3);
+            Obj_DAL.dtParametros.Rows.Add("Costo", 4, sValor3);
+            Obj_DAL.dtParametros.Rows.Add("ID_Cobertura", 1, sValor4);
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Insert_Planes"].ToString();// aqui se lee el stored procedure siempre desde el web config y el nombre del key
             ObjSVC.Consultas_sin_I(Obj_DAL.sNombre_sp, Obj_DAL.dtParametros, ref sMsjError);//es sin I porque la tabla no tiene identity las que si lo llevan usan el otro metodo
         }
@@ -61,12 +59,16 @@ namespace BLL.BLL_ADMIN
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Delete_Planes"].ToString();
             ObjSVC.Consultas_sin_I(Obj_DAL.sNombre_sp, Obj_DAL.dtParametros, ref sMsjError);
         }
-        public void Editar_Planes(ref cls_Planes_DAL Obj_DAL, int sValor1, string sValor2, ref string sMsjError)
+        public void Editar_Planes(ref cls_Planes_DAL Obj_DAL, string sValor1, string sValor2, string sValor3, string sValor4, ref string sMsjError)
         {
             Svc_DataBase.I_DBClient ObjSVC = new Svc_DataBase.I_DBClient();
             Crear_tabla(ref Obj_DAL);
-            Obj_DAL.dtParametros.Rows.Add(@"ID_provi", 1, sValor1);
-            Obj_DAL.dtParametros.Rows.Add(@"Nombre", 2, sValor2);
+            Obj_DAL.dtParametros.Rows.Add("ID_Plan", 1, sValor1); //el número corresponde al valor dentro del switch creado en el wfc -
+                                                                  //en el metodo excecute nonquery cambia dependiedo del tipo de dato a insertar o valorar
+            Obj_DAL.dtParametros.Rows.Add("NOMBRE", 2, sValor2);
+            Obj_DAL.dtParametros.Rows.Add("Costo", 4, sValor3);
+            Obj_DAL.dtParametros.Rows.Add("ID_Cobertura", 1, sValor4);
+            Obj_DAL.dtParametros.Rows.Add("plan", 1, sValor1);
             Obj_DAL.sNombre_sp = ConfigurationManager.AppSettings["Update_Planes"].ToString();
             ObjSVC.Consultas_sin_I(Obj_DAL.sNombre_sp, Obj_DAL.dtParametros, ref sMsjError);
         }

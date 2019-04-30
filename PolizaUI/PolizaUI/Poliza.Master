@@ -55,17 +55,11 @@
                        <li id="administrador" runat="server"><a class="dropdown-toggle" data-toggle="dropdown" href="# ">Administrativo<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="../../Paginas/Administrativo/Persona.aspx">Personas</a></li>
-                                <li><a href="../../Paginas/Administrativo/Identificacion.aspx">Identificacion</a></li>
                                 <li><a href="../../Paginas/Administrativo/Beneficiario.aspx">Beneficiario</a></li>
                                 <li><a href="../../Paginas/Cliente/Poliza.aspx">Poliza</a></li>
                                 <li><a href="../../Paginas/Cliente/Venta.aspx">Venta</a></li>
-                                <li><a href="../../Paginas/Administrativo/MetodoPago.aspx">MetodoPago</a></li>
-                                <li><a href="../../Paginas/Administrativo/TarjetaCreditoDeb.aspx">Tarjeta_Cred_Deb</a></li>
                                 <li><a href="../../Paginas/Administrativo/Planes.aspx">Planes</a></li>
                                 <li><a href="../../Paginas/Administrativo/Cobertura.aspx">Cobertura</a></li>
-                                <li><a href="../../Paginas/Administrativo/Provincia.aspx">Provincia</a></li>
-                                <li><a href="../../Paginas/Administrativo/Canton.aspx">Canton</a></li>
-                                <li><a href="../../Paginas/Administrativo/Distrito.aspx">Distrito</a></li>
                             </ul>
                         </li>
                             <ul class="nav navbar-nav navbar-right">
